@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>爷爷奶奶结婚纪念日</title>
+    <script type="text/javascript" src="static/jquery.min.js"></script>
+    <script type="text/javascript" src="static/TimeCircles.js"></script>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/TimeCircles.css" />
+    <link rel="icon" href="statif/favicon.ico">
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background-color: #fffceb;
+        }
+
+        .container {
+            width: 800px;
+            height: 340px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -400px;
+            margin-top: -170px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>爷爷 & 奶奶 结婚于 💓 一九六二年阴历七月十一 <br> 珍惜每一天的美好</h2>
+            <div id="DateCountdown" data-date="1962-08-10 12:00:00"></div>
+        </div>
+    </div>
+    <script>
+        $("#DateCountdown").TimeCircles();
+    </script>
+</body>
+
+<audio controls="controls">
+  <source src="static/beautifulinwhite.mp3" type="audio/mp3" />
+</audio>
+
+<div style="margin-top:40%;margin-left:38%"><img src="static/grandpic.jpeg" height='200'  style="text-align:center;"></div>
+
+
+
+</html>

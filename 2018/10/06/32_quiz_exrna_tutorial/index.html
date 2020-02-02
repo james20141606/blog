@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google5b248f7b86cbcee5.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="machine learning,python,bioinformatics,teaching,TA," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="WonderLand" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="This is one of the two course quizzes instruction of Bioinformatics basic course in Tsinghua University. You may also find it here The related jupyter file">
+<meta name="keywords" content="machine learning,python,bioinformatics,teaching,TA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QUIZ identification of cancer biomarker from exRNA-seq data">
+<meta property="og:url" content="https://www.cmwonderland.com/blog/2018/10/06/32_quiz_exrna_tutorial/index.html">
+<meta property="og:site_name" content="WonderLand">
+<meta property="og:description" content="This is one of the two course quizzes instruction of Bioinformatics basic course in Tsinghua University. You may also find it here The related jupyter file">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://i1.fuimg.com/640680/ba37a834da15e1ee.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/4eb6fea01e086051.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/1878901d4f1fc902.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/e8766d1d4eee4269.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/fb6337ad852d4cd9.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/1ee5270502206085.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/d3a6bbc7066c9c9b.jpg">
+<meta property="og:image" content="http://i1.fuimg.com/640680/938a85448344eab0.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/7f79f56b8863e3b1.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/ae9e7f15b21fd387.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/6698e9b7c214e49e.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/1bb2387bf3fa532b.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/89a22dce74aa130a.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/88788932223f6d72.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/36fc02c704c83c0a.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/35fcf6c9629d5d12.png">
+<meta property="og:image" content="http://i1.fuimg.com/640680/5cd256a6b7e8e922.png">
+<meta property="og:updated_time" content="2019-04-23T13:07:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QUIZ identification of cancer biomarker from exRNA-seq data">
+<meta name="twitter:description" content="This is one of the two course quizzes instruction of Bioinformatics basic course in Tsinghua University. You may also find it here The related jupyter file">
+<meta name="twitter:image" content="http://i1.fuimg.com/640680/ba37a834da15e1ee.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.cmwonderland.com/blog/2018/10/06/32_quiz_exrna_tutorial/"/>
+
+
+
+
+
+  <title>QUIZ identification of cancer biomarker from exRNA-seq data | WonderLand</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6656499bfc0e07b4e20ee4975eb85f31";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/james20141606"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WonderLand</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Somnium & Somniator</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.cmwonderland.com/blog/blog/2018/10/06/32_quiz_exrna_tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="James Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WonderLand">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">QUIZ identification of cancer biomarker from exRNA-seq data</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-06T19:01:19-04:00">
+                2018-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/school-work/" itemprop="url" rel="index">
+                    <span itemprop="name">school work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/blog/2018/10/06/32_quiz_exrna_tutorial/" class="leancloud_visitors" data-flag-title="QUIZ identification of cancer biomarker from exRNA-seq data">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3,674
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This is one of the two course quizzes instruction of <a href="https://lulab.gitbooks.io/teaching/content/" target="_blank" rel="noopener">Bioinformatics basic course in Tsinghua University</a>. You may also find it <a href="https://lulab.gitbooks.io/teaching/content/quiz/quiz_exrna/quiz_exrna_tutorial.html" target="_blank" rel="noopener">here</a></p>
+<p>The related <a href="https://github.com/lulab/teaching_book/blob/master/quiz/quiz_exrna/quiz_exrna_tutorial.ipynb" target="_blank" rel="noopener">jupyter file</a></p>
+<a id="more"></a>
+<p>请在<a href="https://cloud.tsinghua.edu.cn/f/3f4fc999720d45f198ca/" target="_blank" rel="noopener">quiz_exrna_tutorial_shared</a>下载相关文件，并下载该<a href="https://cloud.tsinghua.edu.cn/f/ae9a9d63d1db435ab6e2/" target="_blank" rel="noopener">文件夹</a>下的内容，打开<code>quiz_exrna_tutorial.ipynb</code>文件阅读详细的<strong>Quiz指南</strong>。</p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>（adapt from Young Lee）</p>
+<p>在多种体液中，如血清、唾液以及尿液等，可以检测到一类非侵入性细胞外 RNA (extracellular RNA, exRNA)。诸如环状RNA (circular RNA)等这类具有空间结构的 RNA 分子，能够在血浆中稳定存在。这些从细胞分泌出的 exRNA 通常由微囊泡 (microvesicles)、外泌体(exosome) 包裹，或者与 RBP 密切结合形成 RNP 复合体。因为这些分子由于具备类细胞膜结构和蛋白质的保护，加上某些 RNA 具有特定的结构，exRNA 在多种体液 (血清、唾液、尿液等) 中可以抵抗体液中 RNase 的降解，从而稳定存在。exRNA 包括的类型很多，例如 miRNA，Y RNA, circRNA，lncRNA 等，每种又有不同的加工、剪切和修饰产物，这种多样性为更 好的临床检验带来了新的期望。这些 exRNA 可以成为一类有效的生物标志物，服务于人体健康状况检测和疾病的诊断，如癌症的早期诊断、肿瘤生长状况监测、以及预后辅助诊断。</p>
+<p>本Quiz依托于Lulab现有的一些研究结果，希望读者通过生物信息学方法，尝试使用一些机器学习方法，发现和研究与癌症发生发展相关的新型体液胞外RNA (extracellular RNA，exRNA)生物标志物，并应用于几种国内高致死癌症的早期诊断和预后辅助治疗。我们将在癌症病人体液 (如血液)中的游离、微囊泡、外泌体、RNP 等不同组分中发现和鉴定标志癌症发生发展的新型 exRNA，构建模型，最终建立一个具有更高精准度和重复性的无创检验癌症（尤其是早期癌症）的方法。</p>
+<h2 id="编程工具介绍"><a href="#编程工具介绍" class="headerlink" title="编程工具介绍"></a>编程工具介绍</h2><p>大作业需要使用python完成，推荐读者使用python3。我们需要一些python的工具包来实现部分功能。推荐使用包管理软件Anaconda来预装一些必需的包以及安装其他需要的包。另外强烈建议使用jupyter notebook进行代码编辑、运行和调试。具体使用方法请参考教程<a href="https://lulab.gitbooks.io/teaching/content/part-iii.-machine-learning-basics/python_tutorial.html" target="_blank" rel="noopener">Anaconda 和 jupyter</a>相关指南。<br>如果本地缺少下列可能需要的包，请使用<code>pip</code>或者<code>conda</code>进行安装。如:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> tqdm</span><br><span class="line">conda <span class="keyword">install</span> sklearn</span><br></pre></td></tr></table></figure>
+<p>本作业的部分内容可能会涉及到R，推荐读者使用<a href="https://www.rstudio.com/" target="_blank" rel="noopener">Rstudio</a>，也可以在jupyter notebook中安装R kernel</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入必需的库</span></span><br><span class="line"><span class="keyword">import</span> gc, argparse, sys, os, errno</span><br><span class="line">%pylab inline</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"><span class="keyword">from</span> sklearn.manifold <span class="keyword">import</span> TSNE</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> NearestNeighbors</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score, accuracy_score, get_scorer</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler, RobustScaler, MinMaxScaler, MaxAbsScaler</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE, RFECV</span><br><span class="line"><span class="keyword">from</span> sklearn.utils.class_weight <span class="keyword">import</span> compute_sample_weight</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, StratifiedKFold, ShuffleSplit, LeaveOneOut, \</span><br><span class="line">    RepeatedKFold, RepeatedStratifiedKFold, LeaveOneOut, StratifiedShuffleSplit</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> pearsonr</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#绘图设置</span></span><br><span class="line">styles = [<span class="string">"white"</span>,<span class="string">"dark"</span>,<span class="string">'whitegrid'</span>,<span class="string">"darkgrid"</span>]</span><br><span class="line">contexts = [<span class="string">'paper'</span>,<span class="string">'talk'</span>,<span class="string">'poster'</span>,<span class="string">'notebook'</span>]</span><br><span class="line">sns.set_context(contexts[<span class="number">1</span>])</span><br><span class="line">sns.set_style(styles[<span class="number">2</span>])</span><br><span class="line">tableau20 = np.array([(<span class="number">31</span>, <span class="number">119</span>, <span class="number">180</span>), (<span class="number">174</span>, <span class="number">199</span>, <span class="number">232</span>), (<span class="number">255</span>, <span class="number">127</span>, <span class="number">14</span>), (<span class="number">255</span>, <span class="number">187</span>, <span class="number">120</span>),  </span><br><span class="line">             (<span class="number">44</span>, <span class="number">160</span>, <span class="number">44</span>), (<span class="number">152</span>, <span class="number">223</span>, <span class="number">138</span>), (<span class="number">214</span>, <span class="number">39</span>, <span class="number">40</span>), (<span class="number">255</span>, <span class="number">152</span>, <span class="number">150</span>),  </span><br><span class="line">             (<span class="number">148</span>, <span class="number">103</span>, <span class="number">189</span>), (<span class="number">197</span>, <span class="number">176</span>, <span class="number">213</span>), (<span class="number">140</span>, <span class="number">86</span>, <span class="number">75</span>), (<span class="number">196</span>, <span class="number">156</span>, <span class="number">148</span>),  </span><br><span class="line">             (<span class="number">227</span>, <span class="number">119</span>, <span class="number">194</span>), (<span class="number">247</span>, <span class="number">182</span>, <span class="number">210</span>), (<span class="number">127</span>, <span class="number">127</span>, <span class="number">127</span>), (<span class="number">199</span>, <span class="number">199</span>, <span class="number">199</span>),  </span><br><span class="line">             (<span class="number">188</span>, <span class="number">189</span>, <span class="number">34</span>), (<span class="number">219</span>, <span class="number">219</span>, <span class="number">141</span>), (<span class="number">23</span>, <span class="number">190</span>, <span class="number">207</span>), (<span class="number">158</span>, <span class="number">218</span>, <span class="number">229</span>)])/<span class="number">255.</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据介绍"><a href="#数据介绍" class="headerlink" title="数据介绍"></a>数据介绍</h2><p>为了减轻工作负担，读者不需要从mapping开始工作，我们为读者准备好了五套处理好的expression matrix，读者在此基础上完成后续的工作。</p>
+<h3 id="expression-matrix"><a href="#expression-matrix" class="headerlink" title="expression matrix"></a>expression matrix</h3><p>expression matrix共有五套，来自每一行为一个feature，每一列为一个样本。其中<em>hcc</em>的expression matrix的feature分别为full length，peak以及两轮peak calling选出的peak数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scirepount = pd.read_table(<span class="string">'data/expression_matrix/GSE71008.txt'</span>)</span><br><span class="line">hcc_full_count = pd.read_table(<span class="string">'data/expression_matrix/transcripts_exrna.txt'</span>)</span><br><span class="line">hcc_peak_count = pd.read_table(<span class="string">'data/expression_matrix/piranha_peaks.txt'</span>)</span><br><span class="line">hcc_peak_iter_count = pd.read_table(<span class="string">'data/expression_matrix/piranha_peaks_iterative.txt'</span>)</span><br><span class="line">exorbase = pd.read_table(<span class="string">'data/expression_matrix/exoRBase.txt'</span>)</span><br><span class="line">scirepount.head()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scirepount.shape, hcc_full_count.shape, hcc_peak_count.shape, hcc_peak_iter_count.shape, exorbase.shape</span><br></pre></td></tr></table></figure>
+<pre><code>((3460, 193), (143666, 62), (1727, 64), (3061, 82), (111131, 86))
+</code></pre><h3 id="sample-labels"><a href="#sample-labels" class="headerlink" title="sample labels"></a>sample labels</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exo_samplenames = pd.read_table(<span class="string">'data/labels/exoRBase.txt'</span>,header=<span class="keyword">None</span>)</span><br><span class="line">scirep_samplenames = pd.read_table(<span class="string">'data/labels/GSE71008.txt'</span>,delimiter=<span class="string">','</span> , header=<span class="keyword">None</span>)</span><br><span class="line">hcc_samplenamess = pd.read_table(<span class="string">'data/labels/hccfull.txt'</span>, header=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hcc_samplenamess.head()</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>17402567-B</td>
+      <td>stage_A</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>249136-B</td>
+      <td>stage_A</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>385247-B</td>
+      <td>stage_A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>497411-B</td>
+      <td>stage_A</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>498221-B</td>
+      <td>stage_A</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.unique(scirep_samplenames[<span class="number">1</span>],return_counts=<span class="keyword">True</span>)</span><br><span class="line">np.unique(exo_samplenames[<span class="number">1</span>],return_counts=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="other-annotations"><a href="#other-annotations" class="headerlink" title="other annotations"></a>other annotations</h3><h4 id="gene-annotation"><a href="#gene-annotation" class="headerlink" title="gene annotation"></a>gene annotation</h4><p>可以通过feature的transcript id找到feature的transcript_nama, gene_type等信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geneannotation = pd.read_table(<span class="string">'data/transcript_anno.txt'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geneannotation.head()</span><br></pre></td></tr></table></figure>
+<h4 id="batch信息"><a href="#batch信息" class="headerlink" title="batch信息"></a>batch信息</h4><p>batch信息记录了对不同样本采取的不同实验条件，包括处理时间，处理材料的规格差异等，可能会造成同类样本的较大差异，称为batch effect。</p>
+<p>对于exoRBase数据，每一种癌症样本均来自不同的实验室，因此其batch与样本类别重合。对于scirep数据和hcc数据，batch信息如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scirepbatch = pd.read_excel(<span class="string">'data/other_annotations/scirep_batch.xlsx'</span>)</span><br><span class="line">hccbatch = pd.read_csv(<span class="string">'data/other_annotations/hcc_batch.csv'</span>,delimiter=<span class="string">'\t'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="RNA-type-统计信息"><a href="#RNA-type-统计信息" class="headerlink" title="RNA type 统计信息"></a>RNA type 统计信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hccrnastats = pd.read_csv(<span class="string">'data/other_annotations/hcc_rna_stats.csv'</span>,index_col=<span class="number">0</span>)</span><br><span class="line">exornastats = pd.read_csv(<span class="string">'data/other_annotations/exorbase_rna_stats.csv'</span>,index_col=<span class="number">0</span>)</span><br><span class="line">scireprnastats = pd.read_csv(<span class="string">'data/other_annotations/scirep_rna_stats.csv'</span>,index_col=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Quiz具体要求"><a href="#Quiz具体要求" class="headerlink" title="Quiz具体要求"></a>Quiz具体要求</h2><p>请读者使用我们提供的五套数据，以下工作：</p>
+<ul>
+<li>完成<strong>数据分析</strong>工作</li>
+<li>完成<strong>特征选择和特征筛除工作</strong>并汇报挑选出的feature。</li>
+<li>完成<strong>模型拟合</strong>并汇报效果。</li>
+<li>提交一份<strong>工作报告</strong>，中英文不限，同时提交<strong>源代码</strong>。</li>
+<li>选择性完成加分项内容。</li>
+</ul>
+<h3 id="基本统计分析"><a href="#基本统计分析" class="headerlink" title="基本统计分析"></a>基本统计分析</h3><ul>
+<li>统计一套数据中不同RNA type在不同样本的counts分布，hcc和scirep测到的主要是小RNA，exoRBase测到的主要是长RNA，观察分布能否得到这样的结论。</li>
+<li>统计某套数据中某种类型的RNA在不同样本中的counts数量，可以分析一些希望重点关注的RNA类型，如lncRNA等。</li>
+<li>对exoRBase和scirep数据做基本的quality control，通过counts或者PCA中明显离群点去除部分样本。参考<a href="#sampleqc"><em>sample QC</em></a>部分</li>
+<li>统计expression matrix中counts数量排在top 20的feature的占比，分析过高的占比可能对scaling造成的影响。参考<a href="#topk"><em>top k feature</em></a>部分</li>
+</ul>
+<h3 id="稳健的特征选择方法"><a href="#稳健的特征选择方法" class="headerlink" title="稳健的特征选择方法"></a>稳健的特征选择方法</h3><ul>
+<li>我们希望读者设计一个稳健的特征选择方法，完成以下几种情况下的feature selection，给出针对每套数据，每种分类条件所挑选的feature。<ul>
+<li>hcc(full length, peak, peak iterative)<ul>
+<li>HCC vs Normal</li>
+<li>Stage A vs Normal</li>
+</ul>
+</li>
+<li>exoRBase<ul>
+<li>HCC vs Normal</li>
+<li>PAAD vs Normal</li>
+</ul>
+</li>
+<li>Scirep<ul>
+<li>CRC vs Normal</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>为了帮助读者确立思路，我们给出一个如下的<strong>示例性流程</strong>，以HCC peak数据为例</p>
+<ul>
+<li>Normalize domain coverage by total coverage of all domains (CPM), Normalize Top20 and others separately. </li>
+<li>Scale each feature (log CPM) independently (using z-scores, min-max, robust normalization)</li>
+<li>Run a classifier (random forest, logistic regression, linear SVM) to select features based on feature importance. Optimize hyper-parameters by 3-fold cross-validation.</li>
+<li><strong>Optionally</strong>, use a recursive feature elimination(RFE).</li>
+<li>Do resampling runs to select robust features:<ul>
+<li>shuffle and split dataset and repeat feature selection for 100 times(shuffle split)</li>
+<li>Or randomly test 1 sample in each run (leave one out).</li>
+</ul>
+</li>
+<li>Select features that are recurrently selected across resampling runs (&gt;50%)</li>
+<li>Refit the classifier on selected features</li>
+</ul>
+<p>以上步骤会挑出在<strong>resampling runs</strong>中出现频数超过总轮数一半的特征。其中第一步分别对top20 feature和其他feature做normalization，可以避免top20 feature对整体分布的影响，第二步读者可以尝试不同的对<strong>feature</strong>进行normalization的策略。第三步读者可以尝试不同的机器学习模型，并且在第四步选择是否使用<strong>RFE</strong>来逐步筛除feature。第五步是挑选稳健feature的关键，可以采取random split和leave one out两种方法，选择重复出现的稳健的feature。</p>
+<p>读者可以设计自己的稳健的特征选择方法，请注意必须要体现出自己的方法的稳健性。</p>
+<h3 id="模型效果分析"><a href="#模型效果分析" class="headerlink" title="模型效果分析"></a>模型效果分析</h3><ul>
+<li>绘制挑选出的feature counts（经过适当的scale）的clustermap，用颜色块表示class。请参考<a href="#visfeature"><em>特征选择结果可视化</em></a>。</li>
+<li>绘制二分类模型的ROC曲线，请注意本问题ROC曲线的特殊之处，具体细节请参考<a href="#roc"><em>用选出的feature进行分类并绘制ROC曲线</em></a>。</li>
+<li>对比hcc数据的full length与peak在挑选出的feature以及分类的结果（ROC曲线）的差异，思考为什么会使用peak数据。</li>
+</ul>
+<h3 id="加分内容"><a href="#加分内容" class="headerlink" title="加分内容"></a>加分内容</h3><p>我们为有余力的读者设置了更多的挑战，完成相应的工作会有一定的加分</p>
+<h4 id="更多模型效果分析-20’"><a href="#更多模型效果分析-20’" class="headerlink" title="更多模型效果分析 (20’)"></a>更多模型效果分析 (20’)</h4><ul>
+<li>尝试减少feature数量（如1-10个feature），分析模型AUROC和ROC曲线。(5’)</li>
+<li>针对不同数据中的同一种疾病，如exoRBase和HCC数据中的同一种疾病HCC，比较挑出的feature的异同。(5’)</li>
+<li>比较挑出的feature，参考<a href="#comparefeature"><em>比较挑出的feature</em></a>部分。(10’)<ul>
+<li>不同模型、不同数据挑出的feature的异同，可以使用Venn图、heatmap图等表示。</li>
+<li>分析feature的鲁棒性，分析不同的条件设置（如模型超参数，scale方案，交叉验证方法）下被挑出的feature。</li>
+</ul>
+</li>
+</ul>
+<h4 id="预处理（30’）"><a href="#预处理（30’）" class="headerlink" title="预处理（30’）"></a>预处理（30’）</h4><p>此部分预处理数据不要求读者将处理后的数据再做整个的feature selection流程，只需要使用PCA/t-SNE可视化效果，并且使用我们提供的alignment score量化不同的scale方法的效果。以下问题只要求在<strong>hcc_peak数据和scirep数据</strong>上尝试即可。参考<a href="#preprocessing"><em>预处理部分教程</em></a></p>
+<ul>
+<li>尝试不同的scale方法（对样本），请参考<a href="#scalemethod"><em>不同的scale策略</em></a>部分<ul>
+<li>使用内参基因对样本做normalization。(5’)</li>
+<li>去掉piRNA，miRNA后再做normalization。(5’)</li>
+<li>SCnorm, TMM等方法做normalization（需使用R）(10’)</li>
+</ul>
+</li>
+<li>去除batch effect（需使用R） (10’)<br>尝试使用RUVs, combat等R package去除batch effect，并分析去除效果。</li>
+</ul>
+<h4 id="解释选出的feature（5’）"><a href="#解释选出的feature（5’）" class="headerlink" title="解释选出的feature（5’）"></a>解释选出的feature（5’）</h4><p>通过查阅文献，阐释挑选出的feature的生物学意义，尤其是研究所挑选出的feature是否被其他文献报道在相关癌症检测中起到作用。</p>
+<h2 id="补充知识（选读）"><a href="#补充知识（选读）" class="headerlink" title="补充知识（选读）"></a>补充知识（选读）</h2><h3 id="通过alignment-score量化PCA和t-SNE可视化结果"><a href="#通过alignment-score量化PCA和t-SNE可视化结果" class="headerlink" title="通过alignment score量化PCA和t-SNE可视化结果"></a>通过alignment score量化PCA和t-SNE可视化结果</h3><p>PCA和t-SNE可以直观的看到样本目前的聚集程度，但是无法量化，尤其是不容易做比较，我们提供以下的两个函数<em>alignment_socre</em> &amp; <em>knn_score</em>分别量化二分类和多分类样本的聚集程度。数值越接近1说明同类样本越聚集。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">alignment_score</span><span class="params">(X, y, K=<span class="number">10</span>)</span>:</span></span><br><span class="line">    N = X.shape[<span class="number">0</span>]</span><br><span class="line">    nn = NearestNeighbors(K)</span><br><span class="line">    nn.fit(X)</span><br><span class="line">    distances, indices = nn.kneighbors(X, K + <span class="number">1</span>)</span><br><span class="line">    neighbor_classes = np.take(y, indices[:, <span class="number">1</span>:])</span><br><span class="line">    same_class_fractions = np.sum(neighbor_classes == y[:, np.newaxis], axis=<span class="number">1</span>)</span><br><span class="line">    score = <span class="number">1.0</span> - (np.mean(same_class_fractions) - K/N)/(K - K/N)</span><br><span class="line">    <span class="keyword">print</span> (same_class_fractions.shape,np.mean(same_class_fractions),K/N,neighbor_classes)</span><br><span class="line">    <span class="keyword">return</span> score</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">knn_score</span><span class="params">(X, y, K=<span class="number">10</span>)</span>:</span></span><br><span class="line">    N = X.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">assert</span> K &lt; N</span><br><span class="line">    nn = NearestNeighbors(K)</span><br><span class="line">    nn.fit(X)</span><br><span class="line">    </span><br><span class="line">    distances, indices = nn.kneighbors(X, K + <span class="number">1</span>)</span><br><span class="line">    neighbor_classes = np.take(y, indices[:, <span class="number">1</span>:])</span><br><span class="line">    same_class_fractions = np.sum(neighbor_classes == y[:, np.newaxis], axis=<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    classes, counts = np.unique(y, return_counts=<span class="keyword">True</span>)</span><br><span class="line">    classes = np.argmax(y.reshape((<span class="number">-1</span>, <span class="number">1</span>)) == classes.reshape((<span class="number">1</span>, <span class="number">-1</span>)), axis=<span class="number">1</span>)</span><br><span class="line">    counts = np.take(counts, classes)</span><br><span class="line">    mean_r = K/(N - <span class="number">1</span>)*counts</span><br><span class="line">    max_r = np.minimum(K, counts)</span><br><span class="line">    <span class="comment">#print (same_class_fractions.shape,mean_r.shape,max_r.shape)</span></span><br><span class="line">    <span class="comment">#scores = (np.mean(same_class_fractions) - mean_r)/(max_r - mean_r)</span></span><br><span class="line">    scores = (same_class_fractions - mean_r)/(max_r - mean_r)</span><br><span class="line">    <span class="comment">#print(scores)</span></span><br><span class="line">    <span class="keyword">return</span> scores.mean()</span><br></pre></td></tr></table></figure>
+<p>如下图所示，可以通过<em>knn_score</em>计算出以batch信息所谓label时scirep数据的alignment score。0.27996表示不同batch的分离程度比较差，基本混合在一起</p>
+<p><img src="http://i1.fuimg.com/640680/ba37a834da15e1ee.png" alt="Markdown"></p>
+<h3 id="基本统计"><a href="#基本统计" class="headerlink" title="基本统计"></a>基本统计</h3><h4 id="统计一套数据中不同RNA-type在不同样本的counts"><a href="#统计一套数据中不同RNA-type在不同样本的counts" class="headerlink" title="统计一套数据中不同RNA type在不同样本的counts"></a>统计一套数据中不同RNA type在不同样本的counts</h4><p><img src="http://i1.fuimg.com/640680/4eb6fea01e086051.png" alt="Markdown"></p>
+<h4 id="统计某套数据中某种类型的RNA在不同样本中的counts数量。"><a href="#统计某套数据中某种类型的RNA在不同样本中的counts数量。" class="headerlink" title="统计某套数据中某种类型的RNA在不同样本中的counts数量。"></a>统计某套数据中某种类型的RNA在不同样本中的counts数量。</h4><p><img src="http://i1.fuimg.com/640680/1878901d4f1fc902.png" alt="Markdown"></p>
+<h4 id="分析每个样本不同RNA所占的比例"><a href="#分析每个样本不同RNA所占的比例" class="headerlink" title="分析每个样本不同RNA所占的比例"></a>分析每个样本不同RNA所占的比例</h4><p><img src="http://i1.fuimg.com/640680/e8766d1d4eee4269.png" alt="Markdown"></p>
+<p><img src="http://i1.fuimg.com/640680/fb6337ad852d4cd9.png" alt="Markdown"></p>
+<h4 id="sample-QC"><a href="#sample-QC" class="headerlink" title="sample QC"></a>sample QC</h4><h5 id="QC-by-counts"><a href="#QC-by-counts" class="headerlink" title="QC by counts"></a>QC by counts</h5><p><img src="http://i1.fuimg.com/640680/1ee5270502206085.png" alt="Markdown"></p>
+<h5 id="QC-by-PCA"><a href="#QC-by-PCA" class="headerlink" title="QC by PCA"></a>QC by PCA</h5><p><img src="http://i1.fuimg.com/640680/d3a6bbc7066c9c9b.jpg" alt="Markdown"></p>
+<h4 id="top-k-feature"><a href="#top-k-feature" class="headerlink" title="top k feature"></a>top k feature</h4><p><img src="http://i1.fuimg.com/640680/938a85448344eab0.png" alt="Markdown"></p>
+<h3 id="可视化结果"><a href="#可视化结果" class="headerlink" title="可视化结果"></a>可视化结果</h3><h4 id="特征选择结果可视化"><a href="#特征选择结果可视化" class="headerlink" title="特征选择结果可视化"></a>特征选择结果可视化</h4><p>使用seaborn的clustermap功能，将挑选出的feature的counts（做过合适的scale）绘制heatmap图并聚类，上方的颜色表示类别，可见同一类被很好的聚在了一起。</p>
+<p><img src="http://i1.fuimg.com/640680/7f79f56b8863e3b1.png" alt="Markdown"></p>
+<h4 id="用选出的feature进行分类并绘制ROC曲线"><a href="#用选出的feature进行分类并绘制ROC曲线" class="headerlink" title="用选出的feature进行分类并绘制ROC曲线"></a>用选出的feature进行分类并绘制ROC曲线</h4><p>请特别注意，这里的ROC曲线有其特殊之处。针对我们样本很少的问题，我们不能专门划分出一部分测试集供测试和绘制曲线。我们使用两种方式划分数据集：</p>
+<ul>
+<li>leave one out, 即每轮随机选择一个样本作为validation set，其他样本作为训练集，对validation set进行预测，最终保证每个样本恰好作为validation set一次。</li>
+<li><p>shuffle split, 即每轮随机选择一些样本作为validation set，其他样本作为训练集，对validation set进行预测，最终每个样本可能在不同轮中一共被预测数次。</p>
+</li>
+<li><p>这样，对于leave one out方法，我们恰好可以将所有样本预测一遍，并绘制出ROC曲线，如下图所示。</p>
+</li>
+<li><p>而对于shuffle split方法，每个样本被预测多次，没法放在一起绘制ROC曲线，但是其每轮都可以单独画一条ROC曲线，下面的图片展示的即为“将各条曲线综合起来”的情况，我们使用阴影区域表示每个点的均值的置信区间。</p>
+</li>
+</ul>
+<p><img src="http://i1.fuimg.com/640680/ae9e7f15b21fd387.png" alt="Markdown"></p>
+<p><img src="http://i1.fuimg.com/640680/6698e9b7c214e49e.png" alt="Markdown"></p>
+<h3 id="比较挑出的feature"><a href="#比较挑出的feature" class="headerlink" title="比较挑出的feature"></a>比较挑出的feature</h3><h4 id="比较不同的模型和参数挑出的feature的差异"><a href="#比较不同的模型和参数挑出的feature的差异" class="headerlink" title="比较不同的模型和参数挑出的feature的差异"></a>比较不同的模型和参数挑出的feature的差异</h4><p>图中有颜色的色块儿表示在该参数条件下被选中的feature，可以发现线性模型挑出的feature更相似，而random forest在不同参数设置下挑出的feature比较稳定。</p>
+<p><img src="http://i1.fuimg.com/640680/1bb2387bf3fa532b.png" alt="Markdown"></p>
+<h4 id="查看feature的鲁棒性"><a href="#查看feature的鲁棒性" class="headerlink" title="查看feature的鲁棒性"></a>查看feature的鲁棒性</h4><p>每一列是一轮测试，可以发现大多数feature在每轮测试中都被挑中，证明这些feature具有很强的鲁棒性，我们可以设置一个阈值，选取在超过50%的轮数中都出现的feature作为最终选择的feature。</p>
+<p><img src="http://i1.fuimg.com/640680/89a22dce74aa130a.png" alt="Markdown"></p>
+<h4 id="利用Venn图分析feature的重合"><a href="#利用Venn图分析feature的重合" class="headerlink" title="利用Venn图分析feature的重合"></a>利用Venn图分析feature的重合</h4><p>这里利用Venn图分析了HCC三种类型的数据（full length, peak, peak_iterative）的重合情况，每一个子图是一个模型。</p>
+<p><img src="http://i1.fuimg.com/640680/88788932223f6d72.png" alt="Markdown"></p>
+<h3 id="预处理部分教程"><a href="#预处理部分教程" class="headerlink" title="预处理部分教程"></a>预处理部分教程</h3><ul>
+<li><a href="https://youngleebbs.gitbook.io/bioinfo-training/part-ii/4.-qc-and-normalization" target="_blank" rel="noopener">normalization</a></li>
+<li><a href="https://youngleebbs.gitbook.io/bioinfo-training/part-ii/5.-imputation-and-confounders" target="_blank" rel="noopener">deal with confounders</a></li>
+</ul>
+<h4 id="不同的scale策略"><a href="#不同的scale策略" class="headerlink" title="不同的scale策略"></a>不同的scale策略</h4><h5 id="不同scale策略比较"><a href="#不同scale策略比较" class="headerlink" title="不同scale策略比较"></a>不同scale策略比较</h5><ul>
+<li>使用CPM(counts per million)</li>
+<li>或者使用可能的内参基因：’MIR1228’, ‘MIR16-1’, ‘MIR16-2’, ‘MIR21’, ‘MIR23A’, ‘MIR23B’, ‘MIR23C’,<pre><code> &#39;MIR451A&#39;, &#39;MIR15A&#39;, &#39;MIR15B&#39;进行scale。
+</code></pre></li>
+<li>去除piRNA和miRNA后使用CPM(counts per million)</li>
+</ul>
+<p><img src="http://i1.fuimg.com/640680/36fc02c704c83c0a.png" alt="Markdown"></p>
+<h5 id="内参基因的选择"><a href="#内参基因的选择" class="headerlink" title="内参基因的选择"></a>内参基因的选择</h5><p>我们可以绘制density plot或者violin plot来分析不同内参基因的变异系数，选择变异系数小的，比较稳定的miRNA作为内参。可以看到MIR1228, MIR15B的变异系数较大，不够稳定，不应该作为内参</p>
+<p><img src="http://i1.fuimg.com/640680/35fcf6c9629d5d12.png" alt="Markdown"></p>
+<p><img src="http://i1.fuimg.com/640680/5cd256a6b7e8e922.png" alt="Markdown"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----The ---- end ----<i class="fa fa-paw"></i>--- Thanks --- for --- Reading----</div>
+    
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/machine-learning/" rel="tag"><i class="fa fa-tag"></i> machine learning</a>
+          
+            <a href="/blog/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/blog/tags/bioinformatics/" rel="tag"><i class="fa fa-tag"></i> bioinformatics</a>
+          
+            <a href="/blog/tags/teaching/" rel="tag"><i class="fa fa-tag"></i> teaching</a>
+          
+            <a href="/blog/tags/TA/" rel="tag"><i class="fa fa-tag"></i> TA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/10/05/56_machine-learning-basics/" rel="next" title="Machine Learning Basics Tutorial">
+                <i class="fa fa-chevron-left"></i> Machine Learning Basics Tutorial
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/10/06/55_python_basics/" rel="prev" title="Python Tutorial">
+                Python Tutorial <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Njc1My8yMzI1NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/blog/images/avatar.png"
+                alt="James Chen" />
+            
+              <p class="site-author-name" itemprop="name">James Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/james20141606" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xp-chen14@mails.tsinghua.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=d9dbc8&w=a&t=n&d=MGAfMNv-Snrv0Yg1d2t2EH3ATBUCJtdgbna_qHvb4AI&co=302dad'></script>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景介绍"><span class="nav-number">1.</span> <span class="nav-text">背景介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程工具介绍"><span class="nav-number">2.</span> <span class="nav-text">编程工具介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据介绍"><span class="nav-number">3.</span> <span class="nav-text">数据介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#expression-matrix"><span class="nav-number">3.1.</span> <span class="nav-text">expression matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sample-labels"><span class="nav-number">3.2.</span> <span class="nav-text">sample labels</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-annotations"><span class="nav-number">3.3.</span> <span class="nav-text">other annotations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gene-annotation"><span class="nav-number">3.3.1.</span> <span class="nav-text">gene annotation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#batch信息"><span class="nav-number">3.3.2.</span> <span class="nav-text">batch信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RNA-type-统计信息"><span class="nav-number">3.4.</span> <span class="nav-text">RNA type 统计信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quiz具体要求"><span class="nav-number">4.</span> <span class="nav-text">Quiz具体要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本统计分析"><span class="nav-number">4.1.</span> <span class="nav-text">基本统计分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#稳健的特征选择方法"><span class="nav-number">4.2.</span> <span class="nav-text">稳健的特征选择方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型效果分析"><span class="nav-number">4.3.</span> <span class="nav-text">模型效果分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加分内容"><span class="nav-number">4.4.</span> <span class="nav-text">加分内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更多模型效果分析-20’"><span class="nav-number">4.4.1.</span> <span class="nav-text">更多模型效果分析 (20’)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预处理（30’）"><span class="nav-number">4.4.2.</span> <span class="nav-text">预处理（30’）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解释选出的feature（5’）"><span class="nav-number">4.4.3.</span> <span class="nav-text">解释选出的feature（5’）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充知识（选读）"><span class="nav-number">5.</span> <span class="nav-text">补充知识（选读）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过alignment-score量化PCA和t-SNE可视化结果"><span class="nav-number">5.1.</span> <span class="nav-text">通过alignment score量化PCA和t-SNE可视化结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本统计"><span class="nav-number">5.2.</span> <span class="nav-text">基本统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#统计一套数据中不同RNA-type在不同样本的counts"><span class="nav-number">5.2.1.</span> <span class="nav-text">统计一套数据中不同RNA type在不同样本的counts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#统计某套数据中某种类型的RNA在不同样本中的counts数量。"><span class="nav-number">5.2.2.</span> <span class="nav-text">统计某套数据中某种类型的RNA在不同样本中的counts数量。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析每个样本不同RNA所占的比例"><span class="nav-number">5.2.3.</span> <span class="nav-text">分析每个样本不同RNA所占的比例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample-QC"><span class="nav-number">5.2.4.</span> <span class="nav-text">sample QC</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#QC-by-counts"><span class="nav-number">5.2.4.1.</span> <span class="nav-text">QC by counts</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#QC-by-PCA"><span class="nav-number">5.2.4.2.</span> <span class="nav-text">QC by PCA</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top-k-feature"><span class="nav-number">5.2.5.</span> <span class="nav-text">top k feature</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化结果"><span class="nav-number">5.3.</span> <span class="nav-text">可视化结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征选择结果可视化"><span class="nav-number">5.3.1.</span> <span class="nav-text">特征选择结果可视化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用选出的feature进行分类并绘制ROC曲线"><span class="nav-number">5.3.2.</span> <span class="nav-text">用选出的feature进行分类并绘制ROC曲线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较挑出的feature"><span class="nav-number">5.4.</span> <span class="nav-text">比较挑出的feature</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#比较不同的模型和参数挑出的feature的差异"><span class="nav-number">5.4.1.</span> <span class="nav-text">比较不同的模型和参数挑出的feature的差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看feature的鲁棒性"><span class="nav-number">5.4.2.</span> <span class="nav-text">查看feature的鲁棒性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用Venn图分析feature的重合"><span class="nav-number">5.4.3.</span> <span class="nav-text">利用Venn图分析feature的重合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理部分教程"><span class="nav-number">5.5.</span> <span class="nav-text">预处理部分教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不同的scale策略"><span class="nav-number">5.5.1.</span> <span class="nav-text">不同的scale策略</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#不同scale策略比较"><span class="nav-number">5.5.1.1.</span> <span class="nav-text">不同scale策略比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内参基因的选择"><span class="nav-number">5.5.1.2.</span> <span class="nav-text">内参基因的选择</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Chen</span>
+
+  
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共192.4k字</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("klOjl0RBA8qP5IKgIXkOszBr-gzGzoHsz", "rCaN5wX4mjiRkRMzP95g7XHz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+</body>
+</html>
