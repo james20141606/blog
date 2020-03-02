@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google5b248f7b86cbcee5.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="deep learning,research,graduate,phd,lab,audio," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="WonderLand" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Here I summarized a very exciting differentiable digital signal processing tool proposed by Google’s team in Jan 2020. The tool is especially useful in audio waveform reconstruction and some other rel">
+<meta name="keywords" content="deep learning,research,graduate,phd,lab,audio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DDSP paper and codes summary">
+<meta property="og:url" content="https://www.cmwonderland.com/blog/2020/03/01/ddsp_sum/index.html">
+<meta property="og:site_name" content="WonderLand">
+<meta property="og:description" content="Here I summarized a very exciting differentiable digital signal processing tool proposed by Google’s team in Jan 2020. The tool is especially useful in audio waveform reconstruction and some other rel">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://i2.tiimg.com/640680/9d33009a3459dd58.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/6715b0ef602a4ef4.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/7148b45faa25c7cb.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/49696ba3c2fdb7c7.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/aa722961d552f14c.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/5745e749dd9e9403.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/bc8fe4115ab89d14.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/2e131a5efb44ac7c.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/94ce0231982209cd.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/cbb82ed3d5e7ef04.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/286e9d630d0510de.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/92b0f0331fba85a2.png">
+<meta property="og:updated_time" content="2020-03-02T17:53:54.784Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DDSP paper and codes summary">
+<meta name="twitter:description" content="Here I summarized a very exciting differentiable digital signal processing tool proposed by Google’s team in Jan 2020. The tool is especially useful in audio waveform reconstruction and some other rel">
+<meta name="twitter:image" content="http://i2.tiimg.com/640680/9d33009a3459dd58.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.cmwonderland.com/blog/2020/03/01/ddsp_sum/"/>
+
+
+
+
+
+  <title>DDSP paper and codes summary | WonderLand</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6656499bfc0e07b4e20ee4975eb85f31";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/james20141606"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WonderLand</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Somnium & Somniator</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.cmwonderland.com/blog/blog/2020/03/01/ddsp_sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="James Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WonderLand">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DDSP paper and codes summary</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-01T22:30:44-05:00">
+                2020-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/project/" itemprop="url" rel="index">
+                    <span itemprop="name">project</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/blog/2020/03/01/ddsp_sum/" class="leancloud_visitors" data-flag-title="DDSP paper and codes summary">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3,886
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  24
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Here I summarized a very exciting differentiable digital signal processing tool proposed by Google’s team in Jan 2020. The tool is especially useful in audio waveform reconstruction and some other related task.</p>
+<a id="more"></a>
+<h2 id="paper-summary"><a href="#paper-summary" class="headerlink" title="paper summary"></a>paper summary</h2><h3 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h3><p>The paper and the codes are the most exciting ones I’ve seen in a long time!<br>The DDSP paper successfully combine DSP and neural network together at a totally new level. By making some of the audio related signal processing differentiable. They achieve amazing audio reconstruction and style transfer results.<br>To me, it is really exciting and inspiring. I have tried to do (audio) spectrogram reconstruction for several months. The wavenet based, tacotron based methods, together with GAN, all fail to generate good reconstruction. For a long time I thought it is VAE’s fault that the reconstruction would be blurry and introducing GAN/BiGAN models could not save the results (it seems there is a trade off between VAE and GAN). I also counted on tacotron based model (like parrotron). But it turns out the model is really hard to train, and not working on a relatively small dataset.</p>
+<p>The paper first criticize two kinds of previous audio generation models, which seems reasonable:</p>
+<ul>
+<li>models generating samples in one of two domains: time or frequency do not utilize existing knowledge of how sound is generated and perceived.</li>
+<li>vocoders/synthesizers successfully incorporates strong domain knowledge of signal processing and perception, but has been less actively researched due to limited expressivity and difﬁculty integrating with modern auto-differentiation-based machine learning methods.</li>
+</ul>
+<p>The DDSP frameworks, however, can utilize strong domain knowledge as well as integrating these elements with deep learning. The framework could have good performance even without large autoregressive models (wavenet based) or adversarial losses(GAN based). The authors called it <strong>utilizing strong inductive biases without losing the expressive power of neural networks.</strong><br>The authors show that combining interpretable modules permits manipulation of each separate model component. Because we can manipulate F0 (foundamental frequency) and loudness, residual (timbre) features.  The applications include independent control of pitch and loudness, realistic extrapolation to pitches not seen during training, blind dereverberation of room acoustics, transfer of extracted room acoustics to new environments, and transformation of timbre between disparate sources.<br><strong>In short, DDSP enables an interpretable and modular approach to generative modeling, without sacriﬁcing the beneﬁts of deep learning.</strong></p>
+<p>By the way, the DDSP tools are also easy to use. And their model is really small compared with large wavenet or GAN based model. Which makes it possible to train the model on a small dataset. The DDSP did not propose a specific network, but provided a useful differentiable signal processing tools. The tools enable us to assemble our own powerful model. And the most exciting thing is, I could use a auto-encoder (with out KL regularization, nor adversarial loss) to achieve a nearly perfect reconstruction results.</p>
+<h3 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h3><p>First talks about neural network, </p>
+<blockquote>
+<p>Here, we increase the size of that toolbox by introducing the Differentiable Digital Signal Processing (DDSP) library, which integrates interpretable signal processing elements into modern automatic differentiation software (TensorFlow).<br>Then talks about the periodic property<br>Objects have a natural tendency to periodically vibrate. However, neural synthesis models often do not exploit this periodic structure for generation and perception.</p>
+</blockquote>
+<p>Then the author points out the drawbacks of three different audio synthesis models.</p>
+<ul>
+<li>for strided convolution, the problem is phase alignment. <blockquote>
+<p>Since audio oscillates at many frequencies, all with different periods from the ﬁxed frame hop size, the model must precisely align waveforms between different frames and learn ﬁlters to cover all possible phase variations.</p>
+</blockquote>
+</li>
+<li>Fourier-based models–such as Tacotron and GANSynth (proposed by the same team) face spectral leakage problem and phase-alignment problem<blockquote>
+<p>sinusoids at multiple neighboring frequencies and phases must be combined to represent a single sinusoid when Fourier basis frequencies do not perfectly match the audio</p>
+</blockquote>
+</li>
+<li>Autoregressive waveform models–such as WaveNet, SampleRNN, and WaveRNN (SOTA) face the problem of data limitation and perception problem.<blockquote>
+<p>The can avoid these issues by generating the waveform a single sample at a time. They are not constrained by the bias over generating wave packets and can express arbitrary waveforms.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>they require larger and more data-hungry networks, as they do not take advantage of a bias over oscillation. And a waveform’s shape does not perfectly correspond to perception.</p>
+</blockquote>
+<p><img src="http://i2.tiimg.com/640680/9d33009a3459dd58.png" alt="Markdown"></p>
+<h4 id="OSCILLATOR-MODELS"><a href="#OSCILLATOR-MODELS" class="headerlink" title="OSCILLATOR MODELS"></a>OSCILLATOR MODELS</h4><p>Rather than predicting waveforms or Fourier coefﬁcients, a third model class (vocoders or synthesizers) directly generates audio with oscillators.</p>
+<blockquote>
+<p>These “analysis/synthesis” models use expert knowledge and hand-tuned heuristics to extract synthesis parameters (analysis) that are interpretable (<strong>loudness and frequencies</strong>) and can be used by the generative algorithm (synthesis).<br>Neural networks have play some roles in oscillator models, in modeling pre-extracted synthesis parameters. As the authors says:<br>The analysis parameters must still be tuned by hand and gradients cannot ﬂow through the synthesis procedure. As a result, small errors in parameters can lead to large errors in the audio that cannot propagate back to the network. Crucially, the realism of vocoders is limited by the expressivity of a given analysis/synthesis pair. </p>
+</blockquote>
+<h4 id="contributions"><a href="#contributions" class="headerlink" title="contributions"></a>contributions</h4><blockquote>
+<p>DDSP models combine the strengths of the above approaches, beneﬁting from the inductive bias of using oscillators, while retaining the expressive power of neural networks and end-to-end training.<br>DDSP components are capable of generating high-ﬁdelity audio without autoregressive or adversarial losses. And DSSP could also perform different tasks:</p>
+<ul>
+<li>Independent control over pitch and loudness during synthesis.<br>• Realistic extrapolation to pitches not seen during training.<br>• Blind dereverberation of audio through seperate modelling of room acoustics.<br>• Transfer of extracted room acoustics to new environments.<br>• Timbre transfer between disparate sources, converting a singing voice into a violin.<br>• Smaller network sizes than comparable neural synthesizers.</li>
+</ul>
+</blockquote>
+<h3 id="related-works"><a href="#related-works" class="headerlink" title="related works"></a>related works</h3><p>To understand why Google’s team could build such a good tool, it is important to learn the papers which inspire them.</p>
+<ul>
+<li>Vocoders<blockquote>
+<p>Source-ﬁlter/subtractive models are inspired by the human vocal tract and dynamically ﬁlter a harmonically rich source signal, while sinusoidal/additive models generate sound as the combination of a set of time-varying sine waves. <strong>Additive models</strong> are strictly more expressive than subtractive models but have more parameters as each sinusoid has its own <strong>time-varying loudness and frequency.</strong><br>(Serra &amp; Smith, 1990; Beauchamp, 2007) builds an additive synthesizer combines sinusoids in harmonic (integer) ratios of a fundamental frequency alongside a time-varying ﬁltered noise signal.</p>
+</blockquote>
+</li>
+<li>Neural Source Filter (NSF)<br>A recent (complicated) work, a differentiable waveshaping synthesizer.<blockquote>
+<p>The NSF can be seen as a speciﬁc DDSP model, that uses convolutional waveshaping of a sinusoidal oscillator to create <strong>harmonic content</strong>, rather than additive synthesis explored in this work. Both works also generate audio in the time domain and impose multi-scale spectrograms losses in the frequency domain.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="DDSP-components"><a href="#DDSP-components" class="headerlink" title="DDSP components"></a>DDSP components</h3><p>Now it is the most exciting part, introducing how they make DSP operations differentiable. The ideas is straightforward: to write the operations as functions in modern automatic differentiation software. They express core components as feedforward functions, allowing efﬁcient implementation on parallel hardware such as GPUs and TPUs, and generation of samples during training. These components include oscillators, envelopes, and ﬁlters (linear-time-varying ﬁnite-impulse-response, LTV-FIR).</p>
+<h4 id="SPECTRAL-MODELING-SYNTHESIS"><a href="#SPECTRAL-MODELING-SYNTHESIS" class="headerlink" title="SPECTRAL MODELING SYNTHESIS"></a>SPECTRAL MODELING SYNTHESIS</h4><p>implement a differentiable version of Spectral Modeling Synthesis (SMS) Serra &amp; Smith (1990).</p>
+<blockquote>
+<p>This model generates sound by combining an additive synthesizer (adding together many sinusoids) with a subtractive synthesizer (ﬁltering white noise).<br>It is parametric, and it is a highly expressive model<br>It is important that the model has more parametetrs than other parametric models:<br>For example, in the 4 seconds of 16kHz audio in the datasets considered here, the synthesizer coefﬁcients actually have ∼2.5 times more dimensions than the audio waveform itself ((1 amplitude + 100 harmonics + 65 noise band magnitudes) * 1000 timesteps = 165,000 dimensions, vs. 64,000 audio samples).<br>It is hard to hand design so many features, but it is amenable to control by a neural network</p>
+<p>As we only consider monophonic sources in these experiments, we use the Harmonic plus Noise model, that further constrains sinusoids to be integer multiples of a fundamental frequency</p>
+</blockquote>
+<h4 id="HARMONIC-OSCILLATOR-ADDITIVE-SYNTHESIZER"><a href="#HARMONIC-OSCILLATOR-ADDITIVE-SYNTHESIZER" class="headerlink" title="HARMONIC OSCILLATOR / ADDITIVE SYNTHESIZER"></a>HARMONIC OSCILLATOR / ADDITIVE SYNTHESIZER</h4><p>the heart of the synthesis techniques: <strong>sinusoidal oscillator.</strong></p>
+<p><img src="http://i2.tiimg.com/640680/6715b0ef602a4ef4.png" alt="Markdown"></p>
+<p>This part has clearly illustrate how to generate a monophonic waveform from time varying fundamental frequency(f0) and loudness. The f0 can generate harmonic multiples and loudness can generate harmonic amplitudes using scale factor.</p>
+<h4 id="ENVELOPES"><a href="#ENVELOPES" class="headerlink" title="ENVELOPES"></a>ENVELOPES</h4><p>the neural networks operate at a slower frame rate but the oscillator formulation above requires time-varying amplitudes and frequencies at the audio sample rate (1000 vs 64,000)<br>For instantaneous frequency upsampling, they use bilinear interpolation, required smoothing to prevent artifacts. (by adding overlapping Hamming windows)</p>
+<h4 id="FILTER-DESIGN-FREQUENCY-SAMPLING-METHOD"><a href="#FILTER-DESIGN-FREQUENCY-SAMPLING-METHOD" class="headerlink" title="FILTER DESIGN : FREQUENCY SAMPLING METHOD"></a>FILTER DESIGN : FREQUENCY SAMPLING METHOD</h4><blockquote>
+<p>Standard convolutional layers are equivalent to linear time invariant ﬁnite impulse response (LTI-FIR) ﬁlters. However, to ensure interpretability and prevent phase distortion, we employ the frequency sampling method to convert network outputs into impulse responses of linear-phase ﬁlters.<br>LTV-FIR</p>
+</blockquote>
+<h4 id="FILTERED-NOISE-SUBTRACTIVE-SYNTHESIZER"><a href="#FILTERED-NOISE-SUBTRACTIVE-SYNTHESIZER" class="headerlink" title="FILTERED NOISE / SUBTRACTIVE SYNTHESIZER"></a>FILTERED NOISE / SUBTRACTIVE SYNTHESIZER</h4><blockquote>
+<p>Natural sounds contain both harmonic and stochastic components. The Harmonic plus Noise model captures this by combining the output of an additive synthesizer with a stream of ﬁltered noise (Serra &amp; Smith, 1990; Beauchamp, 2007). We are able to realize a differentiable ﬁltered noise synthesizer by simply applying the LTV-FIR ﬁlter from above to a stream of uniform noise Y l = H l N l where N l is the IDFT of uniform noise in domain [-1, 1].</p>
+</blockquote>
+<p>The detailed usage found in solo example part</p>
+<h3 id="Experiments-and-Model-details"><a href="#Experiments-and-Model-details" class="headerlink" title="Experiments and Model details"></a>Experiments and Model details</h3><p><img src="http://i2.tiimg.com/640680/7148b45faa25c7cb.png" alt="Markdown"></p>
+<p>A demo auto-encoder model, F0 could be extracted from pretrained CREPE model or learned using a resnet encoder<br>Note that the author says with pride that:</p>
+<blockquote>
+<p>we ﬁnd DDSP components are able to dramatically improve autoencoder performance in the audio domain. Introducing stochastic latents (such as in GAN, VAE, and Flow models) will likely further improve performance, but we leave that to future work as it is orthogonal to the core question of DDSP component performance that we investigate in this paper.<br>I can verify their words as the model is really doing a great job and there are definitely improvements we could do.</p>
+</blockquote>
+<p><strong>Encoder:</strong> </p>
+<pre><code>- the loudness l(t) is extracted directly from the audio, using a neural network! Note the details in http://archives.ismir.net/ismir2019/paper/000063.pdf, they can extract F0 and loudness features and use WaveRNN conditioning on it. 
+- a pretrained **CREPE model** with ﬁxed weights (Kim et al., 2018) is used as an f(t) encoder to extact the **fundamental frequency**, and optional encoder extracts a time-varying latent encoding z(t) of the residual information.  (For the unsupervised autoencoder, the pretrained CREPE model is replaced with a Resnet architecture (He et al., 2016) that extracts f(t) from a mel-scaled log spectrogram of the audio, and is jointly trained with the rest of the network.) details in appendic B.1
+- For the z(t) encoder, MFCC coefﬁcients (30 per a frame) are ﬁrst extracted from the audio, which correspond to the smoothed spectral envelope of harmonics (Beauchamp, 2007), and transformed by a single GRU layer into 16 latent variables per a frame.
+</code></pre><blockquote>
+<p>z-encoder: As shown in Figure 8, the encoder ﬁrst calculates MFCC’s (Mel Frequency Cepstrum Coefﬁcients) from the audio. MFCC is computed from the log-mel-spectrogram of the audio with a FFT size of 1024, 128 bins of frequency range between 20Hz to 8000Hz, overlap of 75%. We use only the ﬁrst 30 MFCCs that correspond to a smoothed spectral envelope. The MFCCs are then passed through a normalization layer (which has learnable shift and scale parameters) and a 512-unit GRU. The GRU outputs (over time) fed to a 512-unit linear layer to obtain z(t). The z embedding reported in this model has 16 dimensions across 250 time-steps.</p>
+</blockquote>
+<p><img src="http://i2.tiimg.com/640680/49696ba3c2fdb7c7.png" alt="Markdown"></p>
+<p><strong>Decoder:</strong><br>The decoder network maps the tuple (f(t), l(t), z(t)) to control parameters for the additive and ﬁltered noise synthesizers. The synthesizers generate audio based on these parameters, and a reconstruction loss between the synthesized and original audio is minimized.</p>
+<blockquote>
+<p>The decoder’s input is the latent tuple (f(t), l(t), z(t)) (250 timesteps). Its outputs are the parameters required by the synthesizers. For example, in the case of the <strong>harmonic synthesizer and ﬁltered noise synthesizer</strong> setup, the decoder outputs a(t) <strong>(amplitudes of the harmonics) for the harmonic synthesizer</strong> (note that f(t) is fed directly from the latent), and <strong>H (transfer function of the FIR ﬁlter) for the ﬁltered noise synthesizer.</strong></p>
+</blockquote>
+<p><img src="http://i2.tiimg.com/640680/aa722961d552f14c.png" alt="Markdown"></p>
+<p>Separate MLPs for different features</p>
+<blockquote>
+<p>Note that the latent f(t) is also <strong>fed directly</strong> to the additive synthesizer as it has <strong>structural meaning</strong> for the synthesizer outside the context of any given dataset. This disentangled representation enables the model to both interpolate within and extrapolate outside the data distribution. Indeed, recent work support incorporation of strong inductive biases as a prerequisite for learning disentangled representations<br>This means that with loudness and pitch explicitly controlled by (f(t), l(t)), the model should use the residual z(t) to encode timbre. Although architecture and training do not strictly enforce this encoding, they qualitatively demonstrate how varying z leads to a smooth change in timbre. Fig 3 shows that the features (f0 and loudness) of the resynthsized audio (dashed lines) closely follow the conditioning. But the latent vectors, z(t), are interpolated, and the spectral centroid of resulting audio (thin solid lines) smoothly varies between the original samples (dark solid lines). This could achieve timbre transfer</p>
+</blockquote>
+<p><img src="http://i2.tiimg.com/640680/5745e749dd9e9403.png" alt="Markdown"></p>
+<ul>
+<li><p>timbre transfer task<br>Step by step transfer by explicitly controlling f0 and loudness</p>
+<blockquote>
+<p>converting the singing voice of an author into a violin. F0 and loudness features are extracted from the singing voice and the DDSP autoencoder trained on solo violin used for resynthesis. To better match the conditioning features, we ﬁrst shift the fundamental frequency of the singing up by two octaves to ﬁt a violin’s typical register. Next, we transfer the room acoustics of the violin recording (as described in Section 5.3) to the voice before extracting loudness, to better match the loudness contours of the violin recordings. The resulting audio captures many subtleties of the singing with the timbre and room acoustics of the violin dataset.</p>
+</blockquote>
+<ul>
+<li>Model size<br>The DDSP models have the fewest parameters (up to 10 times less), despite no effort to minimize the model size in these experiments. Compared with WaveNet AE, GANSynth, and WaveRNN.</li>
+</ul>
+</li>
+</ul>
+<h3 id="key-questions-to-be-anwsered"><a href="#key-questions-to-be-anwsered" class="headerlink" title="key questions to be anwsered"></a>key questions to be anwsered</h3><ul>
+<li>Is it causal?<br>It uses GRU and it is causal</li>
+<li>At each time step, only needs to generate two features?<br>if not use z, then we only need loudness and f0 (which is used in our experiments), if use z, z could have more than 1 dimension</li>
+<li>how to generate harmonic features from F0 using decoder?<br>Use RNN and dense layers to output harmonic and magnitude features, dimensions are 60 and 65</li>
+<li>Is it enough to use fundamental frequency and loudness?<blockquote>
+<p>The brain stem faithfully represents the three main features of speech and music: timing (onsets/offsets and envelope of the response), pitch (encoding of the fundamental frequency), and timbre (harmonics)<br><a href="http://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC3989107&amp;blobtype=pdf" target="_blank" rel="noopener">http://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC3989107&amp;blobtype=pdf</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="code-details"><a href="#code-details" class="headerlink" title="code details"></a>code details</h2><h3 id="AE-model"><a href="#AE-model" class="headerlink" title="AE model"></a>AE model</h3><p><a href="https://github.com/magenta/ddsp/blob/master/ddsp/training/gin/models/ae.gin" target="_blank" rel="noopener">ddsp/ae.gin at master · magenta/ddsp · GitHub</a><br>Autoencoder that decodes from (loudness, f0, z).</p>
+<h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4><p>z = encoder(audio)<br>How to generate z?</p>
+<ul>
+<li>generate z use <code>class MfccTimeDistributedRnnEncoder(Encoder)</code><br>“””Use MFCCs as latent variables, distribute across timesteps.”””<br>Use <code>spectral_ops.compute_mfcc</code> to  compute MFCC, then use RNN on MFCC, z_dims=16, z_time_steps=125<br>For encoder, can optionally updates f0 or use CREPE pretrained model.</li>
+<li>generate F0<ul>
+<li>use CREPE</li>
+<li>or use ResnetF0Encoder to train the encoder</li>
+</ul>
+</li>
+</ul>
+<h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4><p>ZRnnFcDecoder()<br>channels 512<br><code>append_f0_loudness = True</code>  this means concat conditioning[‘f0_scaled’], conditioning[‘ld_scaled’], and conditioning[‘z’] together (f0 and loudness are 1 dim)<br>Use RNN and dense layers to generate outputs:<br>output_splits = ((‘amps’, 1),  (‘harmonic_distribution’, 60),(‘noise_magnitudes’, 65))</p>
+<h4 id="processorgroup"><a href="#processorgroup" class="headerlink" title="processorgroup"></a>processorgroup</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ProcessorGroup.dag = [</span><br><span class="line">  (<span class="meta">@synths</span>.Additive(),</span><br><span class="line">    [‘amps’, ‘harmonic_distribution’, ‘f0_hz’]),</span><br><span class="line">  (<span class="meta">@synths</span>.FilteredNoise(),</span><br><span class="line">    [‘noise_magnitudes’]),</span><br><span class="line">  (<span class="meta">@processors</span>.Add(),</span><br><span class="line">    [‘filtered_noise<span class="regexp">/signal’, ‘additive/</span>signal’]),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>synths.Additive()</code><br>Synthesize audio with a bank of harmonic sinusoidal oscillators.<br>  <code>get_controls</code>Use three input</p>
+<ul>
+<li>amplitudes: 3-D Tensor of synthesizer controls, of shape [batch, time, 1].</li>
+<li>harmonic_distribution: 3-D Tensor of synthesizer controls, of shape [batch, time, n_harmonics].</li>
+<li>f0_hz: Fundamental frequencies in hertz. Shape [batch, time, 1].<br><code>get_signal</code> use input which temporal dim is n_frames<br><strong>Returns</strong>  signal: A tensor of harmonic waves of shape [batch, n_samples].</li>
+</ul>
+</li>
+<li><p><code>synths.FilteredNoise()</code><br>Use <code>frequency_filter</code>  to filter audio with a finite impulse response filter.<br>Returns: Filtered audio. Tensor of shape  [batch, audio_timesteps + window_size - 1] (‘valid’ padding) or shape [batch, audio_timesteps] (‘same’ padding).</p>
+</li>
+<li><p><code>processors.Add()</code><br>Add ‘filtered_noise/signal’, ‘additive/signal’ together.</p>
+</li>
+</ul>
+<h4 id="what-is-the-loss"><a href="#what-is-the-loss" class="headerlink" title="what is the loss:"></a>what is the loss:</h4><ul>
+<li><p>spectral loss, since the perception and waveform may be incompatible<br>Given the original and synthesized audio, we compute their (magnitude) spectrogram S_i and \hat{S_i} , respectively, with a given FFT size i, and deﬁne the loss as the sum of the L1 difference between S_i and \hat{S_i}  as well as the L1 difference between log S_i and log \hat{S_i} .</p>
+<script type="math/tex; mode=display">
+L_{i}=\left\|S_{i}-\hat{S}_{i}\right\|_{1}+\alpha\left\|\log S_{i}-\log \hat{S}_{i}\right\|_{1}</script><blockquote>
+<p>where $\alpha$ is a weighting term set to 1.0 in our P experiments. The total reconstruction loss is then the sum of all the spectral losses, L reconstruction = $L<em>{\text {reconstruction }}=\sum</em>{i} L_{i}$ . In our experiments, we used FFT sizes (2048, 1024, 512, 256, 128, 64), and the neighboring frames in the Short-Time Fourier Transform (STFT) overlap by 75%. Therefore, the L i ’s cover differences between the original and synthesized audios at different spatial-temporal resolutions.</p>
+</blockquote>
+</li>
+<li><p>embedding loss, mean difference of embedding from model’s encoder</p>
+<ul>
+<li>for example, a pretrained CREPE model as encoder to generate embeddings(pitch) from gt audio and synthesized audio.<br>For AE model, only use spectral loss</li>
+</ul>
+</li>
+</ul>
+<h4 id="solo-instrument-as-example"><a href="#solo-instrument-as-example" class="headerlink" title="solo instrument as example"></a>solo instrument as example</h4><p>Encoder is None, use CREME pretrained model to extract f0 and loudness, no z here<br>Each sample in the batch  includes:<br><code>batch[‘audio’].shape,batch[‘f0_confidence’].shape, batch[‘f0_hz’].shape,  batch[‘loudness_db’].shape</code><br>64000, 1000, 1000, 1000</p>
+<p>After the encoder, we get<br><code>’audio’, ‘f0_confidence’, ‘f0_hz’, ‘loudness_db’, ‘f0_scaled’, ‘ld_scaled’</code></p>
+<p><img src="http://i2.tiimg.com/640680/bc8fe4115ab89d14.png" alt="Markdown"></p>
+<ul>
+<li>Decode: include decoder and processor_group<ul>
+<li>Decoder on conditioning and generate <strong>processor_inputs</strong><br><code>‘audio’, ‘f0_confidence’, ‘f0_hz’, ‘loudness_db’, ‘f0_scaled’, ‘ld_scaled’, ‘amps’, ‘harmonic_distribution’, ‘noise_magnitudes’</code><br>The last two features: (1, 1000, 60), (1, 1000, 65)</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://i2.tiimg.com/640680/2e131a5efb44ac7c.png" alt="Markdown"></p>
+<p>Note for the noise_magnitude, we use <code>filtered_noise</code> core function to process</p>
+<ul>
+<li>signal: A tensor of harmonic waves of shape [batch, n_samples, 1]. <strong>Here is an uniform noise.</strong> tf.random.uniform([batch_size, self.n_samples], minval=-1.0, maxval=1.0)</li>
+<li>magnitudes: Magnitudes tensor of shape [batch, n_frames, n_filter_banks].<ul>
+<li><code>frequency_filter(signal,magnitudes,window_size=self.window_size)</code><ul>
+<li>the funtion include <code>frequency_impulse_response</code> to convert magnitudes to IR and do <code>fft_convolve</code> fo signal and IR<ul>
+<li><code>frequency_impulse_response</code>: Get windowed impulse responses using the frequency sampling method.<br>Then we can get filtered noise, to add to signal</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>processor_group(processor_inputs) will generate audio</li>
+</ul>
+<p><img src="http://i2.tiimg.com/640680/94ce0231982209cd.png" alt="Markdown"></p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p><strong>Colab is easy to use</strong></p>
+<h4 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h4><figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Requires tensorflow &gt;=<span class="number">2.1</span><span class="number">.0</span></span><br><span class="line">pip install —upgrade tensorflow-gpu</span><br><span class="line">Shoud install libsndfile-dev but no <span class="built_in">package</span> <span class="keyword">in</span> conda</span><br><span class="line"><span class="built_in">module</span> <span class="built_in">load</span> libsndfile/intel/<span class="number">1.0</span><span class="number">.28</span></span><br><span class="line">! pip install soundfile <span class="comment">--upgrade</span></span><br><span class="line">conda install ffmpeg</span><br></pre></td></tr></table></figure>
+<p><code>ddsp-master/ddsp/colab/tutorials/0_processor.ipynb</code><br>demonstrate how to process ‘amplitudes’, ‘harmonic<em>distribution’, ‘f0_hz’<br>And <strong>get_signal()</strong> can synthesize audio from controls,<br>_call</em>  can synthesize audio from raw inputs. amps, harmonic_distribution, f0_hz<br>The function is defined in <code>wavetable_synthesis</code></p>
+<p><img src="http://i2.tiimg.com/640680/cbb82ed3d5e7ef04.png" alt="Markdown"></p>
+<p>After controls:</p>
+<ul>
+<li>Amplitudes are now all positive</li>
+<li>The harmonic distribution sums to 1.0</li>
+<li>All harmonics that are above the Nyquist frequency now have an amplitude of 0.</li>
+</ul>
+<p><img src="http://i2.tiimg.com/640680/286e9d630d0510de.png" alt="Markdown"></p>
+<p><img src="http://i2.tiimg.com/640680/92b0f0331fba85a2.png" alt="Markdown"></p>
+<p>Prepare data<br><code>!ddsp_prepare_tfrecord</code><br>Note, the audio should not be too short, you should merge the short audio into a single audio file and feed in</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module load cuda/<span class="number">9.0</span><span class="number">.176</span></span><br><span class="line">module load cudnn/<span class="number">9.0</span>v7<span class="number">.0</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
+<p>Note that the GPU use is a little tricky when running on own machines</p>
+<p>Results in jupyter notebook, nearly perfect reconstruction, PCC 0.8-0.9<br>Analyze results</p>
+<pre><code>- SHTOOKA whole dataset https://drive.google.com/file/d/1DgjxlMLd-hYtYq4_O99oclqgfliL3Cqx/view?usp=sharing
+- SHTOOKA data with phonemes &lt;=4 https://drive.google.com/file/d/1kPQEVD5OBjeliH2rsLGNjPcJExJv5sSe/view?usp=sharing
+</code></pre><p>Other files: <a href="https://drive.google.com/drive/folders/1A7lT2dMrZf9r-EoRM2c61oQt3CGnaikM?usp=sharing" target="_blank" rel="noopener">https://drive.google.com/drive/folders/1A7lT2dMrZf9r-EoRM2c61oQt3CGnaikM?usp=sharing</a></p>
+<h3 id="Github-Issues"><a href="#Github-Issues" class="headerlink" title="Github Issues:"></a>Github Issues:</h3><p>Q:<br>Hey, I just got a really good reconstruction result which is too good to be true. I have a sense that the idea behind the model is really good but it is still so amazing to me. I just use your demo autoencoder to reconstruct audios from the human voice and the result is really good. But I could not understand how it can be achieved by only using f0 and loudness information? For example, the vowel ‘a’ and ‘e’ is definitely different, how does this be reflected through f0 and loudness? I thought there might be some difference between musical instruments and human voice. I just couldn’t understand that these features are enough.<br>By the way, if I want to add z as latent space besides f0 and loudness, how can I tell the model to use it? I thought you mentioned in the paper that z may correspond to timbre information but I couldn’t find it in timbre_transfer.ipynb, can you achieve timbre transfer without z?<br>Another question I am really curious about is if we’d like to do human voice reconstruction from multiple sources(different people), should we consider timbre and include z in the model?<br>Also since the model is really doing a good job on waveform reconstruction. Have you considered to use it on TTS task? Can we use an encoder to generate some features like f0 and loudness from text of some other signal to generate waveform?<br>A:</p>
+<blockquote>
+<p>My guess is that the model is probably overfitting quite a lot to a small dataset. In that case, segment of loudness and f0 corresponds to a specific phoneme because the dataset doesn’t have enough variation. For a large dataset, there will be one to many mappings that the model can’t handle without more conditioning (latent or labels).<br>Q:</p>
+<ol>
+<li>I put the reconstruction result analysis here: <a href="https://drive.google.com/file/d/1DgjxlMLd-hYtYq4_O99oclqgfliL3Cqx/view" target="_blank" rel="noopener">https://drive.google.com/file/d/1DgjxlMLd-hYtYq4_O99oclqgfliL3Cqx/view</a></li>
+<li>For overfitting issues, I use SHTOOKA dataset which contains audio length around 1hour and 30 min, I think that is not too small for the model to overfit? I am still amazed that the model can handle the data so well, since I have tried parrotron model for spectrogram reconstruction on SHTOOKA dataset and the model could not converge…</li>
+<li>I am not sure if I understood <em>more conditioning (latent or labels).</em> here:<br>For a large dataset, there will be one to many mappings that the model can’t handle without more conditioning (latent or labels).<br>Do you mean we can add conditionings besides z, f0 and loudness? You also mentioned I could add grapheme or phoneme conditioning for TTS task, do you mean using an encoder to extract phoneme, grapheme or other conditioning and concat with z, f0 and loudness and then feed them to decoder?</li>
+<li>I am also curios if I can further improve the result by add z conditioning and use Resnet instead CREPE mode? Or it will be harder to train? Have you try some more complicated model like VAE or GAN using DDSP?</li>
+</ol>
+</blockquote>
+<h2 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h2><p>Not included here</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----The ---- end ----<i class="fa fa-paw"></i>--- Thanks --- for --- Reading----</div>
+    
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
+          
+            <a href="/blog/tags/research/" rel="tag"><i class="fa fa-tag"></i> research</a>
+          
+            <a href="/blog/tags/graduate/" rel="tag"><i class="fa fa-tag"></i> graduate</a>
+          
+            <a href="/blog/tags/phd/" rel="tag"><i class="fa fa-tag"></i> phd</a>
+          
+            <a href="/blog/tags/lab/" rel="tag"><i class="fa fa-tag"></i> lab</a>
+          
+            <a href="/blog/tags/audio/" rel="tag"><i class="fa fa-tag"></i> audio</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2020/01/11/travel_shanghai/" rel="next" title="上海迪士尼游记">
+                <i class="fa fa-chevron-left"></i> 上海迪士尼游记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Njc1My8yMzI1NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/blog/images/avatar.png"
+                alt="James Chen" />
+            
+              <p class="site-author-name" itemprop="name">James Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/james20141606" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xp-chen14@mails.tsinghua.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=d9dbc8&w=a&t=n&d=MGAfMNv-Snrv0Yg1d2t2EH3ATBUCJtdgbna_qHvb4AI&co=302dad'></script>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#paper-summary"><span class="nav-number">1.</span> <span class="nav-text">paper summary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.1.</span> <span class="nav-text">abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">1.2.</span> <span class="nav-text">introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OSCILLATOR-MODELS"><span class="nav-number">1.2.1.</span> <span class="nav-text">OSCILLATOR MODELS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#contributions"><span class="nav-number">1.2.2.</span> <span class="nav-text">contributions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#related-works"><span class="nav-number">1.3.</span> <span class="nav-text">related works</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDSP-components"><span class="nav-number">1.4.</span> <span class="nav-text">DDSP components</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SPECTRAL-MODELING-SYNTHESIS"><span class="nav-number">1.4.1.</span> <span class="nav-text">SPECTRAL MODELING SYNTHESIS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HARMONIC-OSCILLATOR-ADDITIVE-SYNTHESIZER"><span class="nav-number">1.4.2.</span> <span class="nav-text">HARMONIC OSCILLATOR / ADDITIVE SYNTHESIZER</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ENVELOPES"><span class="nav-number">1.4.3.</span> <span class="nav-text">ENVELOPES</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FILTER-DESIGN-FREQUENCY-SAMPLING-METHOD"><span class="nav-number">1.4.4.</span> <span class="nav-text">FILTER DESIGN : FREQUENCY SAMPLING METHOD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FILTERED-NOISE-SUBTRACTIVE-SYNTHESIZER"><span class="nav-number">1.4.5.</span> <span class="nav-text">FILTERED NOISE / SUBTRACTIVE SYNTHESIZER</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments-and-Model-details"><span class="nav-number">1.5.</span> <span class="nav-text">Experiments and Model details</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key-questions-to-be-anwsered"><span class="nav-number">1.6.</span> <span class="nav-text">key questions to be anwsered</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code-details"><span class="nav-number">2.</span> <span class="nav-text">code details</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AE-model"><span class="nav-number">2.1.</span> <span class="nav-text">AE model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Encoder"><span class="nav-number">2.1.1.</span> <span class="nav-text">Encoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Decoder"><span class="nav-number">2.1.2.</span> <span class="nav-text">Decoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#processorgroup"><span class="nav-number">2.1.3.</span> <span class="nav-text">processorgroup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#what-is-the-loss"><span class="nav-number">2.1.4.</span> <span class="nav-text">what is the loss:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#solo-instrument-as-example"><span class="nav-number">2.1.5.</span> <span class="nav-text">solo instrument as example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage"><span class="nav-number">2.2.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#installation"><span class="nav-number">2.2.1.</span> <span class="nav-text">installation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Issues"><span class="nav-number">2.3.</span> <span class="nav-text">Github Issues:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plan"><span class="nav-number">3.</span> <span class="nav-text">Plan</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Chen</span>
+
+  
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共199.5k字</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("klOjl0RBA8qP5IKgIXkOszBr-gzGzoHsz", "rCaN5wX4mjiRkRMzP95g7XHz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+</body>
+</html>
