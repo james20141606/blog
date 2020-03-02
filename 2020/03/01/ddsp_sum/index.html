@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://i2.tiimg.com/640680/cbb82ed3d5e7ef04.png">
 <meta property="og:image" content="http://i2.tiimg.com/640680/286e9d630d0510de.png">
 <meta property="og:image" content="http://i2.tiimg.com/640680/92b0f0331fba85a2.png">
-<meta property="og:updated_time" content="2020-03-02T17:53:54.784Z">
+<meta property="og:updated_time" content="2020-03-02T17:59:12.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DDSP paper and codes summary">
 <meta name="twitter:description" content="Here I summarized a very exciting differentiable digital signal processing tool proposed by Google’s team in Jan 2020. The tool is especially useful in audio waveform reconstruction and some other rel">
@@ -568,14 +568,14 @@
 </li>
 </ul>
 <h4 id="what-is-the-loss"><a href="#what-is-the-loss" class="headerlink" title="what is the loss:"></a>what is the loss:</h4><ul>
-<li><p>spectral loss, since the perception and waveform may be incompatible<br>Given the original and synthesized audio, we compute their (magnitude) spectrogram S_i and \hat{S_i} , respectively, with a given FFT size i, and deﬁne the loss as the sum of the L1 difference between S_i and \hat{S_i}  as well as the L1 difference between log S_i and log \hat{S_i} .</p>
+<li>spectral loss, since the perception and waveform may be incompatible<br>Given the original and synthesized audio, we compute their (magnitude) spectrogram $S_i$ and $\hat{S_i}$ , respectively, with a given FFT size i, and deﬁne the loss as the sum of the L1 difference between S_i and $\hat{S_i}$  as well as the L1 difference between log S_i and log $\hat{S_i}$.</li>
+</ul>
 <script type="math/tex; mode=display">
 L_{i}=\left\|S_{i}-\hat{S}_{i}\right\|_{1}+\alpha\left\|\log S_{i}-\log \hat{S}_{i}\right\|_{1}</script><blockquote>
-<p>where $\alpha$ is a weighting term set to 1.0 in our P experiments. The total reconstruction loss is then the sum of all the spectral losses, L reconstruction = $L<em>{\text {reconstruction }}=\sum</em>{i} L_{i}$ . In our experiments, we used FFT sizes (2048, 1024, 512, 256, 128, 64), and the neighboring frames in the Short-Time Fourier Transform (STFT) overlap by 75%. Therefore, the L i ’s cover differences between the original and synthesized audios at different spatial-temporal resolutions.</p>
+<p>where $\alpha$ is a weighting term set to 1.0 in our P experiments. The total reconstruction loss is then the sum of all the spectral losses, L reconstruction = $L<em>{\text {reconstruction }}=\sum</em>{i} L_{i}$. In our experiments, we used FFT sizes (2048, 1024, 512, 256, 128, 64), and the neighboring frames in the Short-Time Fourier Transform (STFT) overlap by 75%. Therefore, the L i ’s cover differences between the original and synthesized audios at different spatial-temporal resolutions.</p>
 </blockquote>
-</li>
-<li><p>embedding loss, mean difference of embedding from model’s encoder</p>
 <ul>
+<li>embedding loss, mean difference of embedding from model’s encoder<ul>
 <li>for example, a pretrained CREPE model as encoder to generate embeddings(pitch) from gt audio and synthesized audio.<br>For AE model, only use spectral loss</li>
 </ul>
 </li>
