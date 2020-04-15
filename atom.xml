@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://www.cmwonderland.com/blog/"/>
-  <updated>2020-03-22T01:42:09.599Z</updated>
+  <updated>2020-04-15T06:16:31.848Z</updated>
   <id>https://www.cmwonderland.com/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Being a CHILD is GREAT</title>
+    <link href="https://www.cmwonderland.com/blog/2020/04/15/childish/"/>
+    <id>https://www.cmwonderland.com/blog/2020/04/15/childish/</id>
+    <published>2020-04-16T03:30:44.000Z</published>
+    <updated>2020-04-15T06:16:31.848Z</updated>
+    
+    <content type="html"><![CDATA[<p>Being a CHILD is great, and “impossible”. We are dream about being a child again or live “longer”. They are actually the same thing. By living like a child, you will find the world interesting, totally fresh everyday. The day, week, month, year, life will become very long, very different, filled with interesting adventures.</p><p>So you you want to live longer, you should live like a child. To find more interesting things which interests you.</p><p>I will develop a private github repo containing things interest me and find more interesting things, everyone should find their own one!</p><p><a href="https://github.com/james20141606/child" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/CHILD%20is%20GREAT-@GITHUB-blue.svg?colorA=abcdef" alt=""></a></p><a id="more"></a><p>I will try to post more when the project has more things.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Being a CHILD is great, and “impossible”. We are dream about being a child again or live “longer”. They are actually the same thing. By living like a child, you will find the world interesting, totally fresh everyday. The day, week, month, year, life will become very long, very different, filled with interesting adventures.&lt;/p&gt;
+&lt;p&gt;So you you want to live longer, you should live like a child. To find more interesting things which interests you.&lt;/p&gt;
+&lt;p&gt;I will develop a private github repo containing things interest me and find more interesting things, everyone should find their own one!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/james20141606/child&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/CHILD%20is%20GREAT-@GITHUB-blue.svg?colorA=abcdef&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="https://www.cmwonderland.com/blog/categories/life/"/>
+    
+    
+      <category term="life" scheme="https://www.cmwonderland.com/blog/tags/life/"/>
+    
+      <category term="interesting" scheme="https://www.cmwonderland.com/blog/tags/interesting/"/>
+    
+      <category term="play" scheme="https://www.cmwonderland.com/blog/tags/play/"/>
+    
+  </entry>
   
   <entry>
     <title>几件小事</title>
@@ -488,9 +517,9 @@
     
       <category term="python" scheme="https://www.cmwonderland.com/blog/tags/python/"/>
     
-      <category term="probability" scheme="https://www.cmwonderland.com/blog/tags/probability/"/>
-    
       <category term="interesting" scheme="https://www.cmwonderland.com/blog/tags/interesting/"/>
+    
+      <category term="probability" scheme="https://www.cmwonderland.com/blog/tags/probability/"/>
     
   </entry>
   
@@ -585,32 +614,6 @@
       <category term="thoughts" scheme="https://www.cmwonderland.com/blog/tags/thoughts/"/>
     
       <category term="brain" scheme="https://www.cmwonderland.com/blog/tags/brain/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android terminal for the first time</title>
-    <link href="https://www.cmwonderland.com/blog/2019/04/23/52_android/"/>
-    <id>https://www.cmwonderland.com/blog/2019/04/23/52_android/</id>
-    <published>2019-04-23T21:59:19.000Z</published>
-    <updated>2019-04-23T15:30:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Who don’t like android?</p><a id="more"></a><h2 id="setting-up-and-materials"><a href="#setting-up-and-materials" class="headerlink" title="setting up and materials"></a>setting up and materials</h2><h1 id="安卓手机"><a href="#安卓手机" class="headerlink" title="安卓手机"></a>安卓手机</h1><p>jupyter<br>Turmux  给自己发消息<br><a href="https://repo.xposed.info/" target="_blank" rel="noopener">Welcome to the Xposed Module Repository! | Xposed Module Repository</a><br><a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程 | 国光</a><br><a href="https://www.jianshu.com/p/5c8678cef499" target="_blank" rel="noopener">神器Termux的使用日常 - 简书</a><br> <a href="https://www.leouieda.com/blog/scipy-on-android.html" target="_blank" rel="noopener">https://www.leouieda.com/blog/scipy-on-android.html</a> </p><p><a href="http://web.airdroid.com/" target="_blank" rel="noopener">AirDroid Web | Manage your phone on web</a></p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">deb</span> [arch=<span class="keyword">all</span>,i686] http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/termux/</span><br><span class="line"><span class="keyword">sh</span> -<span class="keyword">c</span> <span class="string">"$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"</span></span><br></pre></td></tr></table></figure><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span>//<span class="number">172.22</span><span class="meta">.220</span><span class="meta">.125</span>:<span class="number">8888</span> <span class="built_in">ip</span>=<span class="number">0.0</span><span class="meta">.0</span><span class="meta">.0</span></span><br></pre></td></tr></table></figure><ul><li>[ ] 我装的是一个更加完整的Linux环境，叫Arch Linux： <a href="https://wiki.termux.com/wiki/Arch" target="_blank" rel="noopener">https://wiki.termux.com/wiki/Arch</a><br>里面包含几乎所有的编译好的桌面版linux中的软件包，用pacman -Sy就能全部安装好</li></ul><ul><li>[ ] 我在里面还装过桌面以及桌面版的chrome，用VNC连过去就跟电脑一样了<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">运行<span class="keyword">arch</span>/startarch进入<span class="keyword">arch</span></span><br><span class="line">pacman -S chromium xorg-server-xvfb supervisor</span><br><span class="line">pacman -Sy x11vnc</span><br></pre></td></tr></table></figure></li></ul><p>Intsall vnc<br>Tigervnc没有64位？<br><a href="https://wiki.archlinux.org/index.php/TigerVNC#Installation" target="_blank" rel="noopener">TigerVNC - ArchWiki</a><br> <a href="https://wiki.archlinux.org/index.php/x11vnc" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/x11vnc</a> </p><p>访问手机数据<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-<span class="built_in">setup</span>-storage</span><br></pre></td></tr></table></figure></p><p>The contents of the created $HOME/storage folder are symlinks to different storage folders:</p><p>Zsh<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The zsh shell init <span class="keyword">files</span> are ~/.zshrc <span class="keyword">and</span> <span class="symbol">$</span>PREFIX/etc/zshrcand more. Seeman zsh <span class="keyword">and</span> info zsh <span class="keyword">for</span> more information. It can be installed with:<span class="symbol">$</span> pkg install zsh</span><br></pre></td></tr></table></figure></p><p>配置oh my zsh<br><a href="https://github.com/4679/oh-my-termux" target="_blank" rel="noopener">GitHub - 4679/oh-my-termux: oh-my-termux</a><br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg <span class="keyword">install </span>curl</span><br><span class="line"><span class="keyword">bash </span>-c <span class="string">"$(curl -fsSL https://git.io/oh-my-termux)"</span></span><br></pre></td></tr></table></figure></p><p>Install opencv<br> <a href="https://wiki.termux.com/wiki/Instructions_for_installing_python_packages" target="_blank" rel="noopener">https://wiki.termux.com/wiki/Instructions_for_installing_python_packages</a><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pkg <span class="keyword">install</span> cmake pkg-config libjpeg-turbo-dev libpng-dev python python-dev</span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span>  https://github.com/opencv/opencv  &amp;&amp; cd opencv</span><br><span class="line"></span><br><span class="line">mkdir <span class="keyword">build</span> &amp;&amp; cd <span class="keyword">build</span></span><br><span class="line"></span><br><span class="line">LDFLAGS=<span class="string">" -llog -lpython3"</span> cmake -DCMAKE_BUILD_TYPE=<span class="keyword">RELEASE</span> -DCMAKE_INSTALL_PREFIX=$PREFIX -DBUILD_opencv_python3=<span class="keyword">on</span> -DBUILD_opencv_python2=<span class="keyword">off</span> -DWITH_QT=<span class="keyword">OFF</span> -DWITH_GTK=<span class="keyword">OFF</span> ..</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make <span class="keyword">install</span></span><br></pre></td></tr></table></figure></p><p>Berryconda<br>删除已有anaconda  一切都在arch里装</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Who don’t like android?&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="techniques" scheme="https://www.cmwonderland.com/blog/categories/techniques/"/>
-    
-    
-      <category term="hardware" scheme="https://www.cmwonderland.com/blog/tags/hardware/"/>
-    
-      <category term="android" scheme="https://www.cmwonderland.com/blog/tags/android/"/>
-    
-      <category term="linux" scheme="https://www.cmwonderland.com/blog/tags/linux/"/>
     
   </entry>
   
