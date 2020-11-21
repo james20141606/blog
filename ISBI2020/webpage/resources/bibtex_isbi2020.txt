@@ -1,0 +1,8 @@
+@inproceedings{wang2020stimulus,
+  title={Stimulus Speech Decoding from Human Cortex with Generative Adversarial Network Transfer Learning},
+  author={Wang, Ran and Chen, Xupeng and Khalilian-Gourtani, Amirhossein and Chen, Zhaoxi and Yu, Leyao and Flinker, Adeen and Wang, Yao},
+  booktitle={2020 IEEE 17th International Symposium on Biomedical Imaging (ISBI)},
+  pages={390--394},
+  year={2020},
+  organization={IEEE}
+}
