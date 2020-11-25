@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="WonderLand">
 <meta property="og:description" content="OUR PAPER WAS PUBLISHED on ISBI 2020 as Best Paper Finalist LINK">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-22T19:14:09.159Z">
+<meta property="og:updated_time" content="2020-11-25T00:46:30.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UNDERSTANDING CORTICAL NETWORKS RELATED TO SPEECH USING DEEP LEARNING ON ECOG DATA">
 <meta name="twitter:description" content="OUR PAPER WAS PUBLISHED on ISBI 2020 as Best Paper Finalist LINK">
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  432
+                  437
                 </span>
               
 
@@ -442,7 +442,10 @@
 <li>Differentiable Audio Synthesizer Based Model</li>
 </ul>
 <p>To improve the ECoG to audio decoding, we realized that VAE and GAN based models are not good enough. Auto encoders tend to predict an average spectrogram and it will lose a lot of fine details which make the decoded audio unintelligible. GAN model tries to make the spectrogram more realistic but still there are trade-offs between decoding overall accuracy and intelligibility. Another approach to address this issue is to use a differentiable speech synthesizer which tries to map audio to an acoustic latent space (instead of less regularized latent space). Such model could use much less parameters but achieve more realistic spectrograms in audio to audio reconstruction and downstream ECoG to audio reconstruction. By leveraging speech processing knowledge we could improve the ECoG to audio decoding result by a lot (compared with VAE-GAN based model). This method is still under development and here are some preliminary results:</p>
-<p><a href="https://www.cmwonderland.com/blog/ecog/ddspinv_ecog_recon_audio.html">Demo1</a><br><a href="https://www.cmwonderland.com/blog/ecog/formant_summary/1023/result.html">Demo2</a></p>
+<ul>
+<li><a href="https://www.cmwonderland.com/blog/ecog/ddspinv_ecog_recon_audio.html">Demo1: DDSP</a></li>
+<li><a href="https://www.cmwonderland.com/blog/ecog/formant_summary/NER/metric_summary.html">Demo2: Formant Synthesizer (current model)</a></li>
+</ul>
 <p>The work was supported by the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912286&amp;HistoricalAwards=false" target="_blank" rel="noopener">National Science Foundation</a></p>
 
       
