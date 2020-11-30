@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2020/10/14/106_ISBI2020/</loc>
+    <loc>https://www.cmwonderland.com/blog/about/index.html</loc>
     
-    <lastmod>2020-11-25T00:47:53.340Z</lastmod>
+    <lastmod>2020-11-30T05:54:36.055Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/about/index.html</loc>
+    <loc>https://www.cmwonderland.com/blog/2020/10/14/106_ISBI2020/</loc>
     
-    <lastmod>2020-11-21T07:26:05.041Z</lastmod>
+    <lastmod>2020-11-25T00:47:53.340Z</lastmod>
     
   </url>
   
@@ -212,56 +212,56 @@
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/12/33_setup/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/10/100_summer_intern/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/28/48_line7/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/10/96-emaize-project/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/4_auto8/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/09/94-signal-project/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/16/50_multi0/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/06/31_quiz_emaize_tutorial/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/16/41_line0/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/06/55_python_basics/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/16/43_line2/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/06/32_quiz_exrna_tutorial/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/16/51_multi1/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/10/05/56_machine-learning-basics/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/23/52_bayes1/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/09/29/93_book_high_school/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
@@ -275,7 +275,84 @@
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/23/52_bayes2/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/09/26/38_ECCV_2018/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/08/16/95_medical_image_project/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/07/14/97_summerintern_Synaptic_Partner_and_Cluster_Project/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2019/03/26/latex2mathml/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/07/14/99_summerintern_NMJ/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/06/20/39_wittgenstein_bio/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/06/16/11_dad/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/06/15/49_Artificial%20Intelligence%20and%20Wittgenstein's%20use%20theory%20of%20meaning/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/28/48_line7/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/23/27_aboutbrain&dl/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/23/52_bayes1/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/12/20/research_summary/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
@@ -296,259 +373,7 @@
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/06/20/39_wittgenstein_bio/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/20/45_line4/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/16/54_Statistic-Inferences/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/7_auto4/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/5_auto7/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/6_auto6/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/11/93_book_summary/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/8_auto5/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/11/101-exrna-project/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/09/29/93_book_high_school/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/09/94-signal-project/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/10/96-emaize-project/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/08/16/95_medical_image_project/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2019/03/26/latex2mathml/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/9_auto3/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/09/26/38_ECCV_2018/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/06/16/11_dad/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/04/21_formatting/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/05/24_snakemake/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/06/31_quiz_emaize_tutorial/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/16/42_line1/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/20/36_diffexpress/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/15/34_peomofmeng/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/17/53_Reading-Notes-of-Wittgenstein-s-Bio/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/2_auto10/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/05/29_conda/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/05/22_tools/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/08/23_autobio/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/12/20/research_summary/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/16/13_wechat/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/23/27_aboutbrain&dl/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/06/32_quiz_exrna_tutorial/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/03/40_tlp/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/12/12_mom/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/06/15/49_Artificial%20Intelligence%20and%20Wittgenstein's%20use%20theory%20of%20meaning/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/21/92_death-and-dream/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/1_auto11/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/05/23/52_bayes2/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
@@ -562,98 +387,7 @@
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/05/15_alias-setting/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/16_auto12/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/12/30_emaize-tutorial/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/10/25_Deep-Learning-Practice/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/15/28_datamining/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/3_auto9/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/07/14/97_summerintern_Synaptic_Partner_and_Cluster_Project/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/05/05/14_search-engine/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/10_auto1/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/05/56_machine-learning-basics/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/06/55_python_basics/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/20/44_line3/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/11_auto2/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/04/11/0_auto0/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/05/21/92_death-and-dream/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
@@ -667,20 +401,6 @@
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/07/14/99_summerintern_NMJ/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/11/102-deepshape-project/</loc>
-    
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.cmwonderland.com/blog/2018/05/20/46_line5/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
@@ -688,7 +408,287 @@
   </url>
   
   <url>
-    <loc>https://www.cmwonderland.com/blog/2018/10/10/100_summer_intern/</loc>
+    <loc>https://www.cmwonderland.com/blog/2018/05/20/45_line4/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/20/36_diffexpress/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/16/13_wechat/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/16/51_multi1/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/12/12_mom/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/08/23_autobio/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/05/24_snakemake/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/05/14_search-engine/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/05/22_tools/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/05/15_alias-setting/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/05/29_conda/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/10/11/93_book_summary/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/04/21_formatting/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/10/11/101-exrna-project/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/05/03/40_tlp/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/20/44_line3/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/17/53_Reading-Notes-of-Wittgenstein-s-Bio/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/16/54_Statistic-Inferences/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/16/43_line2/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/16/42_line1/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/16/41_line0/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/16/50_multi0/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/15/34_peomofmeng/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/15/28_datamining/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/12/33_setup/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/12/30_emaize-tutorial/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/0_auto0/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/10_auto1/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/11_auto2/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/9_auto3/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/7_auto4/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/8_auto5/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/6_auto6/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/5_auto7/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/4_auto8/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/3_auto9/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/2_auto10/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/1_auto11/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/11/16_auto12/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/04/10/25_Deep-Learning-Practice/</loc>
+    
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cmwonderland.com/blog/2018/10/11/102-deepshape-project/</loc>
     
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     
