@@ -501,7 +501,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -602,7 +602,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共207.4k字</span>
+  <span class="post-count">博客全站共207.5k字</span>
 </div>
 
 
@@ -916,7 +916,9 @@
   
 </body>
 </html>
-ery.equalTo("url", url);
+
+
+      query.equalTo("url", url);
       query.find({
         success: function(results) {
           if (results.length > 0) {

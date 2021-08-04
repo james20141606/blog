@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2021/08/06/108_25birthday_mengmeng/</loc>
+    <lastmod>2021-08-04T01:54:30.442Z</lastmod>
+    <data>
+        <display>
+        <title>汉服写真——孟孟25岁生日纪念</title>
+        <pubTime>2021-08-06T04:08:06.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>girlfriend</tag>
+         
+        <tag>girl friend</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="https://www.cmwonderland.com/blog/blog/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/16_auto12/</loc>
     <lastmod>2021-07-11T02:59:53.030Z</lastmod>
     <data>
@@ -550,9 +574,9 @@
         
         <tag>codes</tag>
          
-        <tag>python</tag>
-         
         <tag>bioinformatics</tag>
+         
+        <tag>python</tag>
          
         <tag>projects</tag>
          
@@ -865,30 +889,6 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/10/11/101-exrna-project/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>exSeek extracellular RNA analysis tool for noninvasive biomarker</title>
-        <pubTime>2018-10-11T04:30:44.000Z</pubTime>
-        
-        <tag>project</tag>
-         
-        <tag>machine learning</tag>
-         
-        <tag>precision medicine</tag>
-         
-         
-           
-             
-              <breadCrumb title="projects" url="https://www.cmwonderland.com/blog/blog/categories/projects/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/0_auto0/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
@@ -908,6 +908,30 @@
            
              
               <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/10/11/101-exrna-project/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>exSeek extracellular RNA analysis tool for noninvasive biomarker</title>
+        <pubTime>2018-10-11T04:30:44.000Z</pubTime>
+        
+        <tag>project</tag>
+         
+        <tag>machine learning</tag>
+         
+        <tag>precision medicine</tag>
+         
+         
+           
+             
+              <breadCrumb title="projects" url="https://www.cmwonderland.com/blog/blog/categories/projects/"/>
           
         </display>
     </data>
@@ -1035,16 +1059,20 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/16/13_wechat/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/05/15_alias-setting/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>分享一个微信机器人</title>
-        <pubTime>2018-05-17T01:13:27.000Z</pubTime>
+        <title>Alias Setting</title>
+        <pubTime>2018-05-05T04:17:18.000Z</pubTime>
         
         <tag>techniques</tag>
          
-        <tag>codes</tag>
+        <tag>zsh</tag>
+         
+        <tag>alias</tag>
+         
+        <tag>setup</tag>
          
          
            
@@ -1079,44 +1107,16 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/22/17_customizeapp/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/16/13_wechat/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>MAC用automator创建小应用解决一些简单需求</title>
-        <pubTime>2018-05-22T21:35:37.000Z</pubTime>
+        <title>分享一个微信机器人</title>
+        <pubTime>2018-05-17T01:13:27.000Z</pubTime>
         
         <tag>techniques</tag>
          
-        <tag>mac</tag>
-         
-        <tag>setup</tag>
-         
-         
-           
-             
-              <breadCrumb title="techniques" url="https://www.cmwonderland.com/blog/blog/categories/techniques/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/05/15_alias-setting/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Alias Setting</title>
-        <pubTime>2018-05-05T04:17:18.000Z</pubTime>
-        
-        <tag>techniques</tag>
-         
-        <tag>setup</tag>
-         
-        <tag>zsh</tag>
-         
-        <tag>alias</tag>
+        <tag>codes</tag>
          
          
            
@@ -1148,6 +1148,30 @@
            
              
               <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/22/17_customizeapp/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>MAC用automator创建小应用解决一些简单需求</title>
+        <pubTime>2018-05-22T21:35:37.000Z</pubTime>
+        
+        <tag>techniques</tag>
+         
+        <tag>setup</tag>
+         
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="techniques" url="https://www.cmwonderland.com/blog/blog/categories/techniques/"/>
           
         </display>
     </data>
@@ -1253,23 +1277,25 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/10/25_Deep-Learning-Practice/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/2_auto10/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning Practice</title>
-        <pubTime>2018-04-11T01:23:55.000Z</pubTime>
+        <title>回忆录 童年的诗</title>
+        <pubTime>2018-04-11T14:09:42.000Z</pubTime>
         
-        <tag>deep learning</tag>
+        <tag>life</tag>
          
-        <tag>machine learning</tag>
+        <tag>autobiograpy</tag>
          
-        <tag>techniques</tag>
+        <tag>book</tag>
+         
+        <tag>grandpa</tag>
          
          
            
              
-              <breadCrumb title="machine learning" url="https://www.cmwonderland.com/blog/blog/categories/machine-learning/"/>
+              <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
           
         </display>
     </data>
@@ -1301,53 +1327,23 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/2_auto10/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/10/25_Deep-Learning-Practice/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>回忆录 童年的诗</title>
-        <pubTime>2018-04-11T14:09:42.000Z</pubTime>
+        <title>Deep Learning Practice</title>
+        <pubTime>2018-04-11T01:23:55.000Z</pubTime>
         
-        <tag>life</tag>
+        <tag>deep learning</tag>
          
-        <tag>autobiograpy</tag>
+        <tag>machine learning</tag>
          
-        <tag>book</tag>
-         
-        <tag>grandpa</tag>
+        <tag>techniques</tag>
          
          
            
              
-              <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/15/28_datamining/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Data Mining of Deng Era</title>
-        <pubTime>2018-04-15T04:55:43.000Z</pubTime>
-        
-        <tag>codes</tag>
-         
-        <tag>data science</tag>
-         
-        <tag>statistics</tag>
-         
-        <tag>data mining</tag>
-         
-        <tag>matplotlib</tag>
-         
-         
-           
-             
-              <breadCrumb title="techniques" url="https://www.cmwonderland.com/blog/blog/categories/techniques/"/>
+              <breadCrumb title="machine learning" url="https://www.cmwonderland.com/blog/blog/categories/machine-learning/"/>
           
         </display>
     </data>
@@ -1366,9 +1362,33 @@
          
         <tag>software</tag>
          
+        <tag>bioinformatics</tag>
+         
         <tag>python</tag>
          
+         
+           
+             
+              <breadCrumb title="techniques" url="https://www.cmwonderland.com/blog/blog/categories/techniques/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/12/33_setup/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Setup and Linux</title>
+        <pubTime>2018-04-13T03:39:17.000Z</pubTime>
+        
+        <tag>techniques</tag>
+         
         <tag>bioinformatics</tag>
+         
+        <tag>linux</tag>
          
          
            
@@ -1405,51 +1425,27 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/12/33_setup/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/15/28_datamining/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>Setup and Linux</title>
-        <pubTime>2018-04-13T03:39:17.000Z</pubTime>
+        <title>Data Mining of Deng Era</title>
+        <pubTime>2018-04-15T04:55:43.000Z</pubTime>
         
-        <tag>techniques</tag>
+        <tag>codes</tag>
          
-        <tag>bioinformatics</tag>
+        <tag>data science</tag>
          
-        <tag>linux</tag>
+        <tag>statistics</tag>
+         
+        <tag>data mining</tag>
+         
+        <tag>matplotlib</tag>
          
          
            
              
               <breadCrumb title="techniques" url="https://www.cmwonderland.com/blog/blog/categories/techniques/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/10/06/31_quiz_emaize_tutorial/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>QUIZ Predicting maize traits using SNP data</title>
-        <pubTime>2018-10-07T00:03:19.000Z</pubTime>
-        
-        <tag>machine learning</tag>
-         
-        <tag>python</tag>
-         
-        <tag>bioinformatics</tag>
-         
-        <tag>teaching</tag>
-         
-        <tag>TA</tag>
-         
-         
-           
-             
-              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
           
         </display>
     </data>
@@ -1485,34 +1481,6 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/10/06/32_quiz_exrna_tutorial/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>QUIZ identification of cancer biomarker from exRNA-seq data</title>
-        <pubTime>2018-10-06T23:01:19.000Z</pubTime>
-        
-        <tag>machine learning</tag>
-         
-        <tag>python</tag>
-         
-        <tag>bioinformatics</tag>
-         
-        <tag>teaching</tag>
-         
-        <tag>TA</tag>
-         
-         
-           
-             
-              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.cmwonderland.com/blog/blog/2018/05/20/36_diffexpress/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
@@ -1530,30 +1498,6 @@
            
              
               <breadCrumb title="techniques" url="https://www.cmwonderland.com/blog/blog/categories/techniques/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/09/26/38_ECCV_2018/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>ECCV 2018 paper reading</title>
-        <pubTime>2018-09-27T01:23:55.000Z</pubTime>
-        
-        <tag>deep learning</tag>
-         
-        <tag>techniques</tag>
-         
-        <tag>paper reading</tag>
-         
-         
-           
-             
-              <breadCrumb title="machine learning" url="https://www.cmwonderland.com/blog/blog/categories/machine-learning/"/>
           
         </display>
     </data>
@@ -1585,25 +1529,79 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/3_auto9/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/09/26/38_ECCV_2018/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>回忆录 短文数篇</title>
-        <pubTime>2018-04-11T14:09:45.000Z</pubTime>
+        <title>ECCV 2018 paper reading</title>
+        <pubTime>2018-09-27T01:23:55.000Z</pubTime>
         
-        <tag>life</tag>
+        <tag>deep learning</tag>
          
-        <tag>autobiograpy</tag>
+        <tag>techniques</tag>
          
-        <tag>book</tag>
-         
-        <tag>grandpa</tag>
+        <tag>paper reading</tag>
          
          
            
              
-              <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
+              <breadCrumb title="machine learning" url="https://www.cmwonderland.com/blog/blog/categories/machine-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/10/06/31_quiz_emaize_tutorial/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>QUIZ Predicting maize traits using SNP data</title>
+        <pubTime>2018-10-07T00:03:19.000Z</pubTime>
+        
+        <tag>machine learning</tag>
+         
+        <tag>bioinformatics</tag>
+         
+        <tag>python</tag>
+         
+        <tag>teaching</tag>
+         
+        <tag>TA</tag>
+         
+         
+           
+             
+              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/10/06/32_quiz_exrna_tutorial/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>QUIZ identification of cancer biomarker from exRNA-seq data</title>
+        <pubTime>2018-10-06T23:01:19.000Z</pubTime>
+        
+        <tag>machine learning</tag>
+         
+        <tag>bioinformatics</tag>
+         
+        <tag>python</tag>
+         
+        <tag>teaching</tag>
+         
+        <tag>TA</tag>
+         
+         
+           
+             
+              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
           
         </display>
     </data>
@@ -1639,23 +1637,25 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/03/40_tlp/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/3_auto9/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>On Wittgenstein's Picture Theory of Meaning</title>
-        <pubTime>2018-05-04T03:19:27.000Z</pubTime>
+        <title>回忆录 短文数篇</title>
+        <pubTime>2018-04-11T14:09:45.000Z</pubTime>
         
-        <tag>thoughts</tag>
+        <tag>life</tag>
          
-        <tag>philosophy</tag>
+        <tag>autobiograpy</tag>
          
-        <tag>Wittgenstein</tag>
+        <tag>book</tag>
+         
+        <tag>grandpa</tag>
          
          
            
              
-              <breadCrumb title="thoughts" url="https://www.cmwonderland.com/blog/blog/categories/thoughts/"/>
+              <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
           
         </display>
     </data>
@@ -1663,12 +1663,12 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/16/43_line2/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/20/44_line3/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>Linear Regression Assignment 7</title>
-        <pubTime>2018-04-16T18:01:19.000Z</pubTime>
+        <title>Linear Regression Assignment 8</title>
+        <pubTime>2018-04-20T14:01:19.000Z</pubTime>
         
         <tag>codes</tag>
          
@@ -1719,95 +1719,11 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/20/44_line3/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linear Regression Assignment 8</title>
-        <pubTime>2018-04-20T14:01:19.000Z</pubTime>
-        
-        <tag>codes</tag>
-         
-        <tag>statistics</tag>
-         
-        <tag>assignment</tag>
-         
-        <tag>R</tag>
-         
-        <tag>linear regression</tag>
-         
-         
-           
-             
-              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.cmwonderland.com/blog/blog/2018/05/20/46_line5/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
         <title>Linear Regression Assignment 10</title>
-        <pubTime>2018-05-20T14:01:19.000Z</pubTime>
-        
-        <tag>codes</tag>
-         
-        <tag>statistics</tag>
-         
-        <tag>assignment</tag>
-         
-        <tag>R</tag>
-         
-        <tag>linear regression</tag>
-         
-         
-           
-             
-              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/20/45_line4/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linear Regression Assignment 9</title>
-        <pubTime>2018-05-20T14:01:19.000Z</pubTime>
-        
-        <tag>codes</tag>
-         
-        <tag>statistics</tag>
-         
-        <tag>assignment</tag>
-         
-        <tag>R</tag>
-         
-        <tag>linear regression</tag>
-         
-         
-           
-             
-              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/20/47_line6/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linear Regression Assignment 12</title>
         <pubTime>2018-05-20T14:01:19.000Z</pubTime>
         
         <tag>codes</tag>
@@ -1885,12 +1801,12 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/06/15/49_Artificial%20Intelligence%20and%20Wittgenstein's%20use%20theory%20of%20meaning/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/03/40_tlp/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>Artificial Intelligence and Wittgenstein's use theory of meaning</title>
-        <pubTime>2018-06-16T02:30:17.000Z</pubTime>
+        <title>On Wittgenstein's Picture Theory of Meaning</title>
+        <pubTime>2018-05-04T03:19:27.000Z</pubTime>
         
         <tag>thoughts</tag>
          
@@ -1898,12 +1814,66 @@
          
         <tag>Wittgenstein</tag>
          
-        <tag>AI</tag>
-         
          
            
              
               <breadCrumb title="thoughts" url="https://www.cmwonderland.com/blog/blog/categories/thoughts/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/16/43_line2/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linear Regression Assignment 7</title>
+        <pubTime>2018-04-16T18:01:19.000Z</pubTime>
+        
+        <tag>codes</tag>
+         
+        <tag>statistics</tag>
+         
+        <tag>assignment</tag>
+         
+        <tag>R</tag>
+         
+        <tag>linear regression</tag>
+         
+         
+           
+             
+              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/20/45_line4/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linear Regression Assignment 9</title>
+        <pubTime>2018-05-20T14:01:19.000Z</pubTime>
+        
+        <tag>codes</tag>
+         
+        <tag>statistics</tag>
+         
+        <tag>assignment</tag>
+         
+        <tag>R</tag>
+         
+        <tag>linear regression</tag>
+         
+         
+           
+             
+              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
           
         </display>
     </data>
@@ -1967,7 +1937,35 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/23/52_bayes2/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/20/47_line6/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linear Regression Assignment 12</title>
+        <pubTime>2018-05-20T14:01:19.000Z</pubTime>
+        
+        <tag>codes</tag>
+         
+        <tag>statistics</tag>
+         
+        <tag>assignment</tag>
+         
+        <tag>R</tag>
+         
+        <tag>linear regression</tag>
+         
+         
+           
+             
+              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/23/52_bayes1/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
@@ -1995,7 +1993,7 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/23/52_bayes1/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/23/52_bayes2/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
@@ -2079,34 +2077,6 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/23/52_datamining1/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Multivariate Statistics Assignment 5</title>
-        <pubTime>2018-05-23T16:59:19.000Z</pubTime>
-        
-        <tag>codes</tag>
-         
-        <tag>statistics</tag>
-         
-        <tag>assignment</tag>
-         
-        <tag>R</tag>
-         
-        <tag>linear regression</tag>
-         
-         
-           
-             
-              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.cmwonderland.com/blog/blog/2018/04/16/54_Statistic-Inferences/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
@@ -2159,12 +2129,66 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/6_auto6/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/23/52_datamining1/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>回忆录 CHAPTER Ⅵ  婚后的生活</title>
-        <pubTime>2018-04-11T14:09:51.000Z</pubTime>
+        <title>Multivariate Statistics Assignment 5</title>
+        <pubTime>2018-05-23T16:59:19.000Z</pubTime>
+        
+        <tag>codes</tag>
+         
+        <tag>statistics</tag>
+         
+        <tag>assignment</tag>
+         
+        <tag>R</tag>
+         
+        <tag>linear regression</tag>
+         
+         
+           
+             
+              <breadCrumb title="school work" url="https://www.cmwonderland.com/blog/blog/categories/school-work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/06/15/49_Artificial%20Intelligence%20and%20Wittgenstein's%20use%20theory%20of%20meaning/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Artificial Intelligence and Wittgenstein's use theory of meaning</title>
+        <pubTime>2018-06-16T02:30:17.000Z</pubTime>
+        
+        <tag>thoughts</tag>
+         
+        <tag>philosophy</tag>
+         
+        <tag>Wittgenstein</tag>
+         
+        <tag>AI</tag>
+         
+         
+           
+             
+              <breadCrumb title="thoughts" url="https://www.cmwonderland.com/blog/blog/categories/thoughts/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/8_auto5/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>回忆录 CHAPTER Ⅴ 休学的日子</title>
+        <pubTime>2018-04-11T14:09:53.000Z</pubTime>
         
         <tag>life</tag>
          
@@ -2204,34 +2228,6 @@
            
              
               <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/10/06/55_python_basics/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python Tutorial</title>
-        <pubTime>2018-10-07T00:03:19.000Z</pubTime>
-        
-        <tag>machine learning</tag>
-         
-        <tag>python</tag>
-         
-        <tag>bioinformatics</tag>
-         
-        <tag>teaching</tag>
-         
-        <tag>TA</tag>
-         
-         
-           
-             
-              <breadCrumb title="teaching" url="https://www.cmwonderland.com/blog/blog/categories/teaching/"/>
           
         </display>
     </data>
@@ -2289,18 +2285,18 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/10/05/56_machine-learning-basics/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/10/06/55_python_basics/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>Machine Learning Basics Tutorial</title>
-        <pubTime>2018-10-05T14:03:19.000Z</pubTime>
+        <title>Python Tutorial</title>
+        <pubTime>2018-10-07T00:03:19.000Z</pubTime>
         
         <tag>machine learning</tag>
          
-        <tag>python</tag>
-         
         <tag>bioinformatics</tag>
+         
+        <tag>python</tag>
          
         <tag>teaching</tag>
          
@@ -2309,7 +2305,7 @@
          
            
              
-              <breadCrumb title="machine learning" url="https://www.cmwonderland.com/blog/blog/categories/machine-learning/"/>
+              <breadCrumb title="teaching" url="https://www.cmwonderland.com/blog/blog/categories/teaching/"/>
           
         </display>
     </data>
@@ -2317,12 +2313,12 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/8_auto5/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/6_auto6/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>回忆录 CHAPTER Ⅴ 休学的日子</title>
-        <pubTime>2018-04-11T14:09:53.000Z</pubTime>
+        <title>回忆录 CHAPTER Ⅵ  婚后的生活</title>
+        <pubTime>2018-04-11T14:09:51.000Z</pubTime>
         
         <tag>life</tag>
          
@@ -2336,30 +2332,6 @@
            
              
               <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/05/21/92_death-and-dream/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Death & Dream</title>
-        <pubTime>2018-05-21T04:49:39.000Z</pubTime>
-        
-        <tag>life</tag>
-         
-        <tag>thoughts</tag>
-         
-        <tag>dream</tag>
-         
-         
-           
-             
-              <breadCrumb title="thoughts" url="https://www.cmwonderland.com/blog/blog/categories/thoughts/"/>
           
         </display>
     </data>
@@ -2386,6 +2358,86 @@
            
              
               <breadCrumb title="book" url="https://www.cmwonderland.com/blog/blog/categories/book/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/10/05/56_machine-learning-basics/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Machine Learning Basics Tutorial</title>
+        <pubTime>2018-10-05T14:03:19.000Z</pubTime>
+        
+        <tag>machine learning</tag>
+         
+        <tag>bioinformatics</tag>
+         
+        <tag>python</tag>
+         
+        <tag>teaching</tag>
+         
+        <tag>TA</tag>
+         
+         
+           
+             
+              <breadCrumb title="machine learning" url="https://www.cmwonderland.com/blog/blog/categories/machine-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/08/16/95_medical_image_project/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning in Medical Image</title>
+        <pubTime>2018-08-16T23:03:19.000Z</pubTime>
+        
+        <tag>project</tag>
+         
+        <tag>deep learning</tag>
+         
+        <tag>computer vision</tag>
+         
+        <tag>research</tag>
+         
+        <tag>medical image</tag>
+         
+         
+           
+             
+              <breadCrumb title="projects" url="https://www.cmwonderland.com/blog/blog/categories/projects/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/05/21/92_death-and-dream/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Death & Dream</title>
+        <pubTime>2018-05-21T04:49:39.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>thoughts</tag>
+         
+        <tag>dream</tag>
+         
+         
+           
+             
+              <breadCrumb title="thoughts" url="https://www.cmwonderland.com/blog/blog/categories/thoughts/"/>
           
         </display>
     </data>
@@ -2425,68 +2477,6 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/08/16/95_medical_image_project/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Deep Learning in Medical Image</title>
-        <pubTime>2018-08-16T23:03:19.000Z</pubTime>
-        
-        <tag>project</tag>
-         
-        <tag>deep learning</tag>
-         
-        <tag>computer vision</tag>
-         
-        <tag>research</tag>
-         
-        <tag>medical image</tag>
-         
-         
-           
-             
-              <breadCrumb title="projects" url="https://www.cmwonderland.com/blog/blog/categories/projects/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/07/14/97_summerintern_Synaptic_Partner_and_Cluster_Project/</loc>
-    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Synaptic Partner and Cluster Project</title>
-        <pubTime>2018-07-15T03:58:06.000Z</pubTime>
-        
-        <tag>project</tag>
-         
-        <tag>neural science</tag>
-         
-        <tag>summer intern</tag>
-         
-        <tag>connectomics</tag>
-         
-        <tag>computational neural science</tag>
-         
-        <tag>deep learning</tag>
-         
-        <tag>computer vision</tag>
-         
-        <tag>Jeff Lichtman</tag>
-         
-         
-           
-             
-              <breadCrumb title="projects" url="https://www.cmwonderland.com/blog/blog/categories/projects/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.cmwonderland.com/blog/blog/2018/04/11/9_auto3/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
@@ -2513,12 +2503,12 @@
 
     
   <url>
-    <loc>https://www.cmwonderland.com/blog/blog/2018/07/14/99_summerintern_NMJ/</loc>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/07/14/97_summerintern_Synaptic_Partner_and_Cluster_Project/</loc>
     <lastmod>2019-04-23T13:07:13.000Z</lastmod>
     <data>
         <display>
-        <title>NMJ Project</title>
-        <pubTime>2018-07-15T00:35:19.000Z</pubTime>
+        <title>Synaptic Partner and Cluster Project</title>
+        <pubTime>2018-07-15T03:58:06.000Z</pubTime>
         
         <tag>project</tag>
          
@@ -2589,6 +2579,40 @@
         <tag>bioinformatics</tag>
          
         <tag>medical image</tag>
+         
+         
+           
+             
+              <breadCrumb title="projects" url="https://www.cmwonderland.com/blog/blog/categories/projects/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.cmwonderland.com/blog/blog/2018/07/14/99_summerintern_NMJ/</loc>
+    <lastmod>2019-04-23T13:07:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>NMJ Project</title>
+        <pubTime>2018-07-15T00:35:19.000Z</pubTime>
+        
+        <tag>project</tag>
+         
+        <tag>neural science</tag>
+         
+        <tag>summer intern</tag>
+         
+        <tag>connectomics</tag>
+         
+        <tag>computational neural science</tag>
+         
+        <tag>deep learning</tag>
+         
+        <tag>computer vision</tag>
+         
+        <tag>Jeff Lichtman</tag>
          
          
            
