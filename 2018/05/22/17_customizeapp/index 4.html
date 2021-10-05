@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="codes,statistics,assignment,R,linear regression," />
+  <meta name="keywords" content="techniques,mac,setup," />
 
 
 
@@ -90,18 +90,23 @@
 
 
 
-<meta name="description" content="The eleventh assignment of Linear Regression. The assignment is written in Rmarkdown, a smart syntax supported by RStudio helping with formula, plot visualization and plugin codes running.">
-<meta name="keywords" content="codes,statistics,assignment,R,linear regression">
+<meta name="description" content="本来是要解决mac一个很蠢的问题的：无法新建文件。 之前的策略有两种：一是复制粘贴其他的文件过来。另一个是cd到当前目录下然后touch一个文件。这个有点麻烦，首先cd还得拖到终端一个文件才能找对位置。 这次用了Mac自带的automator自己做一个简单的生成新文件的应用，非常简单。 显然既然automator还可以用shell脚本，能低成本实现的东西还是很多的。">
+<meta name="keywords" content="techniques,mac,setup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linear Regression Assignment 10">
-<meta property="og:url" content="https://www.cmwonderland.com/blog/2018/05/20/46_line5/index.html">
+<meta property="og:title" content="MAC用automator创建小应用解决一些简单需求">
+<meta property="og:url" content="https://www.cmwonderland.com/blog/2018/05/22/17_customizeapp/index.html">
 <meta property="og:site_name" content="WonderLand">
-<meta property="og:description" content="The eleventh assignment of Linear Regression. The assignment is written in Rmarkdown, a smart syntax supported by RStudio helping with formula, plot visualization and plugin codes running.">
+<meta property="og:description" content="本来是要解决mac一个很蠢的问题的：无法新建文件。 之前的策略有两种：一是复制粘贴其他的文件过来。另一个是cd到当前目录下然后touch一个文件。这个有点麻烦，首先cd还得拖到终端一个文件才能找对位置。 这次用了Mac自带的automator自己做一个简单的生成新文件的应用，非常简单。 显然既然automator还可以用shell脚本，能低成本实现的东西还是很多的。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://i4.fuimg.com/640680/f7023d7d9b64c7a6.png">
+<meta property="og:image" content="http://i4.fuimg.com/640680/a26d9176d1204015.png">
+<meta property="og:image" content="http://i4.fuimg.com/640680/8d684b37c5e1ad34.png">
+<meta property="og:image" content="http://i4.fuimg.com/640680/4c85f5ca77cab348.png">
 <meta property="og:updated_time" content="2019-04-23T13:07:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linear Regression Assignment 10">
-<meta name="twitter:description" content="The eleventh assignment of Linear Regression. The assignment is written in Rmarkdown, a smart syntax supported by RStudio helping with formula, plot visualization and plugin codes running.">
+<meta name="twitter:title" content="MAC用automator创建小应用解决一些简单需求">
+<meta name="twitter:description" content="本来是要解决mac一个很蠢的问题的：无法新建文件。 之前的策略有两种：一是复制粘贴其他的文件过来。另一个是cd到当前目录下然后touch一个文件。这个有点麻烦，首先cd还得拖到终端一个文件才能找对位置。 这次用了Mac自带的automator自己做一个简单的生成新文件的应用，非常简单。 显然既然automator还可以用shell脚本，能低成本实现的东西还是很多的。">
+<meta name="twitter:image" content="http://i4.fuimg.com/640680/f7023d7d9b64c7a6.png">
 
 
 
@@ -131,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://www.cmwonderland.com/blog/2018/05/20/46_line5/"/>
+  <link rel="canonical" href="https://www.cmwonderland.com/blog/2018/05/22/17_customizeapp/"/>
 
 
 
 
 
-  <title>Linear Regression Assignment 10 | WonderLand</title>
+  <title>MAC用automator创建小应用解决一些简单需求 | WonderLand</title>
   
 
 
@@ -285,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.cmwonderland.com/blog/blog/2018/05/20/46_line5/">
+    <link itemprop="mainEntityOfPage" href="https://www.cmwonderland.com/blog/blog/2018/05/22/17_customizeapp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="James Chen">
@@ -302,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linear Regression Assignment 10</h1>
+          <h1 class="post-title" itemprop="name headline">MAC用automator创建小应用解决一些简单需求</h1>
         
 
         <div class="post-meta">
@@ -314,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T10:01:19-04:00">
-                2018-05-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T17:35:37-04:00">
+                2018-05-22
               </time>
             
 
@@ -337,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/school-work/" itemprop="url" rel="index">
-                    <span itemprop="name">school work</span>
+                  <a href="/blog/categories/techniques/" itemprop="url" rel="index">
+                    <span itemprop="name">techniques</span>
                   </a>
                 </span>
 
@@ -355,9 +360,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2018/05/20/46_line5/#comments" itemprop="discussionUrl">
+                <a href="/blog/2018/05/22/17_customizeapp/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/20/46_line5/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/22/17_customizeapp/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,7 +370,7 @@
 
           
           
-             <span id="/blog/2018/05/20/46_line5/" class="leancloud_visitors" data-flag-title="Linear Regression Assignment 10">
+             <span id="/blog/2018/05/22/17_customizeapp/" class="leancloud_visitors" data-flag-title="MAC用automator创建小应用解决一些简单需求">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,7 +395,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  283
+                  392
                 </span>
               
 
@@ -427,68 +432,25 @@
       
 
       
-        <p>The eleventh assignment of Linear Regression. The assignment is written in Rmarkdown, a smart syntax supported by RStudio helping with formula, plot visualization and plugin codes running.</p>
+        <p><strong>本来是要解决mac一个很蠢的问题的：无法新建文件。</strong></p>
+<p>之前的策略有两种：一是复制粘贴其他的文件过来。另一个是cd到当前目录下然后touch一个文件。这个有点麻烦，首先cd还得拖到终端一个文件才能找对位置。</p>
+<p>这次用了Mac自带的automator自己做一个简单的生成新文件的应用，非常简单。</p>
+<p>显然既然automator还可以用shell脚本，能低成本实现的东西还是很多的。</p>
 <a id="more"></a>
-<blockquote>
-<p><strong>most recommend:</strong> <a href="https://www.cmwonderland.com/linearweek11.html"><strong>click here</strong></a> for <strong>html version</strong> of assignment, you can see codes as well as plots.</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=21224493&auto=1&height=66"></iframe>
+
+<h2 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS"></a>STEPS</h2><h3 id="open-automator"><a href="#open-automator" class="headerlink" title="open automator"></a>open automator</h3><h4 id="select-application"><a href="#select-application" class="headerlink" title="select application"></a>select application</h4><p><img src="http://i4.fuimg.com/640680/f7023d7d9b64c7a6.png" alt="Markdown"></p>
+<h4 id="select-AppleScript-on-left-bar"><a href="#select-AppleScript-on-left-bar" class="headerlink" title="select AppleScript on left bar"></a>select AppleScript on left bar</h4><p><strong>WRITE</strong><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">on</span> <span class="built_in">run</span> &#123;input, parameters&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"Finder"</span></span><br><span class="line">	<span class="keyword">set</span> selection <span class="keyword">to</span> make new <span class="built_in">file</span> <span class="keyword">at</span> (<span class="keyword">get</span> insertion location)</span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">	return</span> input</span><br><span class="line"><span class="keyword">end</span> <span class="built_in">run</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="save-as-file-app-in-somewhere"><a href="#save-as-file-app-in-somewhere" class="headerlink" title="save as file.app in somewhere"></a>save as file.app in somewhere</h3><blockquote>
+<p>YOU can use your own icon, just change the picture to icns and drag it to apps/contents/resources to replace the original one. And also copy your picture to the <strong>Get Info Menu</strong></p>
 </blockquote>
-<p>You may also find the <a href="https://github.com/james20141606/somethingmore/tree/master/linear_regression_pdf" target="_blank" rel="noopener"><strong>PDF Version</strong></a> of this assignment from github. <strong>Or if you can cross the fire wall, just see below</strong>:</p>
-
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1rQelXNDGk1GJmcFKDWqpeJGFbHUiDe1k/preview" style="width:100%; height:550px"></iframe>
-	</div>
-
-
-
-<h3 id="15-8"><a href="#15-8" class="headerlink" title="15.8"></a>15.8</h3><h4 id="a"><a href="#a" class="headerlink" title="a"></a>a</h4><p>This study is mixed exeprimental and observational.</p>
-<p>A randomization of treatments (standard or computer based curriculum) does occur. However, the choice of which school is not randomized.</p>
-<h4 id="b"><a href="#b" class="headerlink" title="b"></a>b</h4><ul>
-<li>Experimental factor: Type of curriculum; </li>
-<li><p>Levels: Standard or computer based.</p>
-</li>
-<li><p>observational factor: schools;</p>
-</li>
-<li>Levels: school no.1, 2 and 3</li>
-</ul>
-<p>There are 6 factor-level combinations:</p>
-<ul>
-<li>School1 +standard; </li>
-<li>School 1 +computer based;</li>
-<li>School2 +standard; </li>
-<li>School 2 +computer based;</li>
-<li>School3 +standard; </li>
-<li>School 3 +computer based.</li>
-</ul>
-<h4 id="c"><a href="#c" class="headerlink" title="c"></a>c</h4><p>Completely randomized design</p>
-<h4 id="d"><a href="#d" class="headerlink" title="d"></a>d</h4><p>The basic unit is each of the 24-student sections</p>
-<h3 id="15-10"><a href="#15-10" class="headerlink" title="15.10"></a>15.10</h3><h4 id="a-1"><a href="#a-1" class="headerlink" title="a"></a>a</h4><p>Mixed exeprimental and observational.</p>
-<p>The color of paper is randomized but the nature of parking lots is just observed.</p>
-<h4 id="b-1"><a href="#b-1" class="headerlink" title="b"></a>b</h4><ul>
-<li>Experimental factor: Color of the paper</li>
-<li><p>Levels: Blue, green, orange</p>
-</li>
-<li><p>observational factor: What parking lot the papers are distributed in;</p>
-</li>
-<li>Levels: Parking lot a, b, c, d.</li>
-</ul>
-<p>There are 12 factor-level combinations:</p>
-<ul>
-<li>Parking lot a+ Blue;</li>
-<li>Parking lot b+ Blue;</li>
-<li>Parking lot c+ Blue;</li>
-<li>Parking lot d+ Blue;</li>
-<li>Parking lot a+ Orange;</li>
-<li>Parking lot b+ Orange;</li>
-<li>Parking lot c+ Orange;</li>
-<li>Parking lot d+ Orange;</li>
-<li>Parking lot a+ Green;</li>
-<li>Parking lot b+ Green;</li>
-<li>Parking lot c+ Green;</li>
-<li>Parking lot d+ Green;</li>
-</ul>
-<h4 id="c-1"><a href="#c-1" class="headerlink" title="c"></a>c</h4><p>Repeated measures design</p>
-<h4 id="d-1"><a href="#d-1" class="headerlink" title="d"></a>d</h4><p>The basic unit is the papers of the same color distributed in each of the parking lots.</p>
+<h3 id="customize-toolbar"><a href="#customize-toolbar" class="headerlink" title="customize toolbar"></a>customize toolbar</h3><h4 id="drug-your-new-application-to-toolbar"><a href="#drug-your-new-application-to-toolbar" class="headerlink" title="drug your new application to toolbar"></a>drug your new application to toolbar</h4><p><img src="http://i4.fuimg.com/640680/a26d9176d1204015.png" alt="Markdown"></p>
+<p><strong>DONE</strong></p>
+<p><img src="http://i4.fuimg.com/640680/8d684b37c5e1ad34.png" alt="Markdown"></p>
+<p><strong>NEXT TIME click the button above to enjoy your design</strong></p>
+<p>As you can see, I design another one to sync my scripts, contents:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/Desktop/</span>website<span class="regexp">/jamesblog /</span>Volumes<span class="regexp">/New\ Drive/</span></span><br><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/Desktop/</span>bear <span class="regexp">/Volumes/</span>New\ Drive/</span><br><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/Desktop/</span>爷爷回忆录gitbook <span class="regexp">/Volumes/</span>New\ Drive/</span><br><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/Desktop/</span>三春 <span class="regexp">/Volumes/</span>New\ Drive/</span><br><span class="line">rsync -avzh --max-size=<span class="string">'5M'</span> --exclude-from=<span class="string">'exclude_me.txt'</span> <span class="string">hpc1:</span><span class="regexp">~/projects/</span> <span class="regexp">/Volumes/</span>New\ Drive/hpc1backup</span><br><span class="line">rsync -avzh --max-size=<span class="string">'5M'</span> --exclude-from=<span class="string">'exclude_me.txt'</span> <span class="string">ibme:</span><span class="regexp">~/projects/</span> <span class="regexp">/Volumes/</span>New\ Drive/ibmebackup</span><br><span class="line">cp <span class="regexp">/Users/</span>james<span class="regexp">/snippets.json /</span>Users<span class="regexp">/james/</span>Library<span class="regexp">/Jupyter/</span>nbextensions<span class="regexp">/snippets/</span>snippets.json</span><br><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/snippets.json ibme:/</span>Share<span class="regexp">/home/</span>chenxupeng<span class="regexp">/.local/</span>share<span class="regexp">/jupyter/</span>nbextensions<span class="regexp">/snippets/</span></span><br><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/snippets.json cnode:/</span>home<span class="regexp">/chenxupeng/</span>.local<span class="regexp">/share/</span>jupyter<span class="regexp">/nbextensions/</span>snippets/snippets.json</span><br><span class="line">rsync -avzh <span class="regexp">/Users/</span>james<span class="regexp">/snippets.json hpc1:/</span>home<span class="regexp">/chenxupeng/</span>.local<span class="regexp">/share/</span>jupyter<span class="regexp">/nbextensions/</span>snippets/</span><br></pre></td></tr></table></figure>
+<p><img src="http://i4.fuimg.com/640680/4c85f5ca77cab348.png" alt="Markdown"></p>
 
       
     </div>
@@ -517,15 +479,11 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/codes/" rel="tag"><i class="fa fa-tag"></i> codes</a>
+            <a href="/blog/tags/techniques/" rel="tag"><i class="fa fa-tag"></i> techniques</a>
           
-            <a href="/blog/tags/statistics/" rel="tag"><i class="fa fa-tag"></i> statistics</a>
+            <a href="/blog/tags/mac/" rel="tag"><i class="fa fa-tag"></i> mac</a>
           
-            <a href="/blog/tags/assignment/" rel="tag"><i class="fa fa-tag"></i> assignment</a>
-          
-            <a href="/blog/tags/R/" rel="tag"><i class="fa fa-tag"></i> R</a>
-          
-            <a href="/blog/tags/linear-regression/" rel="tag"><i class="fa fa-tag"></i> linear regression</a>
+            <a href="/blog/tags/setup/" rel="tag"><i class="fa fa-tag"></i> setup</a>
           
         </div>
       
@@ -538,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/05/20/36_diffexpress/" rel="next" title="Differential Expression">
-                <i class="fa fa-chevron-left"></i> Differential Expression
+              <a href="/blog/2018/05/21/92_death-and-dream/" rel="next" title="Death & Dream">
+                <i class="fa fa-chevron-left"></i> Death & Dream
               </a>
             
           </div>
@@ -548,8 +506,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/20/47_line6/" rel="prev" title="Linear Regression Assignment 12">
-                Linear Regression Assignment 12 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/05/23/52_datamining1/" rel="prev" title="Multivariate Statistics Assignment 5">
+                Multivariate Statistics Assignment 5 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -719,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#15-8"><span class="nav-number">1.</span> <span class="nav-text">15.8</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a"><span class="nav-number">1.1.</span> <span class="nav-text">a</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b"><span class="nav-number">1.2.</span> <span class="nav-text">b</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c"><span class="nav-number">1.3.</span> <span class="nav-text">c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d"><span class="nav-number">1.4.</span> <span class="nav-text">d</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-10"><span class="nav-number">2.</span> <span class="nav-text">15.10</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-1"><span class="nav-number">2.1.</span> <span class="nav-text">a</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-1"><span class="nav-number">2.2.</span> <span class="nav-text">b</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-1"><span class="nav-number">2.3.</span> <span class="nav-text">c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-1"><span class="nav-number">2.4.</span> <span class="nav-text">d</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STEPS"><span class="nav-number">1.</span> <span class="nav-text">STEPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#open-automator"><span class="nav-number">1.1.</span> <span class="nav-text">open automator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#select-application"><span class="nav-number">1.1.1.</span> <span class="nav-text">select application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#select-AppleScript-on-left-bar"><span class="nav-number">1.1.2.</span> <span class="nav-text">select AppleScript on left bar</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#save-as-file-app-in-somewhere"><span class="nav-number">1.2.</span> <span class="nav-text">save as file.app in somewhere</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#customize-toolbar"><span class="nav-number">1.3.</span> <span class="nav-text">customize toolbar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#drug-your-new-application-to-toolbar"><span class="nav-number">1.3.1.</span> <span class="nav-text">drug your new application to toolbar</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -883,9 +841,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://www.cmwonderland.com/blog/2018/05/20/46_line5/';
-          this.page.identifier = '2018/05/20/46_line5/';
-          this.page.title = 'Linear Regression Assignment 10';
+          this.page.url = 'https://www.cmwonderland.com/blog/2018/05/22/17_customizeapp/';
+          this.page.identifier = '2018/05/22/17_customizeapp/';
+          this.page.title = 'MAC用automator创建小应用解决一些简单需求';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cmwonderland.disqus.com/embed.js';
@@ -1058,26 +1016,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
