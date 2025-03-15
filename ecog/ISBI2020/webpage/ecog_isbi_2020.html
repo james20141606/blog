@@ -1,0 +1,486 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="analytics.js"></script><script src="jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script><script type="text/javascript" charset="UTF-8" src="jquery.js"></script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+
+  
+  </head>
+
+  <body>
+    <br>
+          <center>
+          	<span style="font-size:42px">Stimulus Speech Decoding From Human Cortex With Generative Adversarial Network Transfer Learning</span>
+	  		  <table width="1000px" align="center">
+	  			  <tbody><tr>
+	  	              <td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Ran Wang</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Xupeng Chen</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Amirhossein Khalilian-Gourtani</a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Zhaoxi Chen</a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Leyao Yu</a></span>
+		  		  		</center>
+		  		  	  </td>
+				<td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Adeen Flinker</a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Yao Wang</a></span>
+		  		  		</center>
+		  		  	  </td>
+			  </tr></tbody></table>
+          		<!-- <span style="font-size:30px">ECCV 2016.</span> -->
+
+	  		  <table width="650px" align="center">
+	  			  <tbody><tr>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:24px"><a href="https://wp.nyu.edu/videolab/ecog_demo/"> [Demo]</a>
+		  		  		</span></center>
+		  		  	  </td>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:24px"><a href="../ISBIvideo.mp4"> [Talk]</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:24px"><a href="../slides.pdf"> [Slides]</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:24px"><a href="https://ieeexplore.ieee.org/document/9098589"> [Paper]</a></span>
+		  		  		</center>
+		  		  	  </td>
+
+		  		  	 </tr>
+	  			  <tr>
+
+          </center>
+
+<!--   		  <br><br>
+		  <hr> -->
+
+  		  <br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/result_HB.png" height="250px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+
+				<tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/result_HD.png" height="250px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+					  
+  	                	<span style="font-size:14px"><i>Decoding results on each one of HD and HB testing set. GT
+and SW denote ground truth and SpecWaveNet, respectively.</i>
+					</span></center>
+  	              </td>
+
+  		  </tr></tbody></table>
+
+      	  <br>
+		  
+
+
+  		  <center><h1>Abstract</h1></center><table width="850px" align="center">
+	  		  
+	  		  <tbody><tr>
+	  		  	<td>
+<!-- 					Given a grayscale photograph as input, this paper attacks the problem of hallucinating a <i>plausible</i> color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and explore using class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward operation in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a "colorization Turing test", asking human subjects to choose between a generated and ground truth color image. Our method successfully fools humans 20% of the time, significantly higher than previous methods. -->
+	  		    </td>
+	  		  </tr>
+			</tbody></table>
+
+					Decoding auditory stimulus from neural activity can enable neuroprosthetics and direct communication with the brain. Some recent
+studies have shown successful speech decoding from intracranial
+recording using deep learning models. However, scarcity of training data leads to low quality speech reconstruction which prevents a
+complete brain-computer-interface (BCI) application. In this work,
+we propose a transfer learning approach with a pre-trained GAN to
+disentangle representation and generation layers for decoding. We
+first pre-train a generator to produce spectrograms from a representation space using a large corpus of natural speech data. With
+a small amount of paired data containing the stimulus speech and
+corresponding ECoG signals, we then transfer it to a bigger network
+with an encoder attached before, which maps the neural signal to
+the representation space. To further improve the network generalization ability, we introduce a Gaussian prior distribution regularizer on
+the latent representation during the transfer phase. With at most 150
+training samples for each tested subject, we achieve a state-of-the-art
+decoding performance. By visualizing the attention mask embedded
+in the encoder, we observe brain dynamics that are consistent with
+findings from previous studies investigating dynamics in the superior temporal gyrus (STG), pre-central gyrus (motor) and inferior
+frontal gyrus (IFG). Our findings demonstrate a high reconstruction
+accuracy using deep learning networks together with the potential to
+elucidate interactions across different brain regions during a cognitive task
+
+<!-- 					Given a grayscale photograph as input, this paper attacks the problem of hallucinating a <i>plausible</i> color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and explore using class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward operation in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a "colorization Turing test", asking human subjects to choose between a generated and ground truth color image. Our method successfully fools humans 20% of the time, significantly higher than previous methods. -->
+
+  		  <br><br>
+		  <hr>
+
+	  <!-- TRY THE DEMO -->
+ 		<center><h1>Generated Audio Demo</h1></center>
+
+ 		  <br>
+
+  		  <table width="1000px" align="center">
+  			  <tbody><tr>
+  	              <td width="175px" align="center">
+  					<center>
+						  </center></td><td><a href="https://wp.nyu.edu/videolab/ecog_demo/"><img class="round" style="height:400px" src="Images/ecog_demo.png"></a></td>
+	  		  		
+	  		  	<!-- </br> -->
+			  </tr>
+		  </tbody></table>
+
+			  <tbody><tr></tr>
+		  </tbody></table>
+
+      	  <br>
+		  <hr>
+
+
+  		  <center><h1>Videos</h1></center><table width="1100px" align="center">
+	  		 	
+  			  <tbody><tr>
+<!--   	              <td width=400px>
+  					<center>
+  	                	<img class="rounded" src = "./index_files/teaser_v3.jpg" height="275px"></img>
+  	                	<br>
+					</center>
+  	              </td> -->
+		  		  </tr></tbody></table><table width="800px" align="center">
+		  		    <tbody><tr>
+		              <td width="800px" align="center">
+						<iframe src="../ISBIvideo.mp4" allowfullscreen="" width="900" height="450" frameborder="0"></iframe>
+					  </td>
+					</tr>
+					<tr>
+		              <td width="600px" align="center">
+		              <span style="font-size:22px">ISBI 2020 Talk</span>
+					  </td>
+					</tr>
+				  </tbody></table>
+				<br>
+                
+  		  
+
+        <!-- <center></center> -->
+
+
+
+
+<!-- <a href="http://www.eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v0/colorization_release_v0.caffemodel">[Model 129MB]</span> -->
+
+      	  <br>
+		  <hr>
+
+  		  <!-- <table align=center width=550px> -->
+  		  <center><h1>Paper and Supplementary Material</h1></center><table width="825px" align="center">
+	 		
+  			  <tbody><tr>
+  	              <!--<td width=300px align=left>-->
+  	              <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
+				  <td><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9098589"><img class="layered-paper-big" style="height:175px" src="Images/paper_thumb.png"></a></td>
+				  <td><span style="font-size:14pt">Wang, Ran and Chen, Xupeng and Khalilian-Gourtani, Amirhossein and Chen, Zhaoxi and Yu, Leyao and Flinker, Adeen and Wang, Yao.<br>
+				  Stimulus Speech Decoding From Human Cortex With Generative Adversarial Network Transfer Learning.<br>
+				  In ISBI, 2020.
+				  (hosted  <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9098589">here</a>)
+				  <!-- <td><span style="font-size:14pt">Zhang, Isola, Efros. Colorful Image Colorization. In ECCV, 2016. (hosted on arXiv) -->
+				  <span style="font-size:4pt"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9098589"><br></a>
+<!-- 				  <span style="font-size:14pt"><br><b>Primary revisions in v2</b>
+				  <span style="font-size:10pt"><br> &bull; ECCV 2016 Camera Ready
+				  <span style="font-size:10pt"><br> &bull; Self-supervision/representation learning experiments (see <b>Section 3.2</b>) -->
+				  <!-- <br> &bull; Loss function comparisons, with all models re-trained from scratch (see <b>Table 1</b>) -->
+				  </span>
+				  </span></td>
+  	              
+              </tr>
+  		  </tbody></table>
+		  <br>
+
+		  <!-- <br> -->
+<!--   		  <table align=center width=200px>
+			  <tr>
+				  <td><span style="font-size:11pt"><a href="http://arxiv.org/pdf/1603.08511v1.pdf">Previous version [v1] [10MB]</a></td>
+				  <td><span style="font-size:12pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
+			  </tr>
+			  <tr>
+				  <td><span style="font-size:11pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
+			  </tr>
+		  </table> -->
+
+		  <table width="600px" align="center">
+			  <tbody><tr>
+				  <td><span style="font-size:14pt"><center>
+				  	<a href='resources/bibtex_isbi2020.txt'>[Bibtex]</a>
+  	              </center></span></td>
+              </tr>
+  		  </tbody></table>
+
+	
+  	  	<hr>
+
+  		  <a name="perform_comp"></a>
+  		  <center><h1>Performance comparisons</h1></center>
+  		
+		  <br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/compare_result.png" width = "800px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+
+  		  </tr></tbody></table>
+
+      	  <br>
+
+		Quantitative comparison of transfer-GAN (proposed),
+ <a href="https://ieeexplore.ieee.org/document/8615605">SpecWaveNet</a>, and <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001251">linear model</a> in MSE (lower is better) and
+CC (higher is better) on test data. “-” refers to number not reported.
+  		<br><br>  
+  	  	<hr>
+
+
+		<a name="vgg_res"></a>
+  	  	<center><h1> Model Architecture<br>
+  	  		<!-- Categories for which colorization most helps/hurts recognition -->
+  	  	<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/fig1.png" width="800px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+<span style="font-size:14px"><i>Overview of the transfer-GAN framework.</i>
+					</span></center>
+				<tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/fig2.png" width="800px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+					  
+  	                	<span style="font-size:14px"><i> Overview of the generator network. Total K = 5 residual
+blocks are used. The BN, DO, and 1 × 1 in the figure denote batch
+normalization, dropout, and temporal convolution with filter width
+1, respectively.</i>
+					</span></center>
+  	              </td>
+
+  		  </tr></tbody></table>
+
+      	  <br>
+</center>
+	The transfer-GAN framework contains an encoder that
+maps an ECoG signal to a representation space with a prescribed
+distribution, followed by a generator that generates a spectrogram
+from the representation vector (output of the encoder). Finally, the
+spectrogram is converted to the sound waveform using another network (vocoder). Both the generator and the vocoder can be pretrained using any large corpus of speech data. To encourage realist
+spectrograms generation, a GAN loss is applied during generator
+pre-training. Then, the encoder and the generator can be refined together using the paired data.
+
+  		<br><br>  
+		  <hr>
+
+
+		<a name="vgg_res"></a>
+  	  	<center><h1> Averaged evolution of the attention mask<br>
+  	  		<!-- Categories for which colorization most helps/hurts recognition -->
+  	  	<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/attention_742_wider.png" width = "1000px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+
+  		  </tr></tbody></table>
+
+      	  <br>
+</center>
+	The plot shows the averaged evolution of the attention mask for a subject with the hybrid grid. The color in each electrode indicates the value of the
+attention mask, following the color bar. The white square shows the 8×8 grid used in the experiment. Similar dynamic is also observed in
+the other HB subject.
+
+  		<br><br>  
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75863369-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+              
+
+
+ 
+</body></html>
