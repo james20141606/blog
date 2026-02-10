@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google5b248f7b86cbcee5.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="machine learning,python,bioinformatics,teaching,TA," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="WonderLand" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="This is one of the chapter in Bioinformatics basic course in Tsinghua University. You may also find it here The related jupyter file">
+<meta name="keywords" content="machine learning,python,bioinformatics,teaching,TA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Tutorial">
+<meta property="og:url" content="https://www.cmwonderland.com/blog/2018/10/06/55_python_basics/index.html">
+<meta property="og:site_name" content="WonderLand">
+<meta property="og:description" content="This is one of the chapter in Bioinformatics basic course in Tsinghua University. You may also find it here The related jupyter file">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://i2.tiimg.com/640680/bd9bf324c62838ea.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/6c673d3d2a99eb69.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/883fecd2e4eb8e5b.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/118f51c0d90051c8.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/98f28eb528ec01b8.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/88d0bef8d04a30c6.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/3ff9089547169bd3.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/782990d4fc31ded7.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/0bb4e663938fe506.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/f3d01d72d42e8579.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/56c5bcb9364c6462.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/e917186572eb56a1.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/6a9c55b2916eea12.jpg">
+<meta property="og:image" content="http://i2.tiimg.com/640680/7f5bc15337bf554a.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/b2b4f50de382d817.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/0533f1359890e8ed.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/73c9ac2564d70838.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/39a71f7469439ab1.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/0bec0a9639a5c1e2.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/68736b715f5d433b.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/bc36e9b169826b32.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/2360c5310673162a.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/186cb62c6e00df0e.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/010f81392dd7104a.png">
+<meta property="og:image" content="http://i2.tiimg.com/640680/70da70ed24b4932f.png">
+<meta property="og:updated_time" content="2019-04-23T13:07:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Tutorial">
+<meta name="twitter:description" content="This is one of the chapter in Bioinformatics basic course in Tsinghua University. You may also find it here The related jupyter file">
+<meta name="twitter:image" content="http://i2.tiimg.com/640680/bd9bf324c62838ea.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.cmwonderland.com/blog/2018/10/06/55_python_basics/"/>
+
+
+
+
+
+  <title>Python Tutorial | WonderLand</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6656499bfc0e07b4e20ee4975eb85f31";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/james20141606"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WonderLand</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Somnium & Somniator</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.cmwonderland.com/blog/blog/2018/10/06/55_python_basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="James Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WonderLand">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python Tutorial</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-06T20:03:19-04:00">
+                2018-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/teaching/" itemprop="url" rel="index">
+                    <span itemprop="name">teaching</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/10/06/55_python_basics/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/06/55_python_basics/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/blog/2018/10/06/55_python_basics/" class="leancloud_visitors" data-flag-title="Python Tutorial">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5,165
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  32
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This is one of the chapter in <a href="https://lulab.gitbooks.io/teaching/content/" target="_blank" rel="noopener">Bioinformatics basic course in Tsinghua University</a>. You may also find it <a href="https://lulab.gitbooks.io/teaching/content/appendix/python_tutorial.html" target="_blank" rel="noopener">here</a></p>
+<p>The related <a href="https://github.com/lulab/teaching_book/blob/master/appendix/python_tutorial.ipynb" target="_blank" rel="noopener">jupyter file</a></p>
+<a id="more"></a>
+<h2 id="Python-Tutorial"><a href="#Python-Tutorial" class="headerlink" title="Python Tutorial"></a>Python Tutorial</h2><p><img src="http://i2.tiimg.com/640680/bd9bf324c62838ea.png" alt="Markdown"></p>
+<h2 id="Install-Anaconda-Python"><a href="#Install-Anaconda-Python" class="headerlink" title="Install Anaconda Python"></a>Install Anaconda Python</h2><p>URL: (<a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">https://www.anaconda.com/download/</a>)</p>
+<ul>
+<li>Easy install of data science packages (binary distribution)</li>
+<li>Package management with </li>
+</ul>
+<p><code>conda</code></p>
+<p><img src="http://i2.tiimg.com/640680/6c673d3d2a99eb69.png" alt="Markdown"></p>
+<p>Install Python packages using conda:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install h5py</span><br></pre></td></tr></table></figure>
+<p>Update a package to the latest version:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update h5py</span><br></pre></td></tr></table></figure>
+<p>Install Python packages using pip:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install h5py</span><br></pre></td></tr></table></figure>
+<p>Update a package using pip:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade h5py</span><br></pre></td></tr></table></figure>
+<h2 id="Python-language-tips"><a href="#Python-language-tips" class="headerlink" title="Python language tips"></a>Python language tips</h2><h3 id="Compatibility-between-Python-3-x-and-Python-2-x"><a href="#Compatibility-between-Python-3-x-and-Python-2-x" class="headerlink" title="Compatibility between Python 3.x and Python 2.x"></a>Compatibility between Python 3.x and Python 2.x</h3><p><strong>Biggest difference</strong>: print is a function rather than statement in Python 3</p>
+<p>This does not work in Python 3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p><strong>Solution</strong>: use the <code>__future__</code> module</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="comment"># this works both in Python 2 and Python 3</span></span><br><span class="line">print(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>Second biggest difference</strong>: some package/function names in the standard library are changed</p>
+<p><strong>Python 2</strong> =&gt; <strong>Python 3</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cStringIO =&gt; io.StringIO</span><br><span class="line">Queue =&gt; queue</span><br><span class="line">cPickle =&gt; pickle</span><br><span class="line">ConfigParser =&gt; configparser</span><br><span class="line">HTMLParser =&gt; html.parser</span><br><span class="line">SocketServer =&gt; socketserver</span><br><span class="line">SimpleHTTPServer =&gt; http.server</span><br></pre></td></tr></table></figure>
+<p><strong>Solution</strong>: use the <code>six</code> module</p>
+<ul>
+<li>Refer to (<a href="https://docs.python.org/3/library/__future__.html" target="_blank" rel="noopener">https://docs.python.org/3/library/__future__.html</a>) for usage of the <code>__future__</code> module.</li>
+<li>Refer to (<a href="https://pythonhosted.org/six/" target="_blank" rel="noopener">https://pythonhosted.org/six/</a>) for usage of the <code>six</code> module.</li>
+</ul>
+<h3 id="Get-away-from-IndentationError"><a href="#Get-away-from-IndentationError" class="headerlink" title="Get away from IndentationError"></a>Get away from IndentationError</h3><p>Python forces usage of tabs/spaces to indent code</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># use a tab</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(i)</span><br><span class="line"><span class="comment"># use 2 spaces</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">  print(i)</span><br><span class="line"><span class="comment"># use 4 spaces</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+<p><strong>Best practice</strong>: always use 4 spaces. You can set whether to use spaces(soft tabs) or tabs for indentation.</p>
+<p>In vim editor, use <code>:set list</code> to inspect incorrect number of spaces/tabs.</p>
+<h3 id="Add-Shebang-and-encoding-at-the-beginning-of-executable-scripts"><a href="#Add-Shebang-and-encoding-at-the-beginning-of-executable-scripts" class="headerlink" title="Add Shebang and encoding at the beginning of executable scripts"></a>Add Shebang and encoding at the beginning of executable scripts</h3><p>Create a file named <code>welcome.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line">print(<span class="string">'welcome to python!'</span>)</span><br></pre></td></tr></table></figure>
+<p>Then set the python script as executable:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x welcome.py</span><br></pre></td></tr></table></figure>
+<p>Now you can run the script without specifying the Python interpreter:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./welcome.py</span><br></pre></td></tr></table></figure></p>
+<h3 id="All-variables-functions-classes-are-dynamic-objects"><a href="#All-variables-functions-classes-are-dynamic-objects" class="headerlink" title="All variables, functions, classes are dynamic objects"></a>All variables, functions, classes are dynamic objects</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"><span class="comment"># assign an integer to a</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">print(type(a))</span><br><span class="line"><span class="comment"># assign a string to a</span></span><br><span class="line">a = <span class="string">'abc'</span></span><br><span class="line">print(type(a))</span><br><span class="line"><span class="comment"># assign a function to a</span></span><br><span class="line">a = range</span><br><span class="line">print(type(a))</span><br><span class="line">print(a(<span class="number">10</span>))</span><br><span class="line"><span class="comment"># assign a class to a</span></span><br><span class="line">a = MyClass</span><br><span class="line">print(type(a))</span><br><span class="line">b = a(<span class="string">'myclass'</span>)</span><br><span class="line">print(b.name)</span><br><span class="line"><span class="comment"># assign an instance of a class to a</span></span><br><span class="line">a = MyClass(<span class="string">'myclass'</span>)</span><br><span class="line">print(b.name)</span><br><span class="line"><span class="comment"># get type of a</span></span><br><span class="line">print(type(a))</span><br></pre></td></tr></table></figure>
+<h3 id="All-python-variables-are-pointers-references"><a href="#All-python-variables-are-pointers-references" class="headerlink" title="All python variables are pointers/references"></a>All python variables are pointers/references</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(<span class="string">'a = '</span>, a)</span><br><span class="line"><span class="comment"># this add another refrence to the list</span></span><br><span class="line">b = a</span><br><span class="line">print(<span class="string">'b = '</span>, b)</span><br><span class="line"><span class="comment"># this will change contents of both a and b</span></span><br><span class="line">b[<span class="number">2</span>] = <span class="number">4</span></span><br><span class="line">print(<span class="string">'a = '</span>, a)</span><br><span class="line">print(<span class="string">'b = '</span>, b)</span><br></pre></td></tr></table></figure>
+<h3 id="Use-deepcopy-if-you-really-want-to-COPY-a-variable"><a href="#Use-deepcopy-if-you-really-want-to-COPY-a-variable" class="headerlink" title="Use deepcopy if you really want to COPY a variable"></a>Use <code>deepcopy</code> if you really want to COPY a variable</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy</span><br><span class="line">a = &#123;<span class="string">'A'</span>: [<span class="number">1</span>], <span class="string">'B'</span>: [<span class="number">2</span>], <span class="string">'C'</span>: [<span class="number">3</span>]&#125;</span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># shallow copy</span></span><br><span class="line">b = dict(a)</span><br><span class="line"><span class="comment"># modify elements of b will change contents of a</span></span><br><span class="line">b[<span class="string">'A'</span>].append(<span class="number">2</span>)</span><br><span class="line">print(<span class="string">'a = '</span>, a)</span><br><span class="line">print(<span class="string">'b = '</span>, b)</span><br><span class="line"><span class="comment"># this also does not work</span></span><br><span class="line">c = &#123;k:v <span class="keyword">for</span> k, v <span class="keyword">in</span> a&#125;</span><br><span class="line">c[<span class="string">'A'</span>].append(<span class="number">3</span>)</span><br><span class="line">print(<span class="string">'a = '</span>, a)</span><br><span class="line">print(<span class="string">'c = '</span>, c)</span><br><span class="line"><span class="comment"># recurrently copy every object of a</span></span><br><span class="line">d = deepcopy(a)</span><br><span class="line"><span class="comment"># modify elements of c will not change contents of a</span></span><br><span class="line">d[<span class="string">'A'</span>].append(<span class="number">2</span>)</span><br><span class="line">print(<span class="string">'a = '</span>, a)</span><br><span class="line">print(<span class="string">'d = '</span>, d)</span><br></pre></td></tr></table></figure>
+<h3 id="What-if-I-accidentally-overwrite-my-builtin-functions"><a href="#What-if-I-accidentally-overwrite-my-builtin-functions" class="headerlink" title="What if I accidentally overwrite my builtin functions?"></a>What if I accidentally overwrite my builtin functions?</h3><p>You can refer to (<a href="https://docs.python.org/2/library/functions.html" target="_blank" rel="noopener">https://docs.python.org/2/library/functions.html</a>) for builtin functions in the standard library.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="comment"># Ops! the builtin function sum is overwritten by a number</span></span><br><span class="line">sum = sum(A)</span><br><span class="line"><span class="comment"># this will raise an error because sum is not a function now</span></span><br><span class="line">print(sum(A))</span><br><span class="line"><span class="comment"># recover the builtin function into the current environment</span></span><br><span class="line"><span class="keyword">from</span> __builtin__ <span class="keyword">import</span> sum</span><br><span class="line"><span class="comment"># this works because sum is a function</span></span><br><span class="line">print(sum(A))</span><br></pre></td></tr></table></figure>
+<p><strong>Note</strong>: in Python 3, you should import from <code>builtins</code> rather than <code>__builtin__</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> builtins <span class="keyword">import</span> sum</span><br></pre></td></tr></table></figure>
+<h3 id="int-is-of-arbitrary-precision-in-Python"><a href="#int-is-of-arbitrary-precision-in-Python" class="headerlink" title="int is of arbitrary precision in Python!"></a><code>int</code> is of arbitrary precision in Python!</h3><p>In Pyhton:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">2</span>**<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
+<p>In R:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">2</span>^<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Easiest-way-to-swap-values-of-two-variables"><a href="#Easiest-way-to-swap-values-of-two-variables" class="headerlink" title="Easiest way to swap values of two variables"></a>Easiest way to swap values of two variables</h3><p>In C/C++:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>, t;</span><br><span class="line">t = a;</span><br><span class="line">a = b;</span><br><span class="line">b = t;</span><br></pre></td></tr></table></figure>
+<p>In Python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">b, a = a, b</span><br><span class="line">print(a, b)</span><br></pre></td></tr></table></figure>
+<h3 id="List-comprehension"><a href="#List-comprehension" class="headerlink" title="List comprehension"></a>List comprehension</h3><p>Use for-loops:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    a.append(i + <span class="number">10</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p>Use list comprehension</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [i + <span class="number">10</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<h3 id="Dict-comprehension"><a href="#Dict-comprehension" class="headerlink" title="Dict comprehension"></a>Dict comprehension</h3><p>Use for-loops:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    a[i] = chr(ord(<span class="string">'A'</span>) + i) </span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p>Use dict comprehension:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;i:chr(ord(<span class="string">'A'</span>) + i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure></p>
+<h3 id="For-the-one-liners"><a href="#For-the-one-liners" class="headerlink" title="For the one-liners"></a>For the one-liners</h3><p>Use ‘;’ instead of ‘\n’:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print the first column of each line</span></span><br><span class="line">python -c <span class="string">'import sys; print("\n".join(line.split("\t")[0] for line in sys.stdin))'</span></span><br></pre></td></tr></table></figure>
+<p>For more examples of one-liners, please refer to (<a href="https://wiki.python.org/moin/Powerful%20Python%20One-Liners" target="_blank" rel="noopener">https://wiki.python.org/moin/Powerful%20Python%20One-Liners</a>).</p>
+<h3 id="Read-from-standard-input"><a href="#Read-from-standard-input" class="headerlink" title="Read from standard input"></a>Read from standard input</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment"># read line by line</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> sys.stdin:</span><br><span class="line">    print(line)</span><br></pre></td></tr></table></figure>
+<h3 id="Order-of-dict-keys-are-NOT-as-you-expected"><a href="#Order-of-dict-keys-are-NOT-as-you-expected" class="headerlink" title="Order of dict keys are NOT as you expected"></a>Order of dict keys are NOT as you expected</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'A'</span>: <span class="number">1</span>, <span class="string">'B'</span>: <span class="number">2</span>, <span class="string">'C'</span>: <span class="number">3</span>, <span class="string">'D'</span>: <span class="number">4</span>, <span class="string">'E'</span>: <span class="number">5</span>, <span class="string">'F'</span>: <span class="number">6</span>&#125;</span><br><span class="line"><span class="comment"># not in lexicographical order</span></span><br><span class="line">print([key <span class="keyword">for</span> key <span class="keyword">in</span> a])</span><br><span class="line"><span class="comment"># now in lexicographical order</span></span><br><span class="line">print([key <span class="keyword">for</span> key <span class="keyword">in</span> sorted(a)])</span><br></pre></td></tr></table></figure>
+<h3 id="Use-enumerate-to-add-a-number-during-iteration"><a href="#Use-enumerate-to-add-a-number-during-iteration" class="headerlink" title="Use enumerate() to add a number during iteration"></a>Use enumerate() to add a number during iteration</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line"><span class="keyword">for</span> i, a <span class="keyword">in</span> enumerate(A):</span><br><span class="line">    print(i, a)</span><br></pre></td></tr></table></figure>
+<h3 id="Reverse-a-list"><a href="#Reverse-a-list" class="headerlink" title="Reverse a list"></a>Reverse a list</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line">a = range(<span class="number">10</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(a[::<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="Strings-are-immutable-in-Python"><a href="#Strings-are-immutable-in-Python" class="headerlink" title="Strings are immutable in Python"></a>Strings are immutable in Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'ABCDF'</span></span><br><span class="line"><span class="comment"># will raise an Error</span></span><br><span class="line">a[<span class="number">4</span>] = <span class="string">'E'</span></span><br><span class="line"><span class="comment"># convert str to bytearray</span></span><br><span class="line">b = bytearray(a)</span><br><span class="line"><span class="comment"># bytearray are mutable</span></span><br><span class="line">b[<span class="number">4</span>] = <span class="string">'E'</span></span><br><span class="line"><span class="comment"># convert bytearray to str</span></span><br><span class="line">print(str(b))</span><br></pre></td></tr></table></figure>
+<h3 id="tuples-are-hashable-while-lists-are-not-hashable"><a href="#tuples-are-hashable-while-lists-are-not-hashable" class="headerlink" title="tuples are hashable while lists are not hashable"></a>tuples are hashable while lists are not hashable</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create dict using tuples as keys</span></span><br><span class="line">d = &#123;</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">1000</span>, <span class="number">2000</span>): <span class="string">'featureA'</span>,</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">2000</span>, <span class="number">3000</span>): <span class="string">'featureB'</span>,</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">3000</span>, <span class="number">4000</span>): <span class="string">'featureC'</span>,</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">4000</span>, <span class="number">5000</span>): <span class="string">'featureD'</span>,</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">5000</span>, <span class="number">6000</span>): <span class="string">'featureE'</span>,</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">6000</span>, <span class="number">7000</span>): <span class="string">'featureF'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># query the dict using tuples</span></span><br><span class="line">print(d[(<span class="string">'chr1'</span>, <span class="number">3000</span>, <span class="number">4000</span>)])</span><br><span class="line">print(d[(<span class="string">'chr1'</span>, <span class="number">6000</span>, <span class="number">7000</span>)])</span><br><span class="line"><span class="comment"># will raise an error</span></span><br><span class="line">d = &#123;[<span class="string">'chr1'</span>, <span class="number">1000</span>, <span class="number">2000</span>]: <span class="string">'featureA'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Use-itertools"><a href="#Use-itertools" class="headerlink" title="Use itertools"></a>Use itertools</h3><p>Nested loops in a more concise way:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">B = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">C = [<span class="string">'i'</span>, <span class="string">'j'</span>, <span class="string">'k'</span>]</span><br><span class="line">D = [<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>]</span><br><span class="line"><span class="comment"># Use nested for-loops</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> B:</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> C:</span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> D:</span><br><span class="line">                print(a, b, c, d)</span><br><span class="line"><span class="comment"># Use itertools.product</span></span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> a, b, c, d <span class="keyword">in</span> itertools.product(A, B, C, D):</span><br><span class="line">    print(a, b, c, d)</span><br></pre></td></tr></table></figure>
+<p>Get all combinations of a list:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>]</span><br><span class="line"><span class="comment"># Use itertools.combinations</span></span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> a, b, c <span class="keyword">in</span> itertools.combinations(A, <span class="number">3</span>):</span><br><span class="line">    print(a, b, c)</span><br></pre></td></tr></table></figure>
+<h3 id="Convert-iterables-to-lists"><a href="#Convert-iterables-to-lists" class="headerlink" title="Convert iterables to lists"></a>Convert iterables to lists</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">B = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">a = itertools.product(A, B)</span><br><span class="line"><span class="comment"># a is a iterable rather than a list</span></span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># a is a list now</span></span><br><span class="line">a = list(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<h3 id="Use-the-zip-function-to-transpose-nested-lists-tuples-iterables"><a href="#Use-the-zip-function-to-transpose-nested-lists-tuples-iterables" class="headerlink" title="Use the zip() function to transpose nested lists/tuples/iterables"></a>Use the zip() function to transpose nested lists/tuples/iterables</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">records = [</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">1000</span>, <span class="number">2000</span>),</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">2000</span>, <span class="number">3000</span>),</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">3000</span>, <span class="number">4000</span>),</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">4000</span>, <span class="number">5000</span>),</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">5000</span>, <span class="number">6000</span>),</span><br><span class="line">    (<span class="string">'chr1'</span>, <span class="number">6000</span>, <span class="number">7000</span>)</span><br><span class="line">]</span><br><span class="line"><span class="comment"># iterate by rows</span></span><br><span class="line"><span class="keyword">for</span> chrom, start, end <span class="keyword">in</span> records:</span><br><span class="line">    print(chrom, start, end)</span><br><span class="line"><span class="comment"># extract columns</span></span><br><span class="line">chroms, starts, ends = zip(*records)</span><br><span class="line"><span class="comment"># build records from columns</span></span><br><span class="line"><span class="comment"># now records2 is the same as records</span></span><br><span class="line">records2 = zip(chroms, starts, ends)</span><br><span class="line">print(records)</span><br></pre></td></tr></table></figure>
+<h3 id="Global-and-local-variables"><a href="#Global-and-local-variables" class="headerlink" title="Global and local variables"></a>Global and local variables</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a is global</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_local</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># a is local</span></span><br><span class="line">    a = <span class="number">2</span></span><br><span class="line">    print(a)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_global</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># a is global</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">2</span></span><br><span class="line">    print(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print global variable</span></span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># print local variable from function</span></span><br><span class="line">print_local()</span><br><span class="line"><span class="comment"># a is unchanged</span></span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># change and print global from function</span></span><br><span class="line">print_global()</span><br><span class="line"><span class="comment"># a is changed</span></span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<h3 id="Use-defaultdict"><a href="#Use-defaultdict" class="headerlink" title="Use defaultdict"></a>Use defaultdict</h3><p>Use <code>dict</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#125;</span><br><span class="line">d[<span class="string">'a'</span>] = []</span><br><span class="line">d[<span class="string">'b'</span>] = []</span><br><span class="line">d[<span class="string">'c'</span>] = []</span><br><span class="line"><span class="comment"># extend list with new elements</span></span><br><span class="line">d[<span class="string">'a'</span>] += [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">d[<span class="string">'b'</span>] += [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">d[<span class="string">'c'</span>] += [<span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span> key, val <span class="keyword">in</span> d.items():</span><br><span class="line">    print(key, val)</span><br></pre></td></tr></table></figure>
+<p>Use <code>defaultdict</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="comment"># a new list is created automatically when new elements are added</span></span><br><span class="line">d = defaultdict(list)</span><br><span class="line"><span class="comment"># extend list with new elements</span></span><br><span class="line">d[<span class="string">'a'</span>] += [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">d[<span class="string">'b'</span>] += [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">d[<span class="string">'c'</span>] += [<span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span> key, val <span class="keyword">in</span> d.items():</span><br><span class="line">    print(key, val)</span><br></pre></td></tr></table></figure>
+<h3 id="Use-generators"><a href="#Use-generators" class="headerlink" title="Use generators"></a>Use generators</h3><p>Example: read a large FASTA file</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">append_extra_line</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="string">"""Yield an empty line after the last line in the file</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="keyword">yield</span> line</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_fasta</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        name = <span class="keyword">None</span></span><br><span class="line">        seq = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> append_extra_line(f):</span><br><span class="line">            <span class="keyword">if</span> line.startswith(<span class="string">'&gt;'</span>) <span class="keyword">or</span> (len(line) == <span class="number">0</span>):</span><br><span class="line">                <span class="keyword">if</span> (len(seq) &gt; <span class="number">0</span>) <span class="keyword">and</span> (name <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>):</span><br><span class="line">                    <span class="keyword">yield</span> (name, seq)</span><br><span class="line">                <span class="keyword">if</span> line.startswith(<span class="string">'&gt;'</span>):</span><br><span class="line">                    name = line.strip()[<span class="number">1</span>:].split()[<span class="number">0</span>]</span><br><span class="line">                    seq = <span class="string">''</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> name <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">                    <span class="keyword">raise</span> ValueError(<span class="string">'the first line does not start with "&gt;"'</span>)</span><br><span class="line">                seq += line.strip()</span><br><span class="line"><span class="comment"># print sequence name and length of each </span></span><br><span class="line"><span class="keyword">for</span> name, seq <span class="keyword">in</span> read_fasta(<span class="string">'test.fa'</span>):</span><br><span class="line">    print(name, len(seq))</span><br></pre></td></tr></table></figure>
+<h3 id="Turn-off-annoying-KeyboardInterrupt-and-BrokenPipe-Error"><a href="#Turn-off-annoying-KeyboardInterrupt-and-BrokenPipe-Error" class="headerlink" title="Turn off annoying KeyboardInterrupt and BrokenPipe Error"></a>Turn off annoying KeyboardInterrupt and BrokenPipe Error</h3><p>Without exception handling (press Ctrl+C):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.sleep(<span class="number">300</span>)</span><br></pre></td></tr></table></figure>
+<p>With exception handling (press Ctrl+C):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> errno</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    time.sleep(<span class="number">300</span>)</span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">except</span> OSError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> e.errno == errno.EPIPE:</span><br><span class="line">        sys.exit(-e.errno)</span><br></pre></td></tr></table></figure>
+<h3 id="Class-and-instance-variables"><a href="#Class-and-instance-variables" class="headerlink" title="Class and instance variables"></a>Class and instance variables</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'class_name'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change_name</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line"><span class="comment"># print class variable</span></span><br><span class="line">print(MyClass.name)</span><br><span class="line"><span class="comment"># create an instance from MyClass</span></span><br><span class="line">a = MyClass(<span class="string">'instance_name'</span>)</span><br><span class="line"><span class="comment"># print instance name</span></span><br><span class="line">print(a.name)</span><br><span class="line"><span class="comment"># change instance name</span></span><br><span class="line">a.change_name(<span class="string">'instance_new_name'</span>)</span><br><span class="line">print(a.name)</span><br><span class="line">print(MyClass.name)</span><br><span class="line"><span class="comment"># change class name</span></span><br><span class="line">MyClass.name = <span class="string">'class_new_name'</span></span><br><span class="line">print(a.name)</span><br><span class="line">print(MyClass.name)</span><br></pre></td></tr></table></figure>
+<h2 id="Useful-Python-packages-for-data-analysis"><a href="#Useful-Python-packages-for-data-analysis" class="headerlink" title="Useful Python packages for data analysis"></a>Useful Python packages for data analysis</h2><h3 id="Browser-based-interactive-programming-in-Python-jupyter"><a href="#Browser-based-interactive-programming-in-Python-jupyter" class="headerlink" title="Browser-based interactive programming in Python: jupyter"></a>Browser-based interactive programming in Python: jupyter</h3><p>URL: (<a href="http://jupyter.org/" target="_blank" rel="noopener">http://jupyter.org/</a>)</p>
+<p><strong>Start jupyter notebook</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --no-browser</span><br></pre></td></tr></table></figure>
+<p><strong>Jupyter notebooks manager</strong></p>
+<p><img src="http://i2.tiimg.com/640680/883fecd2e4eb8e5b.png" alt="Markdown"></p>
+<p><strong>Jupyter process manager</strong></p>
+<p><img src="http://i2.tiimg.com/640680/118f51c0d90051c8.png" alt="Markdown"></p>
+<p><strong>Jupyter notebook</strong></p>
+<p><img src="http://i2.tiimg.com/640680/98f28eb528ec01b8.png" alt="Markdown"></p>
+<p><strong>Integrate with matplotlib</strong></p>
+<p><img src="http://i2.tiimg.com/640680/88d0bef8d04a30c6.png" alt="Markdown"></p>
+<p><strong>Browser-based text editor</strong></p>
+<p><img src="http://i2.tiimg.com/640680/3ff9089547169bd3.png" alt="Markdown"></p>
+<p><strong>Browser-based terminal</strong></p>
+<p><img src="http://i2.tiimg.com/640680/782990d4fc31ded7.png" alt="Markdown"></p>
+<p><strong>Display image</strong></p>
+<p><img src="http://i2.tiimg.com/640680/0bb4e663938fe506.png" alt="Markdown"></p>
+<p><strong>Display dataframe</strong></p>
+<p><img src="http://i2.tiimg.com/640680/f3d01d72d42e8579.png" alt="Markdown"></p>
+<p><strong>Display audio</strong></p>
+<p><img src="http://i2.tiimg.com/640680/56c5bcb9364c6462.png" alt="Markdown"></p>
+<p><strong>Embedded markdown</strong></p>
+<p><img src="http://i2.tiimg.com/640680/e917186572eb56a1.png" alt="Markdown"></p>
+<h3 id="Python-packages-for-scientific-computing"><a href="#Python-packages-for-scientific-computing" class="headerlink" title="Python packages for scientific computing"></a>Python packages for scientific computing</h3><p><img src="http://i2.tiimg.com/640680/6a9c55b2916eea12.jpg" alt="Markdown"></p>
+<h3 id="Vector-arithmetics-numpy"><a href="#Vector-arithmetics-numpy" class="headerlink" title="Vector arithmetics: numpy"></a>Vector arithmetics: numpy</h3><p>URL: (<a href="http://www.numpy.org/" target="_blank" rel="noopener">http://www.numpy.org/</a>)</p>
+<p>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># create an empty matrix of shape (5, 4)</span></span><br><span class="line">X = np.zeros((<span class="number">5</span>, <span class="number">4</span>), dtype=np.int32)</span><br><span class="line"><span class="comment"># create an array of length 5: [0, 1, 2, 3, 4]</span></span><br><span class="line">y = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># create an array of length 4: [0, 1, 2, 3]</span></span><br><span class="line">z = np.arange(<span class="number">4</span>)</span><br><span class="line"><span class="comment"># set Row 1 to [0, 1, 2, 3]</span></span><br><span class="line">X[<span class="number">0</span>] = np.arange(<span class="number">4</span>)</span><br><span class="line"><span class="comment"># set Row 2 to [1, 1, 1, 1]</span></span><br><span class="line">X[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line"><span class="comment"># add 1 to all elements</span></span><br><span class="line">X += <span class="number">1</span></span><br><span class="line"><span class="comment"># add y to each row of X</span></span><br><span class="line">X += y.reshape((<span class="number">-1</span>, <span class="number">1</span>))</span><br><span class="line"><span class="comment"># add z to each column of X</span></span><br><span class="line">X += z.reshape((<span class="number">1</span>, <span class="number">-1</span>))</span><br><span class="line"><span class="comment"># get row sums =&gt; </span></span><br><span class="line">row_sums = X.sum(axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># get column sums</span></span><br><span class="line">col_sums = X.sum(axis=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># matrix multiplication</span></span><br><span class="line">A = X.dot(X.T)</span><br><span class="line"><span class="comment"># save matrix to text file</span></span><br><span class="line">np.savetxt(<span class="string">'data.txt'</span>, A)</span><br></pre></td></tr></table></figure>
+<h3 id="Numerical-analysis-probability-distribution-signal-processing-etc-scipy"><a href="#Numerical-analysis-probability-distribution-signal-processing-etc-scipy" class="headerlink" title="Numerical analysis (probability distribution, signal processing, etc.): scipy"></a>Numerical analysis (probability distribution, signal processing, etc.): scipy</h3><p>URL: (<a href="https://www.scipy.org/" target="_blank" rel="noopener">https://www.scipy.org/</a>)</p>
+<p>scipy.stats contains a large number probability distributions:<br><img src="http://i2.tiimg.com/640680/7f5bc15337bf554a.png" alt="Markdown"></p>
+<p>Unified interface for all probability distributions:<br><img src="http://i2.tiimg.com/640680/b2b4f50de382d817.png" alt="Markdown"></p>
+<h3 id="Just-in-time-JIT-compiler-for-vector-arithmetics"><a href="#Just-in-time-JIT-compiler-for-vector-arithmetics" class="headerlink" title="Just-in-time (JIT) compiler for vector arithmetics"></a>Just-in-time (JIT) compiler for vector arithmetics</h3><p>URL: (<a href="https://numba.pydata.org/" target="_blank" rel="noopener">https://numba.pydata.org/</a>)</p>
+<p>Compile python for-loops to native code to achive similar performance to C/C++ code.<br>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numba <span class="keyword">import</span> jit</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> arange</span><br><span class="line"></span><br><span class="line"><span class="comment"># jit decorator tells Numba to compile this function.</span></span><br><span class="line"><span class="comment"># The argument types will be inferred by Numba when function is called.</span></span><br><span class="line"><span class="meta">@jit</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum2d</span><span class="params">(arr)</span>:</span></span><br><span class="line">    M, N = arr.shape</span><br><span class="line">    result = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(M):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(N):</span><br><span class="line">            result += arr[i,j]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">a = arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">print(sum2d(a))</span><br></pre></td></tr></table></figure>
+<h3 id="Library-for-symbolic-computation-sympy"><a href="#Library-for-symbolic-computation-sympy" class="headerlink" title="Library for symbolic computation: sympy"></a>Library for symbolic computation: sympy</h3><p>URL: (<a href="http://www.sympy.org/en/index.html" target="_blank" rel="noopener">http://www.sympy.org/en/index.html</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/0533f1359890e8ed.png" alt="Markdown"></p>
+<h3 id="Operation-on-data-frames-pandas"><a href="#Operation-on-data-frames-pandas" class="headerlink" title="Operation on data frames: pandas"></a>Operation on data frames: pandas</h3><p>URL: (<a href="http://pandas.pydata.org/pandas-docs/stable/" target="_blank" rel="noopener">http://pandas.pydata.org/pandas-docs/stable/</a>)</p>
+<p>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment"># read a bed file</span></span><br><span class="line">genes = pd.read_table(<span class="string">'gene.bed'</span>, header=<span class="keyword">None</span>, sep=<span class="string">'\t'</span>,</span><br><span class="line">                     names=(<span class="string">'chrom'</span>, <span class="string">'start'</span>, <span class="string">'end'</span>, <span class="string">'gene_id'</span>, <span class="string">'score'</span>, <span class="string">'strand'</span>, <span class="string">'biotype'</span>))</span><br><span class="line"><span class="comment"># get all gene IDs</span></span><br><span class="line">gene_ids = genes[<span class="string">'gene_id'</span>]</span><br><span class="line"><span class="comment"># set gene_id as index</span></span><br><span class="line">genes.index = genes[<span class="string">'gene_id'</span>]</span><br><span class="line"><span class="comment"># get row with given gene_id</span></span><br><span class="line">gene = genes.loc[<span class="string">'ENSG00000212325.1'</span>]</span><br><span class="line"><span class="comment"># get rows with biotype = 'protein_coding'</span></span><br><span class="line">genes_selected = genes[genes[<span class="string">'biotype'</span>] == <span class="string">'protein_coding'</span>]]</span><br><span class="line"><span class="comment"># get protein coding genes in chr1</span></span><br><span class="line">genes_selected = genes.query(<span class="string">'(biotype == "protein_coding") and (chrom == "chr1")'</span>)</span><br><span class="line"><span class="comment"># count genes for each biotype</span></span><br><span class="line">biotype_counts = genes.groupby(<span class="string">'biotype'</span>)[<span class="string">'gene_id'</span>].count()</span><br><span class="line"><span class="comment"># add a column for gene length</span></span><br><span class="line">genes[<span class="string">'length'</span>] = genes[<span class="string">'end'</span>] - genes[<span class="string">'start'</span>]</span><br><span class="line"><span class="comment"># calculate average gene length for each chromosome and biotype</span></span><br><span class="line">length_table = genes.pivot_table(values=<span class="string">'length'</span>, index=<span class="string">'biotype'</span>, columns=<span class="string">'chrom'</span>)</span><br><span class="line"><span class="comment"># save DataFrame to Excel file</span></span><br><span class="line">length_table.to_excel(<span class="string">'length_table.xlsx'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Basic-graphics-and-plotting-matplotlib"><a href="#Basic-graphics-and-plotting-matplotlib" class="headerlink" title="Basic graphics and plotting: matplotlib"></a>Basic graphics and plotting: matplotlib</h3><p>URL: (<a href="https://matplotlib.org/contents.html" target="_blank" rel="noopener">https://matplotlib.org/contents.html</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/73c9ac2564d70838.png" alt="Markdown"></p>
+<h3 id="Statistical-data-visualization-seaborn"><a href="#Statistical-data-visualization-seaborn" class="headerlink" title="Statistical data visualization: seaborn"></a>Statistical data visualization: seaborn</h3><p>URL: (<a href="https://seaborn.pydata.org/" target="_blank" rel="noopener">https://seaborn.pydata.org/</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/39a71f7469439ab1.png" alt="Markdown"></p>
+<h3 id="Interactive-programming-in-Python-ipython"><a href="#Interactive-programming-in-Python-ipython" class="headerlink" title="Interactive programming in Python: ipython"></a>Interactive programming in Python: ipython</h3><p>URL: (<a href="http://ipython.org/ipython-doc/stable/index.html" target="_blank" rel="noopener">http://ipython.org/ipython-doc/stable/index.html</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/0bec0a9639a5c1e2.png" alt="Markdown"></p>
+<h3 id="Statistical-tests-statsmodels"><a href="#Statistical-tests-statsmodels" class="headerlink" title="Statistical tests: statsmodels"></a>Statistical tests: statsmodels</h3><p>URL: (<a href="https://www.statsmodels.org/stable/index.html" target="_blank" rel="noopener">https://www.statsmodels.org/stable/index.html</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/68736b715f5d433b.png" alt="Markdown"></p>
+<h3 id="Machine-learning-algorithms-scikit-learn"><a href="#Machine-learning-algorithms-scikit-learn" class="headerlink" title="Machine learning algorithms: scikit-learn"></a>Machine learning algorithms: scikit-learn</h3><p>URL: (<a href="http://scikit-learn.org/" target="_blank" rel="noopener">http://scikit-learn.org/</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/bc36e9b169826b32.png" alt="Markdown"></p>
+<p>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_classification</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score, accuracy_score</span><br><span class="line"></span><br><span class="line"><span class="comment"># generate ramdom data</span></span><br><span class="line">X, y = make_classification(n_samples=<span class="number">1000</span>, n_classes=<span class="number">2</span>, n_features=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># split dataset into training and test dataset</span></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>)</span><br><span class="line"><span class="comment"># create an classifier object</span></span><br><span class="line">model = LogisticRegression()</span><br><span class="line"><span class="comment"># training the classifier</span></span><br><span class="line">model.fit(X_train, y_train)</span><br><span class="line"><span class="comment"># predict outcomes on the test dataset</span></span><br><span class="line">y_pred = model.predict(X_test)</span><br><span class="line"><span class="comment"># evalualte the classification performance</span></span><br><span class="line">print(<span class="string">'roc_auc_score = %f'</span>%roc_auc_score(y_test, y_pred))</span><br><span class="line">print(<span class="string">'accuracy_score = %f'</span>%accuracy_score(y_test, y_pred))</span><br></pre></td></tr></table></figure>
+<h3 id="Natural-language-analysis-gensim"><a href="#Natural-language-analysis-gensim" class="headerlink" title="Natural language analysis: gensim"></a>Natural language analysis: gensim</h3><p>URL: (<a href="https://radimrehurek.com/gensim/" target="_blank" rel="noopener">https://radimrehurek.com/gensim/</a>)</p>
+<h3 id="HTTP-library-requests"><a href="#HTTP-library-requests" class="headerlink" title="HTTP library: requests"></a>HTTP library: requests</h3><p>URL: (<a href="http://docs.python-requests.org/en/master/" target="_blank" rel="noopener">http://docs.python-requests.org/en/master/</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/2360c5310673162a.png" alt="Markdown"></p>
+<h3 id="Lightweight-Web-framework-flask"><a href="#Lightweight-Web-framework-flask" class="headerlink" title="Lightweight Web framework: flask"></a>Lightweight Web framework: flask</h3><p>URL: (<a href="http://flask.pocoo.org/" target="_blank" rel="noopener">http://flask.pocoo.org/</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/186cb62c6e00df0e.png" alt="Markdown"></p>
+<h3 id="Deep-learning-framework-tensorflow"><a href="#Deep-learning-framework-tensorflow" class="headerlink" title="Deep learning framework: tensorflow"></a>Deep learning framework: tensorflow</h3><p>URL: (<a href="http://tensorflow.org/" target="_blank" rel="noopener">http://tensorflow.org/</a>)</p>
+<h3 id="High-level-deep-learning-framework-keras"><a href="#High-level-deep-learning-framework-keras" class="headerlink" title="High-level deep learning framework: keras"></a>High-level deep learning framework: keras</h3><p>URL: (<a href="https://keras.io/" target="_blank" rel="noopener">https://keras.io/</a>)</p>
+<h3 id="Operation-on-sequence-and-alignment-formats-biopython"><a href="#Operation-on-sequence-and-alignment-formats-biopython" class="headerlink" title="Operation on sequence and alignment formats: biopython"></a>Operation on sequence and alignment formats: biopython</h3><p>URL: (<a href="http://biopython.org/" target="_blank" rel="noopener">http://biopython.org/</a>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Bio <span class="keyword">import</span> SeqIO</span><br><span class="line"><span class="keyword">for</span> record <span class="keyword">in</span> SeqIO.parse(<span class="string">'test.fa'</span>, <span class="string">'fasta'</span>):</span><br><span class="line">    print(record.id, len(record.seq))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Bio <span class="keyword">import</span> SeqIO</span><br><span class="line"><span class="keyword">from</span> Bio.Seq <span class="keyword">import</span> Seq</span><br><span class="line"><span class="keyword">from</span> Bio.SeqRecord <span class="keyword">import</span> SeqRecord</span><br><span class="line">sequences = [</span><br><span class="line">    SeqRecord(Seq(<span class="string">'ACCGGTATCTATATCCCCGAGAGGAATGGGTCAGACATGGACCTAC'</span>), id=<span class="string">'A'</span>, description=<span class="string">''</span>),</span><br><span class="line">    SeqRecord(Seq(<span class="string">'TTACAATGTGGCAGTGAACGCGTGACAATCCTCCCCGTTGGACAT'</span>), id=<span class="string">'B'</span>, description=<span class="string">''</span>),</span><br><span class="line">    SeqRecord(Seq(<span class="string">'CAAAGCTGCATCGAATTGTCGAGACAACACTAGATTTAAGCGCA'</span>), id=<span class="string">'C'</span>, description=<span class="string">''</span>),</span><br><span class="line">    SeqRecord(Seq(<span class="string">'CGCCCGCGAGGGCAATCAGGACGGATTTACGGAT'</span>), id=<span class="string">'D'</span>, description=<span class="string">''</span>),</span><br><span class="line">    SeqRecord(Seq(<span class="string">'CCGCCCACGCTCCCGTTTTCTTCCATACCTGTCC'</span>), id=<span class="string">'E'</span>, description=<span class="string">''</span>)</span><br><span class="line">]</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test_out.fa'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    SeqIO.write(sequences, f, <span class="string">'fasta'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Operation-on-genomic-formats-BigWig-etc-bx-python"><a href="#Operation-on-genomic-formats-BigWig-etc-bx-python" class="headerlink" title="Operation on genomic formats (BigWig,etc.): bx-python"></a>Operation on genomic formats (BigWig,etc.): bx-python</h3><h3 id="Operation-on-HDF5-files-h5py"><a href="#Operation-on-HDF5-files-h5py" class="headerlink" title="Operation on HDF5 files: h5py"></a>Operation on HDF5 files: h5py</h3><p>URL: (<a href="https://www.h5py.org/" target="_blank" rel="noopener">https://www.h5py.org/</a>)</p>
+<p>Save data to an HDF5 file</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># generate data</span></span><br><span class="line">chroms = [<span class="string">'chr1'</span>, <span class="string">'chr2'</span>, <span class="string">'chr3'</span>]</span><br><span class="line">chrom_sizes = &#123;</span><br><span class="line">    <span class="string">'chr1'</span>: <span class="number">15000</span>,</span><br><span class="line">    <span class="string">'chr2'</span>: <span class="number">12000</span>,</span><br><span class="line">    <span class="string">'chr3'</span>: <span class="number">11000</span></span><br><span class="line">&#125;</span><br><span class="line">coverage = &#123;&#125;</span><br><span class="line">counts = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> chrom, size <span class="keyword">in</span> chrom_sizes.items():</span><br><span class="line">    coverage[chrom] = np.random.randint(<span class="number">10</span>, <span class="number">1000</span>, size=size)</span><br><span class="line">    counts[chrom] = np.random.randint(<span class="number">1000</span>, size=size)%coverage[chrom]</span><br><span class="line"><span class="comment"># save data to an HDF5 file</span></span><br><span class="line"><span class="keyword">with</span> h5py.File(<span class="string">'dataset.h5'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> chrom <span class="keyword">in</span> chrom_sizes:</span><br><span class="line">        g = f.create_group(chrom)</span><br><span class="line">        g.create_dataset(<span class="string">'coverage'</span>, data=coverage[chrom])</span><br><span class="line">        g.create_dataset(<span class="string">'counts'</span>, data=counts[chrom])</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h5ls -r dataset.h5</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/                        Group</span><br><span class="line">/chr1                    Group</span><br><span class="line">/chr1/counts             Dataset &#123;15000&#125;</span><br><span class="line">/chr1/coverage           Dataset &#123;15000&#125;</span><br><span class="line">/chr2                    Group</span><br><span class="line">/chr2/counts             Dataset &#123;12000&#125;</span><br><span class="line">/chr2/coverage           Dataset &#123;12000&#125;</span><br><span class="line">/chr3                    Group</span><br><span class="line">/chr3/counts             Dataset &#123;11000&#125;</span><br><span class="line">/chr3/coverage           Dataset &#123;11000&#125;</span><br></pre></td></tr></table></figure>
+<p>Read data from an HDF file:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line"><span class="comment"># read data from an HDF5 file</span></span><br><span class="line"><span class="keyword">with</span> h5py.File(<span class="string">'dataset.h5'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    coverage = &#123;&#125;</span><br><span class="line">    counts = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> chrom <span class="keyword">in</span> f.keys():</span><br><span class="line">        coverage[chrom] = f[chrom + <span class="string">'/coverage'</span>][:]</span><br><span class="line">        counts[chrom] = f[chrom + <span class="string">'/counts'</span>][:]</span><br></pre></td></tr></table></figure>
+<h3 id="Mixed-C-C-and-python-programming-cython"><a href="#Mixed-C-C-and-python-programming-cython" class="headerlink" title="Mixed C/C++ and python programming: cython"></a>Mixed C/C++ and python programming: cython</h3><p>URL: (<a href="http://cython.org/" target="_blank" rel="noopener">http://cython.org/</a>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">cimport numpy <span class="keyword">as</span> np</span><br><span class="line">cimport cython</span><br><span class="line"><span class="keyword">from</span> cython.parallel <span class="keyword">import</span> prange</span><br><span class="line"><span class="keyword">from</span> cython.parallel cimport parallel</span><br><span class="line">cimport openmp</span><br><span class="line"></span><br><span class="line"><span class="meta">@cython.boundscheck(False) # turn off bounds-checking for entire function</span></span><br><span class="line"><span class="meta">@cython.wraparound(False)  # turn off negative index wrapping for entire function</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_mse_grad_linear_ard</span><span class="params">(np.ndarray[np.float64_t, ndim=<span class="number">1</span>] w,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] X1,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] X2,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] Kinv1,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] K2,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] a,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] err,</span></span></span><br><span class="line"><span class="function"><span class="params">        np.ndarray[np.float64_t, ndim=<span class="number">2</span>] mask=None)</span>:</span></span><br><span class="line">    <span class="string">'''Compute the gradients of MSE on the test samples with respect to relevance vector w.</span></span><br><span class="line"><span class="string">    :param w: 1D array of shape [n_features]</span></span><br><span class="line"><span class="string">    :return: gradients of MSE wrt. 2, 1D array of shape [n_features]</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    cdef np.int64_t N1, N2, p</span><br><span class="line">    cdef np.int64_t k, i, j, m</span><br><span class="line">    N1 = X1.shape[<span class="number">0</span>]</span><br><span class="line">    N2 = X2.shape[<span class="number">0</span>]</span><br><span class="line">    p = X2.shape[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    cdef np.ndarray[np.float64_t, ndim=<span class="number">2</span>] K2Kinv1 = K2.dot(Kinv1)</span><br><span class="line">    cdef np.ndarray[np.float64_t, ndim=<span class="number">1</span>] mse_grad = np.zeros_like(w)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#cdef np.ndarray[np.float64_t, ndim=3] K1_grad = np.zeros((p, N1, N1), dtype=np.float64)</span></span><br><span class="line">    <span class="comment">#cdef np.ndarray[np.float64_t, ndim=3] K2_grad = np.zeros((p, N2, N1), dtype=np.float64)</span></span><br><span class="line">    <span class="comment">#cdef np.ndarray[np.float64_t, ndim=3] K_grad =  np.zeros((p, N2, N1), dtype=np.float64)</span></span><br><span class="line">    cdef np.int64_t max_n_threads = openmp.omp_get_max_threads()</span><br><span class="line">    cdef np.ndarray[np.float64_t, ndim=<span class="number">3</span>] K1_grad = np.zeros((max_n_threads, N1, N1), dtype=np.float64)</span><br><span class="line">    cdef np.ndarray[np.float64_t, ndim=<span class="number">3</span>] K2_grad = np.zeros((max_n_threads, N2, N1), dtype=np.float64)</span><br><span class="line">    cdef np.ndarray[np.float64_t, ndim=<span class="number">3</span>] K_grad  = np.zeros((max_n_threads, N1, N1), dtype=np.float64)</span><br><span class="line"></span><br><span class="line">    cdef np.int64_t thread_id</span><br><span class="line">    <span class="keyword">with</span> nogil, parallel():</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> prange(p):</span><br><span class="line">            thread_id = openmp.omp_get_thread_num()</span><br><span class="line">            <span class="comment"># compute K1_grad</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(N1):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(N1):</span><br><span class="line">                    K1_grad[thread_id, i, j] = <span class="number">2.0</span>*w[k]*X1[i, k]*X1[j, k]</span><br><span class="line">            <span class="comment"># compute K2_grad</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(N2):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(N1):</span><br><span class="line">                    K2_grad[thread_id, i, j] = <span class="number">2.0</span>*w[k]*X2[i, k]*X1[j, k]</span><br><span class="line">            <span class="comment"># compute K_grad</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(N2):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(N1):</span><br><span class="line">                    K_grad[thread_id, i, j] = K2_grad[thread_id, i, j]</span><br><span class="line">                    <span class="keyword">for</span> m <span class="keyword">in</span> range(N1):</span><br><span class="line">                        K_grad[thread_id, i, j] += K2Kinv1[i, m]*K1_grad[thread_id, m, j]</span><br><span class="line">            <span class="comment"># compute mse_grad</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(N2):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(N1):</span><br><span class="line">                    mse_grad[k] += err[i, <span class="number">0</span>]*K_grad[thread_id, i, j]*a[j, <span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> mse_grad, K_grad</span><br></pre></td></tr></table></figure>
+<h3 id="Progress-bar-tqdm"><a href="#Progress-bar-tqdm" class="headerlink" title="Progress bar: tqdm"></a>Progress bar: tqdm</h3><p>URL: (<a href="https://pypi.python.org/pypi/tqdm" target="_blank" rel="noopener">https://pypi.python.org/pypi/tqdm</a>)</p>
+<p><img src="http://i2.tiimg.com/640680/010f81392dd7104a.png" alt="Markdown"></p>
+<p><img src="http://i2.tiimg.com/640680/70da70ed24b4932f.png" alt="Markdown"></p>
+<h2 id="Example-Python-scripts"><a href="#Example-Python-scripts" class="headerlink" title="Example Python scripts"></a>Example Python scripts</h2><h3 id="View-a-table-in-a-pretty-way"><a href="#View-a-table-in-a-pretty-way" class="headerlink" title="View a table in a pretty way"></a>View a table in a pretty way</h3><p>The original table is ugly:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -n 15 metadata.tsv</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> accession	<span class="type">File</span> format	<span class="type">Output</span> <span class="keyword">type</span>	<span class="type">Experiment</span> accession	<span class="type">Assay</span>	<span class="type">Biosample</span> term id</span><br><span class="line"><span class="type">ENCFF983DFB</span>	fastq	reads	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF590TBW</span>	fastq	reads	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF258RWG</span>	bam	unfiltered alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF468LRV</span>	bam	unfiltered alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF216EBS</span>	bam	alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF232QFN</span>	bam	unfiltered alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF682NGE</span>	bam	alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF328UKA</span>	bam	unfiltered alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF165COO</span>	bam	alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF466OLG</span>	bam	alignments	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF595HIY</span>	bigBed narrowPeak	peaks	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF494CKB</span>	bigWig	fold change over control	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF308BXW</span>	bigWig	fold change over control	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"><span class="type">ENCFF368IHM</span>	bed narrowPeak	peaks	<span class="type">ENCSR429XTR</span>	<span class="type">ChIP</span>-<span class="built_in">seq</span>	<span class="type">EFO</span>:<span class="number">0002067</span></span><br></pre></td></tr></table></figure>
+<p>Now display the table more clearly:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -n 15 metadata.tsv | tvi -d $<span class="string">'\t'</span> -j center</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> accession    <span class="type">File</span> format          <span class="type">Output</span> <span class="keyword">type</span>        <span class="type">Experiment</span> accession  <span class="type">Assay</span>   <span class="type">Biosample</span> term id</span><br><span class="line"> <span class="type">ENCFF983DFB</span>         fastq                reads               <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF590TBW</span>         fastq                reads               <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF258RWG</span>          bam         unfiltered alignments       <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF468LRV</span>          bam         unfiltered alignments       <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF216EBS</span>          bam               alignments            <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF232QFN</span>          bam         unfiltered alignments       <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF682NGE</span>          bam               alignments            <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF328UKA</span>          bam         unfiltered alignments       <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF165COO</span>          bam               alignments            <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF466OLG</span>          bam               alignments            <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF595HIY</span>   bigBed narrowPeak          peaks               <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF494CKB</span>        bigWig       fold change over control     <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF308BXW</span>        bigWig       fold change over control     <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br><span class="line"> <span class="type">ENCFF368IHM</span>    bed narrowPeak            peaks               <span class="type">ENCSR429XTR</span>      <span class="type">ChIP</span>-<span class="built_in">seq</span>    <span class="type">EFO</span>:<span class="number">0002067</span></span><br></pre></td></tr></table></figure>
+<p>You can also get some help by typing <code>tvi -h</code>:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">usage: tvi [-h] [-d DELIMITER] [-j &#123;left,right,center&#125;] [-s SEPARATOR]</span><br><span class="line">           [infile]</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">Print</span> tables pretty</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  infile                input file,<span class="built_in"> default </span>is stdin</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help            show this help message <span class="keyword">and</span> exit</span><br><span class="line">  -d DELIMITER          delimiter of fields of input.<span class="built_in"> Default </span>is white space.</span><br><span class="line">  -j &#123;left,right,center&#125;</span><br><span class="line">                        justification, either left, right <span class="keyword">or</span> center. Default</span><br><span class="line">                        is left</span><br><span class="line">  -s SEPARATOR          separator of fields <span class="keyword">in</span> output</span><br></pre></td></tr></table></figure>
+<p><code>tvi.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> cStringIO <span class="keyword">import</span> StringIO</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	parser = argparse.ArgumentParser(description=<span class="string">'Print tables pretty'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'infile'</span>, type=str, nargs=<span class="string">'?'</span>,</span><br><span class="line">					 help=<span class="string">'input file, default is stdin'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-d'</span>, dest=<span class="string">'delimiter'</span>, type=str,</span><br><span class="line">					 required=<span class="keyword">False</span>,</span><br><span class="line">					 help=<span class="string">'delimiter of fields of input. Default is white space.'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-j'</span>, dest=<span class="string">'justify'</span>, type=str,</span><br><span class="line">					 required=<span class="keyword">False</span>, default=<span class="string">'left'</span>,</span><br><span class="line">					 choices=[<span class="string">'left'</span>, <span class="string">'right'</span>, <span class="string">'center'</span>],</span><br><span class="line">					 help=<span class="string">'justification, either left, right or center. Default is left'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-s'</span>, dest=<span class="string">'separator'</span>, type=str,</span><br><span class="line">					 required=<span class="keyword">False</span>, default=<span class="string">' '</span>,</span><br><span class="line">					 help=<span class="string">'separator of fields in output'</span>)</span><br><span class="line">	args = parser.parse_args()</span><br><span class="line"></span><br><span class="line">	table = []</span><br><span class="line">	maxwidth = []</span><br><span class="line"></span><br><span class="line">	<span class="comment"># default is to read from stdin</span></span><br><span class="line">	fin = sys.stdin</span><br><span class="line">	<span class="keyword">if</span> args.infile:</span><br><span class="line">		<span class="keyword">try</span>:</span><br><span class="line">			fin = open(args.infile, <span class="string">'rt'</span>)</span><br><span class="line">		<span class="keyword">except</span> IOError <span class="keyword">as</span> e:</span><br><span class="line">			sys.stderr.write(<span class="string">'Error: %s: %s\n'</span>%(e.strerror, args.infile))</span><br><span class="line">			sys.exit(e.errno)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> line <span class="keyword">in</span> fin:</span><br><span class="line">		fields = <span class="keyword">None</span></span><br><span class="line">		<span class="comment"># split line by delimiter</span></span><br><span class="line">		<span class="keyword">if</span> args.delimiter:</span><br><span class="line">			fields = line.strip().split(args.delimiter)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			fields = line.strip().split()</span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(fields)):</span><br><span class="line">			width = len(fields[i])</span><br><span class="line">			<span class="keyword">if</span> (i+<span class="number">1</span>) &gt; len(maxwidth):</span><br><span class="line">				maxwidth.append(width)</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				<span class="keyword">if</span> width &gt; maxwidth[i]:</span><br><span class="line">					maxwidth[i] = width</span><br><span class="line">		table.append(fields)</span><br><span class="line">	fin.close()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		<span class="keyword">for</span> fields <span class="keyword">in</span> table:</span><br><span class="line">			line = StringIO()</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(fields)):</span><br><span class="line">				<span class="comment"># format field with different justification</span></span><br><span class="line">				nSpace = maxwidth[i] - len(fields[i])</span><br><span class="line">				<span class="keyword">if</span> args.justify == <span class="string">'left'</span>:</span><br><span class="line">					line.write(fields[i])</span><br><span class="line">					<span class="keyword">for</span> j <span class="keyword">in</span> xrange(nSpace):</span><br><span class="line">						line.write(<span class="string">' '</span>)</span><br><span class="line">				<span class="keyword">elif</span> args.justify == <span class="string">'right'</span>:</span><br><span class="line">					<span class="keyword">for</span> j <span class="keyword">in</span> xrange(nSpace):</span><br><span class="line">						line.write(<span class="string">' '</span>)</span><br><span class="line">					line.write(fields[i])</span><br><span class="line">				<span class="keyword">elif</span> args.justify == <span class="string">'center'</span>:</span><br><span class="line">					<span class="keyword">for</span> j <span class="keyword">in</span> xrange(nSpace/<span class="number">2</span>):</span><br><span class="line">						line.write(<span class="string">' '</span>)</span><br><span class="line">					line.write(fields[i])</span><br><span class="line">					<span class="keyword">for</span> j <span class="keyword">in</span> xrange(nSpace - nSpace/<span class="number">2</span>):</span><br><span class="line">						line.write(<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">				line.write(args.separator)</span><br><span class="line">			<span class="keyword">print</span> line.getvalue()</span><br><span class="line">			line.close()</span><br><span class="line">	<span class="keyword">except</span> IOError:</span><br><span class="line">		sys.exit(<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-a-random-FASTA-file"><a href="#Generate-a-random-FASTA-file" class="headerlink" title="Generate a random FASTA file"></a>Generate a random FASTA file</h3><p><code>seqgen.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> textwrap</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_fasta</span><span class="params">(fout, seq, name=<span class="string">'seq'</span>, description=None)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> description:</span><br><span class="line">		fout.write(<span class="string">'&gt;'</span> + name + <span class="string">' '</span> + description + <span class="string">'\n'</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		fout.write(<span class="string">'&gt;'</span> + name + <span class="string">'\n'</span>)</span><br><span class="line">	fout.write(textwrap.fill(seq) + <span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	parser = argparse.ArgumentParser(description=<span class="string">'Generate sequences and output in various formats'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-n'</span>, <span class="string">'--number'</span>, dest=<span class="string">'number'</span>, type=int, required=<span class="keyword">False</span>,</span><br><span class="line">					 default=<span class="number">10</span>, help=<span class="string">'Number of sequences to generate'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'--min-length'</span>, dest=<span class="string">'min_length'</span>, type=int, required=<span class="keyword">False</span>,</span><br><span class="line">					 default=<span class="number">30</span>, help=<span class="string">'Minimal length'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'--max-length'</span>, dest=<span class="string">'max_length'</span>, type=int, required=<span class="keyword">False</span>,</span><br><span class="line">					 default=<span class="number">50</span>, help=<span class="string">'Maximal length'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-l'</span>, <span class="string">'--length'</span>, type=int, required=<span class="keyword">False</span>,</span><br><span class="line">					 help=<span class="string">'Fixed length. If specified, --min-length and --max-length will be ignored.'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-a'</span>, <span class="string">'--alphabet'</span>, type=str, required=<span class="keyword">False</span>,</span><br><span class="line">					 default=<span class="string">'ATGC'</span>, help=<span class="string">'Letters to used in the sequences'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-f'</span>, <span class="string">'--format'</span>, type=str, required=<span class="keyword">False</span>,</span><br><span class="line">					 choices=[<span class="string">'fasta'</span>, <span class="string">'text'</span>], default=<span class="string">'fasta'</span>, help=<span class="string">'Output formats'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-o'</span>, <span class="string">'--outfile'</span>, type=argparse.FileType(<span class="string">'w'</span>), required=<span class="keyword">False</span>,</span><br><span class="line">					 default=sys.stdout, help=<span class="string">'Output file name'</span>)</span><br><span class="line">	parser.add_argument(<span class="string">'-p'</span>, <span class="string">'--prefix'</span>, type=str, required=<span class="keyword">False</span>,</span><br><span class="line">					 default=<span class="string">'RN_'</span>, help=<span class="string">'Prefix of sequence names for fasta format'</span>)</span><br><span class="line">	args = parser.parse_args()</span><br><span class="line"></span><br><span class="line">	rand = random.Random()</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> xrange(args.number):</span><br><span class="line">		<span class="keyword">if</span> args.length:</span><br><span class="line">			length = args.length</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			length = rand.randint(args.min_length, args.max_length)</span><br><span class="line">		seq = bytearray(length)</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> xrange(length):</span><br><span class="line">			seq[j] = rand.choice(args.alphabet)</span><br><span class="line">		<span class="keyword">if</span> args.format == <span class="string">'fasta'</span>:</span><br><span class="line">			write_fasta(args.outfile, str(seq), args.prefix + <span class="string">'%08d'</span>%i)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			args.outfile.write(seq + <span class="string">'\n'</span>)</span><br><span class="line">	args.outfile.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure>
+<h2 id="Weekly-tasks"><a href="#Weekly-tasks" class="headerlink" title="Weekly tasks"></a>Weekly tasks</h2><p>All files you need for completing the tasks can be found at: <a href="assets/weekly_tasks.zip">weekly_tasks.zip</a></p>
+<p><strong>Task 1: run examples (Python tips, numpy, pandas) in this tutorial</strong></p>
+<p>Install Anaconda on your PC. Try to understand example code and run in Jupyter or IPython.</p>
+<p><strong>Task 2: write a Python program to convert a GTF file to BED12 format</strong> </p>
+<ul>
+<li>Please refer to (<a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format1" target="_blank" rel="noopener">https://genome.ucsc.edu/FAQ/FAQformat.html#format1</a>) for BED12 format and refer to (<a href="https://www.ensembl.org/info/website/upload/gff.html" target="_blank" rel="noopener">https://www.ensembl.org/info/website/upload/gff.html</a>) for GTF format.<br>GTF example:</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">chr1</span>	HAVANA	gene	<span class="number">29554</span>	<span class="number">31109</span>	.	+	.	gene_id <span class="string">"ENSG00000243485.5"</span>; <span class="attribute">gene_type</span> <span class="string">"lincRNA"</span>; <span class="attribute">gene_name</span> <span class="string">"MIR1302-2HG"</span>; <span class="attribute">level</span> <span class="number">2</span>; <span class="attribute">tag</span> <span class="string">"ncRNA_host"</span>; <span class="attribute">havana_gene</span> <span class="string">"OTTHUMG00000000959.2"</span>;</span><br><span class="line"><span class="attribute">chr1</span>	HAVANA	transcript	<span class="number">29554</span>	<span class="number">31097</span>	.	+	.	gene_id <span class="string">"ENSG00000243485.5"</span>; <span class="attribute">transcript_id</span> <span class="string">"ENST00000473358.1"</span>; <span class="attribute">gene_type</span> <span class="string">"lincRNA"</span>; <span class="attribute">gene_name</span> <span class="string">"MIR1302-2HG"</span>; <span class="attribute">transcript_type</span> <span class="string">"lincRNA"</span>; <span class="attribute">transcript_name</span> <span class="string">"MIR1302-2HG-202"</span>; <span class="attribute">level</span> <span class="number">2</span>; <span class="attribute">transcript_support_level</span> <span class="string">"5"</span>; <span class="attribute">tag</span> <span class="string">"not_best_in_genome_evidence"</span>; <span class="attribute">tag</span> <span class="string">"dotter_confirmed"</span>; <span class="attribute">tag</span> <span class="string">"basic"</span>; <span class="attribute">havana_gene</span> <span class="string">"OTTHUMG00000000959.2"</span>; <span class="attribute">havana_transcript</span> <span class="string">"OTTHUMT00000002840.1"</span>;</span><br><span class="line"><span class="attribute">chr1</span>	HAVANA	exon	<span class="number">29554</span>	<span class="number">30039</span>	.	+	.	gene_id <span class="string">"ENSG00000243485.5"</span>; <span class="attribute">transcript_id</span> <span class="string">"ENST00000473358.1"</span>; <span class="attribute">gene_type</span> <span class="string">"lincRNA"</span>; <span class="attribute">gene_name</span> <span class="string">"MIR1302-2HG"</span>; <span class="attribute">transcript_type</span> <span class="string">"lincRNA"</span>; <span class="attribute">transcript_name</span> <span class="string">"MIR1302-2HG-202"</span>; <span class="attribute">exon_number</span> <span class="number">1</span>; <span class="attribute">exon_id</span> <span class="string">"ENSE00001947070.1"</span>; <span class="attribute">level</span> <span class="number">2</span>; <span class="attribute">transcript_support_level</span> <span class="string">"5"</span>; <span class="attribute">tag</span> <span class="string">"not_best_in_genome_evidence"</span>; <span class="attribute">tag</span> <span class="string">"dotter_confirmed"</span>; <span class="attribute">tag</span> <span class="string">"basic"</span>; <span class="attribute">havana_gene</span> <span class="string">"OTTHUMG00000000959.2"</span>; <span class="attribute">havana_transcript</span> <span class="string">"OTTHUMT00000002840.1"</span>;</span><br></pre></td></tr></table></figure>
+<p>BED12 example:</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chr1	<span class="number">67522353</span>	<span class="number">67532326</span>	ENST00000230113	<span class="number">0</span>	+	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">5</span>	<span class="number">45</span>,<span class="number">60</span>,<span class="number">97</span>,<span class="number">64</span>,<span class="number">221</span>,	<span class="number">0</span>,<span class="number">5024</span>,<span class="number">7299</span>,<span class="number">7961</span>,<span class="number">9752</span>,</span><br><span class="line">chr1	<span class="number">39249837</span>	<span class="number">39257649</span>	ENST00000289890	<span class="number">0</span>	-	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">3</span>	<span class="number">365</span>,<span class="number">78</span>,<span class="number">115</span>,	<span class="number">0</span>,<span class="number">4304</span>,<span class="number">7697</span>,</span><br><span class="line">chr1	<span class="number">144245237</span>	<span class="number">144250279</span>	ENST00000294715	<span class="number">0</span>	-	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">3</span>	<span class="number">78</span>,<span class="number">135</span>,<span class="number">55</span>,	<span class="number">0</span>,<span class="number">448</span>,<span class="number">4987</span>,</span><br><span class="line">chr1	<span class="number">15111814</span>	<span class="number">15152464</span>	ENST00000310916	<span class="number">0</span>	-	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">6</span>	<span class="number">5993</span>,<span class="number">578</span>,<span class="number">121</span>,<span class="number">88</span>,<span class="number">146</span>,<span class="number">174</span>,	<span class="number">0</span>,<span class="number">6512</span>,<span class="number">8762</span>,<span class="number">9157</span>,<span class="number">12413</span>,<span class="number">40476</span>,</span><br><span class="line">chr1	<span class="number">34975698</span>	<span class="number">34978706</span>	ENST00000311990	<span class="number">0</span>	-	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">3</span>	<span class="number">1704</span>,<span class="number">154</span>,<span class="number">29</span>,	<span class="number">0</span>,<span class="number">2232</span>,<span class="number">2979</span>,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The GTF file is <code>weekly_tasks/gencode.v27.long_noncoding_RNAs.gtf</code>.</li>
+<li>Each line in the output file is a transcript with the 4th columns as transcript ID</li>
+<li>The version number of the transcript ID should be stripped (e.g. ENST00000473358.1 =&gt; ENST00000473358). </li>
+<li>The output file is sorted <strong>first by transcript IDs</strong> and <strong>then by chromosome</strong> in lexicographical order. </li>
+<li>Column 5, 7, 8, 9 in the BED12 file should be set to 0.</li>
+<li>Please do NOT use any external tools (e.g. <code>sort</code>, <code>awk</code>, etc.) in your program other than Python.</li>
+<li>An example output can be found in <code>weekly_tasks/transcripts.bed</code>.</li>
+</ul>
+<p><strong>Hint:</strong> use <code>dict</code>, <code>list</code>, <code>tuple</code>, <code>str.split</code>, <code>re.match</code>, <code>sorted</code>.</p>
+<p><strong>Task 3: write a Python program to add a prefix to all directories</strong></p>
+<ul>
+<li>Each prefix is a two-digit number starting from 00 and ‘-‘. If the number is less than 10, a single ‘0’ letter should be filled.</li>
+<li>The files/directories should be numbered according to the <strong>lexicographical</strong> order.<br>For example, if the original directory structure is:</li>
+</ul>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="keyword">A</span></span><br><span class="line">│   ├── <span class="keyword">A</span></span><br><span class="line">│   │   ├── <span class="keyword">A</span></span><br><span class="line">│   │   ├── B</span><br><span class="line">│   │   └── C</span><br><span class="line">│   ├── B</span><br><span class="line">│   │   └── <span class="keyword">A</span></span><br><span class="line">│   └── C</span><br><span class="line">│       └── <span class="keyword">A</span></span><br><span class="line">├── B</span><br><span class="line">│   ├── <span class="keyword">A</span></span><br><span class="line">│   └── B</span><br><span class="line">└── C</span><br><span class="line">    ├── <span class="keyword">A</span></span><br><span class="line">    └── B</span><br><span class="line">        └── <span class="keyword">A</span></span><br></pre></td></tr></table></figure>
+<p>then you should get the following directory structure after renaming:</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="number">00</span>-A</span><br><span class="line">│   ├── <span class="number">00</span>-A</span><br><span class="line">│   │   ├── <span class="number">00</span>-A</span><br><span class="line">│   │   ├── <span class="number">01</span>-B</span><br><span class="line">│   │   └── <span class="number">02</span>-C</span><br><span class="line">│   ├── <span class="number">01</span>-B</span><br><span class="line">│   │   └── <span class="number">00</span>-A</span><br><span class="line">│   └── <span class="number">02</span>-C</span><br><span class="line">│       └── <span class="number">00</span>-A</span><br><span class="line">├── <span class="number">01</span>-B</span><br><span class="line">│   ├── <span class="number">00</span>-A</span><br><span class="line">│   └── <span class="number">01</span>-B</span><br><span class="line">└── <span class="number">02</span>-C</span><br><span class="line">    ├── <span class="number">00</span>-A</span><br><span class="line">    └── <span class="number">01</span>-B</span><br><span class="line">        └── <span class="number">00</span>-A</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The original directories can be found in <code>weekly_tasks/original_dirs</code>.</li>
+<li>The root directory (i.e. <code>original_dirs</code>) should not be renamed.</li>
+<li>You can use <code>tree</code> command to display the directory structure as shown above.</li>
+<li>An example result can be found in <code>weekly_tasks/renamed_dirs</code>.<br><strong>Hint:</strong> use <code>os.listdir</code>, <code>os.rename</code>, <code>str.format</code>, <code>sorted</code>, <code>yield</code>.</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----The ---- end ----<i class="fa fa-paw"></i>--- Thanks --- for --- Reading----</div>
+    
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/machine-learning/" rel="tag"><i class="fa fa-tag"></i> machine learning</a>
+          
+            <a href="/blog/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/blog/tags/bioinformatics/" rel="tag"><i class="fa fa-tag"></i> bioinformatics</a>
+          
+            <a href="/blog/tags/teaching/" rel="tag"><i class="fa fa-tag"></i> teaching</a>
+          
+            <a href="/blog/tags/TA/" rel="tag"><i class="fa fa-tag"></i> TA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/10/06/32_quiz_exrna_tutorial/" rel="next" title="QUIZ identification of cancer biomarker from exRNA-seq data">
+                <i class="fa fa-chevron-left"></i> QUIZ identification of cancer biomarker from exRNA-seq data
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/10/06/31_quiz_emaize_tutorial/" rel="prev" title="QUIZ Predicting maize traits using SNP data">
+                QUIZ Predicting maize traits using SNP data <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/blog/images/avatar.png"
+                alt="James Chen" />
+            
+              <p class="site-author-name" itemprop="name">James Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/james20141606" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xp-chen14@mails.tsinghua.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=d9dbc8&w=a&t=n&d=MGAfMNv-Snrv0Yg1d2t2EH3ATBUCJtdgbna_qHvb4AI&co=302dad'></script>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-Tutorial"><span class="nav-number">1.</span> <span class="nav-text">Python Tutorial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Anaconda-Python"><span class="nav-number">2.</span> <span class="nav-text">Install Anaconda Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-language-tips"><span class="nav-number">3.</span> <span class="nav-text">Python language tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compatibility-between-Python-3-x-and-Python-2-x"><span class="nav-number">3.1.</span> <span class="nav-text">Compatibility between Python 3.x and Python 2.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-away-from-IndentationError"><span class="nav-number">3.2.</span> <span class="nav-text">Get away from IndentationError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Shebang-and-encoding-at-the-beginning-of-executable-scripts"><span class="nav-number">3.3.</span> <span class="nav-text">Add Shebang and encoding at the beginning of executable scripts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#All-variables-functions-classes-are-dynamic-objects"><span class="nav-number">3.4.</span> <span class="nav-text">All variables, functions, classes are dynamic objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#All-python-variables-are-pointers-references"><span class="nav-number">3.5.</span> <span class="nav-text">All python variables are pointers/references</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-deepcopy-if-you-really-want-to-COPY-a-variable"><span class="nav-number">3.6.</span> <span class="nav-text">Use deepcopy if you really want to COPY a variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-if-I-accidentally-overwrite-my-builtin-functions"><span class="nav-number">3.7.</span> <span class="nav-text">What if I accidentally overwrite my builtin functions?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int-is-of-arbitrary-precision-in-Python"><span class="nav-number">3.8.</span> <span class="nav-text">int is of arbitrary precision in Python!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Easiest-way-to-swap-values-of-two-variables"><span class="nav-number">3.9.</span> <span class="nav-text">Easiest way to swap values of two variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-comprehension"><span class="nav-number">3.10.</span> <span class="nav-text">List comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dict-comprehension"><span class="nav-number">3.11.</span> <span class="nav-text">Dict comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-the-one-liners"><span class="nav-number">3.12.</span> <span class="nav-text">For the one-liners</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Read-from-standard-input"><span class="nav-number">3.13.</span> <span class="nav-text">Read from standard input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-of-dict-keys-are-NOT-as-you-expected"><span class="nav-number">3.14.</span> <span class="nav-text">Order of dict keys are NOT as you expected</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-enumerate-to-add-a-number-during-iteration"><span class="nav-number">3.15.</span> <span class="nav-text">Use enumerate() to add a number during iteration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-a-list"><span class="nav-number">3.16.</span> <span class="nav-text">Reverse a list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strings-are-immutable-in-Python"><span class="nav-number">3.17.</span> <span class="nav-text">Strings are immutable in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tuples-are-hashable-while-lists-are-not-hashable"><span class="nav-number">3.18.</span> <span class="nav-text">tuples are hashable while lists are not hashable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-itertools"><span class="nav-number">3.19.</span> <span class="nav-text">Use itertools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convert-iterables-to-lists"><span class="nav-number">3.20.</span> <span class="nav-text">Convert iterables to lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-the-zip-function-to-transpose-nested-lists-tuples-iterables"><span class="nav-number">3.21.</span> <span class="nav-text">Use the zip() function to transpose nested lists/tuples/iterables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-and-local-variables"><span class="nav-number">3.22.</span> <span class="nav-text">Global and local variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-defaultdict"><span class="nav-number">3.23.</span> <span class="nav-text">Use defaultdict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-generators"><span class="nav-number">3.24.</span> <span class="nav-text">Use generators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Turn-off-annoying-KeyboardInterrupt-and-BrokenPipe-Error"><span class="nav-number">3.25.</span> <span class="nav-text">Turn off annoying KeyboardInterrupt and BrokenPipe Error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-and-instance-variables"><span class="nav-number">3.26.</span> <span class="nav-text">Class and instance variables</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Useful-Python-packages-for-data-analysis"><span class="nav-number">4.</span> <span class="nav-text">Useful Python packages for data analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Browser-based-interactive-programming-in-Python-jupyter"><span class="nav-number">4.1.</span> <span class="nav-text">Browser-based interactive programming in Python: jupyter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-packages-for-scientific-computing"><span class="nav-number">4.2.</span> <span class="nav-text">Python packages for scientific computing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector-arithmetics-numpy"><span class="nav-number">4.3.</span> <span class="nav-text">Vector arithmetics: numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-analysis-probability-distribution-signal-processing-etc-scipy"><span class="nav-number">4.4.</span> <span class="nav-text">Numerical analysis (probability distribution, signal processing, etc.): scipy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Just-in-time-JIT-compiler-for-vector-arithmetics"><span class="nav-number">4.5.</span> <span class="nav-text">Just-in-time (JIT) compiler for vector arithmetics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Library-for-symbolic-computation-sympy"><span class="nav-number">4.6.</span> <span class="nav-text">Library for symbolic computation: sympy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-on-data-frames-pandas"><span class="nav-number">4.7.</span> <span class="nav-text">Operation on data frames: pandas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-graphics-and-plotting-matplotlib"><span class="nav-number">4.8.</span> <span class="nav-text">Basic graphics and plotting: matplotlib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-data-visualization-seaborn"><span class="nav-number">4.9.</span> <span class="nav-text">Statistical data visualization: seaborn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interactive-programming-in-Python-ipython"><span class="nav-number">4.10.</span> <span class="nav-text">Interactive programming in Python: ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-tests-statsmodels"><span class="nav-number">4.11.</span> <span class="nav-text">Statistical tests: statsmodels</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-learning-algorithms-scikit-learn"><span class="nav-number">4.12.</span> <span class="nav-text">Machine learning algorithms: scikit-learn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-language-analysis-gensim"><span class="nav-number">4.13.</span> <span class="nav-text">Natural language analysis: gensim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-library-requests"><span class="nav-number">4.14.</span> <span class="nav-text">HTTP library: requests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lightweight-Web-framework-flask"><span class="nav-number">4.15.</span> <span class="nav-text">Lightweight Web framework: flask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-learning-framework-tensorflow"><span class="nav-number">4.16.</span> <span class="nav-text">Deep learning framework: tensorflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-level-deep-learning-framework-keras"><span class="nav-number">4.17.</span> <span class="nav-text">High-level deep learning framework: keras</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-on-sequence-and-alignment-formats-biopython"><span class="nav-number">4.18.</span> <span class="nav-text">Operation on sequence and alignment formats: biopython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-on-genomic-formats-BigWig-etc-bx-python"><span class="nav-number">4.19.</span> <span class="nav-text">Operation on genomic formats (BigWig,etc.): bx-python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-on-HDF5-files-h5py"><span class="nav-number">4.20.</span> <span class="nav-text">Operation on HDF5 files: h5py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mixed-C-C-and-python-programming-cython"><span class="nav-number">4.21.</span> <span class="nav-text">Mixed C/C++ and python programming: cython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Progress-bar-tqdm"><span class="nav-number">4.22.</span> <span class="nav-text">Progress bar: tqdm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-Python-scripts"><span class="nav-number">5.</span> <span class="nav-text">Example Python scripts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#View-a-table-in-a-pretty-way"><span class="nav-number">5.1.</span> <span class="nav-text">View a table in a pretty way</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-a-random-FASTA-file"><span class="nav-number">5.2.</span> <span class="nav-text">Generate a random FASTA file</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weekly-tasks"><span class="nav-number">6.</span> <span class="nav-text">Weekly tasks</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Chen</span>
+
+  
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共207.5k字</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://cmwonderland.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.cmwonderland.com/blog/2018/10/06/55_python_basics/';
+          this.page.identifier = '2018/10/06/55_python_basics/';
+          this.page.title = 'Python Tutorial';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cmwonderland.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("klOjl0RBA8qP5IKgIXkOszBr-gzGzoHsz", "rCaN5wX4mjiRkRMzP95g7XHz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+</body>
+</html>

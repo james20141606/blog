@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google5b248f7b86cbcee5.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,interesting,probability," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="WonderLand" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Today I found an interesting revision of Avengers: Endgame. It says:  初代复仇者六人组，每人带一宝石手套，去找灭霸决战，到了草屋，七人围圈而坐，六对一，互相打响指意图消灭对方。灭霸人少，给予先打响指的权利，灭霸打后，超级英雄全化灰就灭霸胜，没全化灰就由一个活着的超级英雄打一个响指，看二分之一消失的概率能不能把灭霸打成灰。没成灰就">
+<meta name="keywords" content="python,interesting,probability">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thanos and Avengers playing roulette">
+<meta property="og:url" content="https://www.cmwonderland.com/blog/2019/05/06/thanos_avengers/index.html">
+<meta property="og:site_name" content="WonderLand">
+<meta property="og:description" content="Today I found an interesting revision of Avengers: Endgame. It says:  初代复仇者六人组，每人带一宝石手套，去找灭霸决战，到了草屋，七人围圈而坐，六对一，互相打响指意图消灭对方。灭霸人少，给予先打响指的权利，灭霸打后，超级英雄全化灰就灭霸胜，没全化灰就由一个活着的超级英雄打一个响指，看二分之一消失的概率能不能把灭霸打成灰。没成灰就">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-11T15:52:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thanos and Avengers playing roulette">
+<meta name="twitter:description" content="Today I found an interesting revision of Avengers: Endgame. It says:  初代复仇者六人组，每人带一宝石手套，去找灭霸决战，到了草屋，七人围圈而坐，六对一，互相打响指意图消灭对方。灭霸人少，给予先打响指的权利，灭霸打后，超级英雄全化灰就灭霸胜，没全化灰就由一个活着的超级英雄打一个响指，看二分之一消失的概率能不能把灭霸打成灰。没成灰就">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.cmwonderland.com/blog/2019/05/06/thanos_avengers/"/>
+
+
+
+
+
+  <title>Thanos and Avengers playing roulette | WonderLand</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6656499bfc0e07b4e20ee4975eb85f31";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/james20141606"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WonderLand</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Somnium & Somniator</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.cmwonderland.com/blog/blog/2019/05/06/thanos_avengers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="James Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WonderLand">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Thanos and Avengers playing roulette</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T20:35:19-04:00">
+                2019-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/techniques/" itemprop="url" rel="index">
+                    <span itemprop="name">techniques</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2019/05/06/thanos_avengers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/05/06/thanos_avengers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/blog/2019/05/06/thanos_avengers/" class="leancloud_visitors" data-flag-title="Thanos and Avengers playing roulette">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,486
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Today I found an interesting revision of Avengers: Endgame. It says:</p>
+<blockquote>
+<p>初代复仇者六人组，每人带一宝石手套，去找灭霸决战，到了草屋，七人围圈而坐，六对一，互相打响指意图消灭对方。灭霸人少，给予先打响指的权利，灭霸打后，超级英雄全化灰就灭霸胜，没全化灰就由一个活着的超级英雄打一个响指，看二分之一消失的概率能不能把灭霸打成灰。没成灰就继续第二回合，灭霸继续优先打响指。问灭霸死的概率是多少?</p>
+<p>The original six avengers, each carrying a stone and fight with Thanos. Thanos snaps his fingers first and each avenger has a 50% probability to die. If all of the avengers die, thanos wins. If not, one of the alive avengers snap fingers and thanos has 50% percent to die. The fights will continue until one side wins. <strong>the question is: what is the probability of thanos death?</strong></p>
+</blockquote>
+<a id="more"></a>
+<p>I still didn’t have a mathematical depict of the probability. But I simulate the data to find out the probability of Thanos’ death is about 80%.</p>
+<p>Like Dr. Strange, I also find the result from 14000605 times test.</p>
+<p>Refer to <a href="https://github.com/james20141606/somethingmore/tree/master/thanos_avengers" target="_blank" rel="noopener">this repo</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">%pylab inline</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">np.random.seed(<span class="number">1111</span>)</span><br><span class="line"><span class="comment">#setup figure template</span></span><br><span class="line"></span><br><span class="line">figure_template_path = <span class="string">'bin'</span></span><br><span class="line"><span class="keyword">if</span> figure_template_path <span class="keyword">not</span> <span class="keyword">in</span> sys.path:</span><br><span class="line">    sys.path.append(figure_template_path)</span><br><span class="line"><span class="keyword">from</span> importlib <span class="keyword">import</span> reload</span><br><span class="line"><span class="keyword">import</span> figure_template</span><br><span class="line"><span class="comment">#force reload of the module</span></span><br><span class="line">reload(figure_template)</span><br><span class="line"><span class="keyword">from</span> figure_template <span class="keyword">import</span> display_dataframe, embed_pdf_figure, embed_pdf_pages,std_plot</span><br></pre></td></tr></table></figure>
+<pre><code>Populating the interactive namespace from numpy and matplotlib
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.randint(<span class="number">0</span>,<span class="number">2</span>,size=<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 1, 1, 1, 0, 0])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_survive</span><span class="params">(input_num)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    input_num: how many people to be decided to survive by stones</span></span><br><span class="line"><span class="string">    status: 0 means dead, 1 means alive</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    random_output = np.random.randint(<span class="number">0</span>,<span class="number">2</span>,size=input_num)</span><br><span class="line">    alive = random_output.sum()</span><br><span class="line">    dead = random_output.shape[<span class="number">0</span>] - alive</span><br><span class="line">    <span class="keyword">return</span> alive, dead</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">avengers_alive_num = <span class="number">6</span></span><br><span class="line">round_num = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    round_num += <span class="number">1</span></span><br><span class="line">    avengers_alive_num,avengers_dead_num = check_survive(avengers_alive_num)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Round &#123;&#125;, avengers alive: &#123;&#125;, dead: &#123;&#125;'</span>.format(round_num,avengers_alive_num,avengers_dead_num) )</span><br><span class="line">    <span class="keyword">if</span> avengers_alive_num ==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'Avengers die first'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> np.random.randint(<span class="number">2</span>) ==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'Thanos die first'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<pre><code>Round 1, avengers alive: 1, dead: 5
+Thanos die first
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">summarize</span><span class="params">(avengers_alive_num = <span class="number">6</span>)</span>:</span></span><br><span class="line">    round_num = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        round_num += <span class="number">1</span></span><br><span class="line">        avengers_alive_num,avengers_dead_num = check_survive(avengers_alive_num)</span><br><span class="line">        <span class="comment">#print ('Round &#123;&#125;, avengers alive: &#123;&#125;, dead: &#123;&#125;'.format(round_num,avengers_alive_num,avengers_dead_num) )</span></span><br><span class="line">        <span class="keyword">if</span> avengers_alive_num ==<span class="number">0</span>:</span><br><span class="line">            <span class="comment">#print ('Avengers die first')</span></span><br><span class="line">            <span class="keyword">return</span> round_num, <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> np.random.randint(<span class="number">2</span>) ==<span class="number">0</span>:</span><br><span class="line">            <span class="comment">#print ('Thanos die first')</span></span><br><span class="line">            <span class="keyword">return</span> round_num, <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test_time = <span class="number">14000605</span></span><br><span class="line">summarize_data = np.ndarray([test_time,<span class="number">2</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(range(test_time)):</span><br><span class="line">    summarize_data[i] = summarize()</span><br></pre></td></tr></table></figure>
+<pre><code>HBox(children=(IntProgress(value=0, max=14000605), HTML(value=&#39;&#39;)))
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.savetxt(<span class="string">'summarize_data_num_6.txt'</span>,summarize_data.astype(<span class="string">'uint8'</span>),fmt=<span class="string">'%1d'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fig,ax=plt.subplots(figsize=(<span class="number">8</span>,<span class="number">4</span>))</span><br><span class="line">sns.distplot(summarize_data[:,<span class="number">1</span>],kde=<span class="number">0</span>,ax=ax)</span><br><span class="line">embed_pdf_figure()</span><br></pre></td></tr></table></figure>
+<object width="640" height="480" data="data:application/pdf;base64,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IC9Bc2NlbnQgOTI5IC9DYXBIZWlnaHQgMCAvRGVzY2VudCAtMjM2IC9GbGFncyAzMgovRm9udEJCb3ggWyAtMTAyMSAtNDYzIDE3OTQgMTIzMyBdIC9Gb250TmFtZSAvRGVqYVZ1U2FucyAvSXRhbGljQW5nbGUgMAovTWF4V2lkdGggMTM0MiAvU3RlbVYgMCAvVHlwZSAvRm9udERlc2NyaXB0b3IgL1hIZWlnaHQgMCA+PgplbmRvYmoKMTIgMCBvYmoKWyA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMAo2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDMxOCA0MDEgNDYwIDgzOCA2MzYKOTUwIDc4MCAyNzUgMzkwIDM5MCA1MDAgODM4IDMxOCAzNjEgMzE4IDMzNyA2MzYgNjM2IDYzNiA2MzYgNjM2IDYzNiA2MzYgNjM2CjYzNiA2MzYgMzM3IDMzNyA4MzggODM4IDgzOCA1MzEgMTAwMCA2ODQgNjg2IDY5OCA3NzAgNjMyIDU3NSA3NzUgNzUyIDI5NQoyOTUgNjU2IDU1NyA4NjMgNzQ4IDc4NyA2MDMgNzg3IDY5NSA2MzUgNjExIDczMiA2ODQgOTg5IDY4NSA2MTEgNjg1IDM5MCAzMzcKMzkwIDgzOCA1MDAgNTAwIDYxMyA2MzUgNTUwIDYzNSA2MTUgMzUyIDYzNSA2MzQgMjc4IDI3OCA1NzkgMjc4IDk3NCA2MzQgNjEyCjYzNSA2MzUgNDExIDUyMSAzOTIgNjM0IDU5MiA4MTggNTkyIDU5MiA1MjUgNjM2IDMzNyA2MzYgODM4IDYwMCA2MzYgNjAwIDMxOAozNTIgNTE4IDEwMDAgNTAwIDUwMCA1MDAgMTM0MiA2MzUgNDAwIDEwNzAgNjAwIDY4NSA2MDAgNjAwIDMxOCAzMTggNTE4IDUxOAo1OTAgNTAwIDEwMDAgNTAwIDEwMDAgNTIxIDQwMCAxMDIzIDYwMCA1MjUgNjExIDMxOCA0MDEgNjM2IDYzNiA2MzYgNjM2IDMzNwo1MDAgNTAwIDEwMDAgNDcxIDYxMiA4MzggMzYxIDEwMDAgNTAwIDUwMCA4MzggNDAxIDQwMSA1MDAgNjM2IDYzNiAzMTggNTAwCjQwMSA0NzEgNjEyIDk2OSA5NjkgOTY5IDUzMSA2ODQgNjg0IDY4NCA2ODQgNjg0IDY4NCA5NzQgNjk4IDYzMiA2MzIgNjMyIDYzMgoyOTUgMjk1IDI5NSAyOTUgNzc1IDc0OCA3ODcgNzg3IDc4NyA3ODcgNzg3IDgzOCA3ODcgNzMyIDczMiA3MzIgNzMyIDYxMSA2MDUKNjMwIDYxMyA2MTMgNjEzIDYxMyA2MTMgNjEzIDk4MiA1NTAgNjE1IDYxNSA2MTUgNjE1IDI3OCAyNzggMjc4IDI3OCA2MTIgNjM0CjYxMiA2MTIgNjEyIDYxMiA2MTIgODM4IDYxMiA2MzQgNjM0IDYzNCA2MzQgNTkyIDYzNSA1OTIgXQplbmRvYmoKMTUgMCBvYmoKPDwgL2UgMTYgMCBSIC9laWdodCAxNyAwIFIgL2ZvdXIgMTggMCBSIC9vbmUgMTkgMCBSIC9wZXJpb2QgMjAgMCBSCi9zZXZlbiAyMSAwIFIgL3NpeCAyMiAwIFIgL3R3byAyMyAwIFIgL3plcm8gMjQgMCBSID4+CmVuZG9iagozIDAgb2JqCjw8IC9GMSAxNCAwIFIgPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0ExIDw8IC9DQSAwIC9UeXBlIC9FeHRHU3RhdGUgL2NhIDEgPj4KL0EyIDw8IC9DQSAwLjQgL1R5cGUgL0V4dEdTdGF0ZSAvY2EgMC40ID4+Ci9BMyA8PCAvQ0EgMSAvVHlwZSAvRXh0R1N0YXRlIC9jYSAxID4+ID4+CmVuZG9iago1IDAgb2JqCjw8ID4+CmVuZG9iago2IDAgb2JqCjw8ID4+CmVuZG9iago3IDAgb2JqCjw8ID4+CmVuZG9iagoyIDAgb2JqCjw8IC9Db3VudCAxIC9LaWRzIFsgMTAgMCBSIF0gL1R5cGUgL1BhZ2VzID4+CmVuZG9iagoyNSAwIG9iago8PCAvQ3JlYXRpb25EYXRlIChEOjIwMTkwNTA2MjExODMyKzA4JzAwJykKL0NyZWF0b3IgKG1hdHBsb3RsaWIgMy4wLjMsIGh0dHA6Ly9tYXRwbG90bGliLm9yZykKL1Byb2R1Y2VyIChtYXRwbG90bGliIHBkZiBiYWNrZW5kIDMuMC4zKSAvVGl0bGUgKEltYWdlKSA+PgplbmRvYmoKeHJlZgowIDI2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNiAwMDAwMCBuIAowMDAwMDA2MTE2IDAwMDAwIG4gCjAwMDAwMDU4NzkgMDAwMDAgbiAKMDAwMDAwNTkxMSAwMDAwMCBuIAowMDAwMDA2MDUzIDAwMDAwIG4gCjAwMDAwMDYwNzQgMDAwMDAgbiAKMDAwMDAwNjA5NSAwMDAwMCBuIAowMDAwMDAwMDY1IDAwMDAwIG4gCjAwMDAwMDAzODUgMDAwMDAgbiAKMDAwMDAwMDIwOCAwMDAwMCBuIAowMDAwMDAxNzU1IDAwMDAwIG4gCjAwMDAwMDQ2ODkgMDAwMDAgbiAKMDAwMDAwNDQ4OSAwMDAwMCBuIAowMDAwMDA0MTI4IDAwMDAwIG4gCjAwMDAwMDU3NDIgMDAwMDAgbiAKMDAwMDAwMTc3NiAwMDAwMCBuIAowMDAwMDAyMDk0IDAwMDAwIG4gCjAwMDAwMDI1NTkgMDAwMDAgbiAKMDAwMDAwMjcyMSAwMDAwMCBuIAowMDAwMDAyODczIDAwMDAwIG4gCjAwMDAwMDI5OTQgMDAwMDAgbiAKMDAwMDAwMzEzNCAwMDAwMCBuIAowMDAwMDAzNTI0IDAwMDAwIG4gCjAwMDAwMDM4NDUgMDAwMDAgbiAKMDAwMDAwNjE3NiAwMDAwMCBuIAp0cmFpbGVyCjw8IC9JbmZvIDI1IDAgUiAvUm9vdCAxIDAgUiAvU2l6ZSAyNiA+PgpzdGFydHhyZWYKNjM0NQolJUVPRgo=" download="Image.pdf"></object>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fig,ax=plt.subplots(figsize=(<span class="number">8</span>,<span class="number">4</span>))</span><br><span class="line">sns.distplot(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">0</span>)][:,<span class="number">0</span>],kde=<span class="number">0</span>,ax=ax,color=<span class="string">'r'</span>)</span><br><span class="line">sns.distplot(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">1</span>)][:,<span class="number">0</span>],kde=<span class="number">0</span>,ax=ax,color=<span class="string">'m'</span>)</span><br><span class="line">embed_pdf_figure()</span><br></pre></td></tr></table></figure>
+<object width="640" height="480" data="data:application/pdf;base64,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pZ9vvMf3D0AAU7QKZW5kc3RyZWFtCmVuZG9iagoxNCAwIG9iago8PCAvQmFzZUZvbnQgL0RlamFWdVNhbnMgL0NoYXJQcm9jcyAxNSAwIFIKL0VuY29kaW5nIDw8Ci9EaWZmZXJlbmNlcyBbIDQ4IC96ZXJvIC9vbmUgL3R3byAvdGhyZWUgL2ZvdXIgL2ZpdmUgL3NpeCAvc2V2ZW4gL2VpZ2h0IF0KL1R5cGUgL0VuY29kaW5nID4+Ci9GaXJzdENoYXIgMCAvRm9udEJCb3ggWyAtMTAyMSAtNDYzIDE3OTQgMTIzMyBdIC9Gb250RGVzY3JpcHRvciAxMyAwIFIKL0ZvbnRNYXRyaXggWyAwLjAwMSAwIDAgMC4wMDEgMCAwIF0gL0xhc3RDaGFyIDI1NSAvTmFtZSAvRGVqYVZ1U2FucwovU3VidHlwZSAvVHlwZTMgL1R5cGUgL0ZvbnQgL1dpZHRocyAxMiAwIFIgPj4KZW5kb2JqCjEzIDAgb2JqCjw8IC9Bc2NlbnQgOTI5IC9DYXBIZWlnaHQgMCAvRGVzY2VudCAtMjM2IC9GbGFncyAzMgovRm9udEJCb3ggWyAtMTAyMSAtNDYzIDE3OTQgMTIzMyBdIC9Gb250TmFtZSAvRGVqYVZ1U2FucyAvSXRhbGljQW5nbGUgMAovTWF4V2lkdGggMTM0MiAvU3RlbVYgMCAvVHlwZSAvRm9udERlc2NyaXB0b3IgL1hIZWlnaHQgMCA+PgplbmRvYmoKMTIgMCBvYmoKWyA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMAo2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDMxOCA0MDEgNDYwIDgzOCA2MzYKOTUwIDc4MCAyNzUgMzkwIDM5MCA1MDAgODM4IDMxOCAzNjEgMzE4IDMzNyA2MzYgNjM2IDYzNiA2MzYgNjM2IDYzNiA2MzYgNjM2CjYzNiA2MzYgMzM3IDMzNyA4MzggODM4IDgzOCA1MzEgMTAwMCA2ODQgNjg2IDY5OCA3NzAgNjMyIDU3NSA3NzUgNzUyIDI5NQoyOTUgNjU2IDU1NyA4NjMgNzQ4IDc4NyA2MDMgNzg3IDY5NSA2MzUgNjExIDczMiA2ODQgOTg5IDY4NSA2MTEgNjg1IDM5MCAzMzcKMzkwIDgzOCA1MDAgNTAwIDYxMyA2MzUgNTUwIDYzNSA2MTUgMzUyIDYzNSA2MzQgMjc4IDI3OCA1NzkgMjc4IDk3NCA2MzQgNjEyCjYzNSA2MzUgNDExIDUyMSAzOTIgNjM0IDU5MiA4MTggNTkyIDU5MiA1MjUgNjM2IDMzNyA2MzYgODM4IDYwMCA2MzYgNjAwIDMxOAozNTIgNTE4IDEwMDAgNTAwIDUwMCA1MDAgMTM0MiA2MzUgNDAwIDEwNzAgNjAwIDY4NSA2MDAgNjAwIDMxOCAzMTggNTE4IDUxOAo1OTAgNTAwIDEwMDAgNTAwIDEwMDAgNTIxIDQwMCAxMDIzIDYwMCA1MjUgNjExIDMxOCA0MDEgNjM2IDYzNiA2MzYgNjM2IDMzNwo1MDAgNTAwIDEwMDAgNDcxIDYxMiA4MzggMzYxIDEwMDAgNTAwIDUwMCA4MzggNDAxIDQwMSA1MDAgNjM2IDYzNiAzMTggNTAwCjQwMSA0NzEgNjEyIDk2OSA5NjkgOTY5IDUzMSA2ODQgNjg0IDY4NCA2ODQgNjg0IDY4NCA5NzQgNjk4IDYzMiA2MzIgNjMyIDYzMgoyOTUgMjk1IDI5NSAyOTUgNzc1IDc0OCA3ODcgNzg3IDc4NyA3ODcgNzg3IDgzOCA3ODcgNzMyIDczMiA3MzIgNzMyIDYxMSA2MDUKNjMwIDYxMyA2MTMgNjEzIDYxMyA2MTMgNjEzIDk4MiA1NTAgNjE1IDYxNSA2MTUgNjE1IDI3OCAyNzggMjc4IDI3OCA2MTIgNjM0CjYxMiA2MTIgNjEyIDYxMiA2MTIgODM4IDYxMiA2MzQgNjM0IDYzNCA2MzQgNTkyIDYzNSA1OTIgXQplbmRvYmoKMTUgMCBvYmoKPDwgL2VpZ2h0IDE2IDAgUiAvZml2ZSAxNyAwIFIgL2ZvdXIgMTggMCBSIC9vbmUgMTkgMCBSIC9zZXZlbiAyMCAwIFIKL3NpeCAyMSAwIFIgL3RocmVlIDIyIDAgUiAvdHdvIDIzIDAgUiAvemVybyAyNCAwIFIgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL0YxIDE0IDAgUiA+PgplbmRvYmoKNCAwIG9iago8PCAvQTEgPDwgL0NBIDAgL1R5cGUgL0V4dEdTdGF0ZSAvY2EgMSA+PgovQTIgPDwgL0NBIDAuNCAvVHlwZSAvRXh0R1N0YXRlIC9jYSAwLjQgPj4KL0EzIDw8IC9DQSAxIC9UeXBlIC9FeHRHU3RhdGUgL2NhIDEgPj4gPj4KZW5kb2JqCjUgMCBvYmoKPDwgPj4KZW5kb2JqCjYgMCBvYmoKPDwgPj4KZW5kb2JqCjcgMCBvYmoKPDwgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL0NvdW50IDEgL0tpZHMgWyAxMCAwIFIgXSAvVHlwZSAvUGFnZXMgPj4KZW5kb2JqCjI1IDAgb2JqCjw8IC9DcmVhdGlvbkRhdGUgKEQ6MjAxOTA1MDYyMTE4MzUrMDgnMDAnKQovQ3JlYXRvciAobWF0cGxvdGxpYiAzLjAuMywgaHR0cDovL21hdHBsb3RsaWIub3JnKQovUHJvZHVjZXIgKG1hdHBsb3RsaWIgcGRmIGJhY2tlbmQgMy4wLjMpIC9UaXRsZSAoSW1hZ2UpID4+CmVuZG9iagp4cmVmCjAgMjYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDE2IDAwMDAwIG4gCjAwMDAwMDc0MDggMDAwMDAgbiAKMDAwMDAwNzE3MSAwMDAwMCBuIAowMDAwMDA3MjAzIDAwMDAwIG4gCjAwMDAwMDczNDUgMDAwMDAgbiAKMDAwMDAwNzM2NiAwMDAwMCBuIAowMDAwMDA3Mzg3IDAwMDAwIG4gCjAwMDAwMDAwNjUgMDAwMDAgbiAKMDAwMDAwMDM4NSAwMDAwMCBuIAowMDAwMDAwMjA4IDAwMDAwIG4gCjAwMDAwMDI3NjQgMDAwMDAgbiAKMDAwMDAwNTk3OSAwMDAwMCBuIAowMDAwMDA1Nzc5IDAwMDAwIG4gCjAwMDAwMDU0MjkgMDAwMDAgbiAKMDAwMDAwNzAzMiAwMDAwMCBuIAowMDAwMDAyNzg1IDAwMDAwIG4gCjAwMDAwMDMyNTAgMDAwMDAgbiAKMDAwMDAwMzU3MCAwMDAwMCBuIAowMDAwMDAzNzMyIDAwMDAwIG4gCjAwMDAwMDM4ODQgMDAwMDAgbiAKMDAwMDAwNDAyNCAwMDAwMCBuIAowMDAwMDA0NDE0IDAwMDAwIG4gCjAwMDAwMDQ4MjUgMDAwMDAgbiAKMDAwMDAwNTE0NiAwMDAwMCBuIAowMDAwMDA3NDY4IDAwMDAwIG4gCnRyYWlsZXIKPDwgL0luZm8gMjUgMCBSIC9Sb290IDEgMCBSIC9TaXplIDI2ID4+CnN0YXJ0eHJlZgo3NjM3CiUlRU9GCg==" download="Image.pdf"></object>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'Avengers win &#123;&#125;, Thanos win &#123;&#125;'</span>.format(<span class="number">1</span> - summarize_data[:,<span class="number">1</span>].sum()/test_time,summarize_data[:,<span class="number">1</span>].sum()/test_time) )</span><br></pre></td></tr></table></figure>
+<pre><code>Avengers win 0.7940833985388489, Thanos win 0.20591660146115115
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">unique_sum = np.unique(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">0</span>)][:,<span class="number">0</span>],return_counts=<span class="number">1</span>)</span><br><span class="line">df = pd.DataFrame(np.concatenate((unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">0</span>].astype(<span class="string">'int'</span>).reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>)/test_time),axis=<span class="number">1</span>))</span><br><span class="line">df.iloc[:,<span class="number">1</span>] = np.array(df.iloc[:,<span class="number">1</span>]).astype(<span class="string">'int'</span>)</span><br><span class="line">df = df.set_index(<span class="number">1</span>)</span><br><span class="line">df.columns = [<span class="string">'win time'</span>,<span class="string">'win probability'</span>]</span><br><span class="line">display_dataframe(df,filename=<span class="string">'Avengers win times in &#123;&#125; times'</span>.format(test_time))</span><br></pre></td></tr></table></figure>
+<p><style type="text/css">
+</style>  </p>
+<table id="T_754e7ea2_7001_11e9_9cd0_8c8590804826"><caption>Avengers win times in 14000605 times</caption> 
+<thead>    <tr> 
+        <th class="blank level0"></th> 
+        <th class="col_heading level0 col0">win time</th> 
+        <th class="col_heading level0 col1">win probability</th> 
+    </tr>    <tr> 
+        <th class="index_name level0">1</th> 
+        <th class="blank"></th> 
+        <th class="blank"></th> 
+    </tr></thead> 
+<tbody>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row0" class="row_heading level0 row0">1</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row0_col0" class="data row0 col0">6.89032e+06</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row0_col1" class="data row0 col1">0.492144</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row1" class="row_heading level0 row1">2</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row1_col0" class="data row1 col0">2.8789e+06</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row1_col1" class="data row1 col1">0.205627</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row2" class="row_heading level0 row2">3</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row2_col0" class="data row2 col0">964446</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row2_col1" class="data row2 col1">0.068886</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row3" class="row_heading level0 row3">4</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row3_col0" class="data row3 col0">281804</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row3_col1" class="data row3 col1">0.020128</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row4" class="row_heading level0 row4">5</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row4_col0" class="data row4 col0">75835</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row4_col1" class="data row4 col1">0.00541655</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row5" class="row_heading level0 row5">6</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row5_col0" class="data row5 col0">19639</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row5_col1" class="data row5 col1">0.00140273</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row6" class="row_heading level0 row6">7</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row6_col0" class="data row6 col0">4988</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row6_col1" class="data row6 col1">0.00035627</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row7" class="row_heading level0 row7">8</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row7_col0" class="data row7 col0">1274</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row7_col1" class="data row7 col1">9.09961e-05</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row8" class="row_heading level0 row8">9</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row8_col0" class="data row8 col0">331</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row8_col1" class="data row8 col1">2.36418e-05</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row9" class="row_heading level0 row9">10</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row9_col0" class="data row9 col0">91</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row9_col1" class="data row9 col1">6.49972e-06</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row10" class="row_heading level0 row10">11</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row10_col0" class="data row10 col0">17</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row10_col1" class="data row10 col1">1.21423e-06</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row11" class="row_heading level0 row11">12</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row11_col0" class="data row11 col0">5</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row11_col1" class="data row11 col1">3.57127e-07</td> 
+    </tr>    <tr> 
+        <th id="T_754e7ea2_7001_11e9_9cd0_8c8590804826level0_row12" class="row_heading level0 row12">13</th> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row12_col0" class="data row12 col0">1</td> 
+        <td id="T_754e7ea2_7001_11e9_9cd0_8c8590804826row12_col1" class="data row12 col1">7.14255e-08</td> 
+    </tr></tbody> 
+</table> 
+
+
+
+<input type="button" id="button_585974664" value="Download">
+
+
+
+<script>
+    document.getElementById("button_585974664").addEventListener("click", function(event){
+        var filename = "Avengers win times in 14000605 times.csv";
+        var data = "data:text/csv;base64,MSx3aW4gdGltZSx3aW4gcHJvYmFiaWxpdHkKMSw2ODkwMzE4LjAsMC40OTIxNDQzMDM3NjQwMTU5CjIsMjg3ODg5OS4wLDAuMjA1NjI2NzU2ODQzNzIyMQozLDk2NDQ0Ni4wLDAuMDY4ODg2MDIzMTM5NzE0MzEKNCwyODE4MDQuMCwwLjAyMDEyNzk4NzMyNjI2MTk3Mgo1LDc1ODM1LjAsMC4wMDU0MTY1NTE2NDE4NzU0NzYKNiwxOTYzOS4wLDAuMDAxNDAyNzI1MDk2NTIyNjE0Ngo3LDQ5ODguMCwwLjAwMDM1NjI3MDMxODMxODM4Njk1CjgsMTI3NC4wLDkuMDk5NjA2NzY2OTkzMjgzZS0wNQo5LDMzMS4wLDIuMzY0MTgzNTQ3NzgyMzk5NWUtMDUKMTAsOTEuMCw2LjQ5OTcxOTExOTI4MDkxN2UtMDYKMTEsMTcuMCwxLjIxNDIzMzI0MjA2MzQ2OGUtMDYKMTIsNS4wLDMuNTcxMjc0MjQxMzYzMTQxZS0wNwoxMywxLjAsNy4xNDI1NDg0ODI3MjYyODJlLTA4Cg==";
+        const element = document.createElement('a');
+        element.setAttribute('href', data);
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    });
+</script>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">unique_sum = np.unique(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">1</span>)][:,<span class="number">0</span>],return_counts=<span class="number">1</span>)</span><br><span class="line">df = pd.DataFrame(np.concatenate((unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">0</span>].astype(<span class="string">'int'</span>).reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>)/test_time),axis=<span class="number">1</span>))</span><br><span class="line">df.iloc[:,<span class="number">1</span>] = np.array(df.iloc[:,<span class="number">1</span>]).astype(<span class="string">'int'</span>)</span><br><span class="line">df = df.set_index(<span class="number">1</span>)</span><br><span class="line">df.columns = [<span class="string">'win time'</span>,<span class="string">'win probability'</span>]</span><br><span class="line">display_dataframe(df,filename=<span class="string">'Thanos win times in &#123;&#125; times'</span>.format(test_time))</span><br></pre></td></tr></table></figure>
+<p><style type="text/css">
+</style>  </p>
+<table id="T_759d3e8e_7001_11e9_9cd0_8c8590804826"><caption>Thanos win times in 14000605 times</caption> 
+<thead>    <tr> 
+        <th class="blank level0"></th> 
+        <th class="col_heading level0 col0">win time</th> 
+        <th class="col_heading level0 col1">win probability</th> 
+    </tr>    <tr> 
+        <th class="index_name level0">1</th> 
+        <th class="blank"></th> 
+        <th class="blank"></th> 
+    </tr></thead> 
+<tbody>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row0" class="row_heading level0 row0">1</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row0_col0" class="data row0 col0">218176</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row0_col1" class="data row0 col1">0.0155833</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row1" class="row_heading level0 row1">2</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row1_col0" class="data row1 col0">1.13563e+06</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row1_col1" class="data row1 col1">0.0811129</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row2" class="row_heading level0 row2">3</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row2_col0" class="data row2 col0">948005</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row2_col1" class="data row2 col1">0.0677117</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row3" class="row_heading level0 row3">4</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row3_col0" class="data row3 col0">402860</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row3_col1" class="data row3 col1">0.0287745</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row4" class="row_heading level0 row4">5</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row4_col0" class="data row4 col0">128810</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row4_col1" class="data row4 col1">0.00920032</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row5" class="row_heading level0 row5">6</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row5_col0" class="data row5 col0">36483</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row5_col1" class="data row5 col1">0.00260582</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row6" class="row_heading level0 row6">7</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row6_col0" class="data row6 col0">9634</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row6_col1" class="data row6 col1">0.000688113</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row7" class="row_heading level0 row7">8</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row7_col0" class="data row7 col0">2508</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row7_col1" class="data row7 col1">0.000179135</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row8" class="row_heading level0 row8">9</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row8_col0" class="data row8 col0">660</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row8_col1" class="data row8 col1">4.71408e-05</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row9" class="row_heading level0 row9">10</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row9_col0" class="data row9 col0">147</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row9_col1" class="data row9 col1">1.04995e-05</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row10" class="row_heading level0 row10">11</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row10_col0" class="data row10 col0">27</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row10_col1" class="data row10 col1">1.92849e-06</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row11" class="row_heading level0 row11">12</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row11_col0" class="data row11 col0">11</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row11_col1" class="data row11 col1">7.8568e-07</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row12" class="row_heading level0 row12">13</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row12_col0" class="data row12 col0">5</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row12_col1" class="data row12 col1">3.57127e-07</td> 
+    </tr>    <tr> 
+        <th id="T_759d3e8e_7001_11e9_9cd0_8c8590804826level0_row13" class="row_heading level0 row13">14</th> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row13_col0" class="data row13 col0">1</td> 
+        <td id="T_759d3e8e_7001_11e9_9cd0_8c8590804826row13_col1" class="data row13 col1">7.14255e-08</td> 
+    </tr></tbody> 
+</table> 
+
+
+
+<input type="button" id="button_803906024" value="Download">
+
+
+
+<script>
+    document.getElementById("button_803906024").addEventListener("click", function(event){
+        var filename = "Thanos win times in 14000605 times.csv";
+        var data = "data:text/csv;base64,MSx3aW4gdGltZSx3aW4gcHJvYmFiaWxpdHkKMSwyMTgxNzYuMCwwLjAxNTU4MzMyNjU3NzY3Mjg5NAoyLDExMzU2MzAuMCwwLjA4MTExMjkyMzMzNDM4NDQ4CjMsOTQ4MDA1LjAsMC4wNjc3MTE3MTY3NDM2NjkzCjQsNDAyODYwLjAsMC4wMjg3NzQ0NzA4MTc1MTExCjUsMTI4ODEwLjAsMC4wMDkyMDAzMTY3MDA1OTk3MjQKNiwzNjQ4My4wLDAuMDAyNjA1ODE1OTYyOTUzMDI5NAo3LDk2MzQuMCwwLjAwMDY4ODExMzEyMDgyNTg1CjgsMjUwOC4wLDAuMDAwMTc5MTM1MTE1OTQ2Nzc1MTYKOSw2NjAuMCw0LjcxNDA4MTk5ODU5OTM0NjZlLTA1CjEwLDE0Ny4wLDEuMDQ5OTU0NjI2OTYwNzYzNWUtMDUKMTEsMjcuMCwxLjkyODQ4ODA5MDMzNjA5NjRlLTA2CjEyLDExLjAsNy44NTY4MDMzMzA5OTg5MWUtMDcKMTMsNS4wLDMuNTcxMjc0MjQxMzYzMTQxZS0wNwoxNCwxLjAsNy4xNDI1NDg0ODI3MjYyODJlLTA4Cg==";
+        const element = document.createElement('a');
+        element.setAttribute('href', data);
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    });
+</script>
+
+
+<p>It’s not fair! In fact, if there are only two avengers, the game will be more fair.</p>
+<p>灭霸死的有点惨，其实复仇者初始只有两个人的时候概率稍微对等</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">summarize</span><span class="params">(avengers_alive_num = <span class="number">6</span>)</span>:</span></span><br><span class="line">    round_num = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        round_num += <span class="number">1</span></span><br><span class="line">        avengers_alive_num,avengers_dead_num = check_survive(avengers_alive_num)</span><br><span class="line">        <span class="comment">#print ('Round &#123;&#125;, avengers alive: &#123;&#125;, dead: &#123;&#125;'.format(round_num,avengers_alive_num,avengers_dead_num) )</span></span><br><span class="line">        <span class="keyword">if</span> avengers_alive_num ==<span class="number">0</span>:</span><br><span class="line">            <span class="comment">#print ('Avengers die first')</span></span><br><span class="line">            <span class="keyword">return</span> round_num, <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> np.random.randint(<span class="number">2</span>) ==<span class="number">0</span>:</span><br><span class="line">            <span class="comment">#print ('Thanos die first')</span></span><br><span class="line">            <span class="keyword">return</span> round_num, <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test_time = <span class="number">14000605</span></span><br><span class="line">summarize_data = np.ndarray([test_time,<span class="number">2</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(range(test_time)):</span><br><span class="line">    summarize_data[i] = summarize(avengers_alive_num =<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>HBox(children=(IntProgress(value=0, max=14000605), HTML(value=&#39;&#39;)))
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig,ax=plt.subplots(<span class="number">2</span>,<span class="number">1</span>,figsize=(<span class="number">8</span>,<span class="number">8</span>))</span><br><span class="line">sns.distplot(summarize_data[:,<span class="number">1</span>],kde=<span class="number">0</span>,ax=ax[<span class="number">0</span>])</span><br><span class="line">sns.distplot(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">0</span>)][:,<span class="number">0</span>],kde=<span class="number">0</span>,ax=ax[<span class="number">1</span>],color=<span class="string">'r'</span>)</span><br><span class="line">sns.distplot(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">1</span>)][:,<span class="number">0</span>],kde=<span class="number">0</span>,ax=ax[<span class="number">1</span>],color=<span class="string">'m'</span>)</span><br><span class="line">embed_pdf_figure()</span><br></pre></td></tr></table></figure>
+<object width="640" height="480" data="data:application/pdf;base64,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MTc5NCAxMjMzIF0gL0ZvbnREZXNjcmlwdG9yIDEzIDAgUgovRm9udE1hdHJpeCBbIDAuMDAxIDAgMCAwLjAwMSAwIDAgXSAvTGFzdENoYXIgMjU1IC9OYW1lIC9EZWphVnVTYW5zCi9TdWJ0eXBlIC9UeXBlMyAvVHlwZSAvRm9udCAvV2lkdGhzIDEyIDAgUiA+PgplbmRvYmoKMTMgMCBvYmoKPDwgL0FzY2VudCA5MjkgL0NhcEhlaWdodCAwIC9EZXNjZW50IC0yMzYgL0ZsYWdzIDMyCi9Gb250QkJveCBbIC0xMDIxIC00NjMgMTc5NCAxMjMzIF0gL0ZvbnROYW1lIC9EZWphVnVTYW5zIC9JdGFsaWNBbmdsZSAwCi9NYXhXaWR0aCAxMzQyIC9TdGVtViAwIC9UeXBlIC9Gb250RGVzY3JpcHRvciAvWEhlaWdodCAwID4+CmVuZG9iagoxMiAwIG9iagpbIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwCjYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgMzE4IDQwMSA0NjAgODM4IDYzNgo5NTAgNzgwIDI3NSAzOTAgMzkwIDUwMCA4MzggMzE4IDM2MSAzMTggMzM3IDYzNiA2MzYgNjM2IDYzNiA2MzYgNjM2IDYzNiA2MzYKNjM2IDYzNiAzMzcgMzM3IDgzOCA4MzggODM4IDUzMSAxMDAwIDY4NCA2ODYgNjk4IDc3MCA2MzIgNTc1IDc3NSA3NTIgMjk1CjI5NSA2NTYgNTU3IDg2MyA3NDggNzg3IDYwMyA3ODcgNjk1IDYzNSA2MTEgNzMyIDY4NCA5ODkgNjg1IDYxMSA2ODUgMzkwIDMzNwozOTAgODM4IDUwMCA1MDAgNjEzIDYzNSA1NTAgNjM1IDYxNSAzNTIgNjM1IDYzNCAyNzggMjc4IDU3OSAyNzggOTc0IDYzNCA2MTIKNjM1IDYzNSA0MTEgNTIxIDM5MiA2MzQgNTkyIDgxOCA1OTIgNTkyIDUyNSA2MzYgMzM3IDYzNiA4MzggNjAwIDYzNiA2MDAgMzE4CjM1MiA1MTggMTAwMCA1MDAgNTAwIDUwMCAxMzQyIDYzNSA0MDAgMTA3MCA2MDAgNjg1IDYwMCA2MDAgMzE4IDMxOCA1MTggNTE4CjU5MCA1MDAgMTAwMCA1MDAgMTAwMCA1MjEgNDAwIDEwMjMgNjAwIDUyNSA2MTEgMzE4IDQwMSA2MzYgNjM2IDYzNiA2MzYgMzM3CjUwMCA1MDAgMTAwMCA0NzEgNjEyIDgzOCAzNjEgMTAwMCA1MDAgNTAwIDgzOCA0MDEgNDAxIDUwMCA2MzYgNjM2IDMxOCA1MDAKNDAxIDQ3MSA2MTIgOTY5IDk2OSA5NjkgNTMxIDY4NCA2ODQgNjg0IDY4NCA2ODQgNjg0IDk3NCA2OTggNjMyIDYzMiA2MzIgNjMyCjI5NSAyOTUgMjk1IDI5NSA3NzUgNzQ4IDc4NyA3ODcgNzg3IDc4NyA3ODcgODM4IDc4NyA3MzIgNzMyIDczMiA3MzIgNjExIDYwNQo2MzAgNjEzIDYxMyA2MTMgNjEzIDYxMyA2MTMgOTgyIDU1MCA2MTUgNjE1IDYxNSA2MTUgMjc4IDI3OCAyNzggMjc4IDYxMiA2MzQKNjEyIDYxMiA2MTIgNjEyIDYxMiA4MzggNjEyIDYzNCA2MzQgNjM0IDYzNCA1OTIgNjM1IDU5MiBdCmVuZG9iagoxNSAwIG9iago8PCAvZWlnaHQgMTYgMCBSIC9maXZlIDE3IDAgUiAvZm91ciAxOCAwIFIgL29uZSAxOSAwIFIgL3BlcmlvZCAyMCAwIFIKL3NldmVuIDIxIDAgUiAvc2l4IDIyIDAgUiAvdGhyZWUgMjMgMCBSIC90d28gMjQgMCBSIC96ZXJvIDI1IDAgUiA+PgplbmRvYmoKMyAwIG9iago8PCAvRjEgMTQgMCBSID4+CmVuZG9iago0IDAgb2JqCjw8IC9BMSA8PCAvQ0EgMCAvVHlwZSAvRXh0R1N0YXRlIC9jYSAxID4+Ci9BMiA8PCAvQ0EgMC40IC9UeXBlIC9FeHRHU3RhdGUgL2NhIDAuNCA+PgovQTMgPDwgL0NBIDEgL1R5cGUgL0V4dEdTdGF0ZSAvY2EgMSA+PiA+PgplbmRvYmoKNSAwIG9iago8PCA+PgplbmRvYmoKNiAwIG9iago8PCA+PgplbmRvYmoKNyAwIG9iago8PCA+PgplbmRvYmoKMiAwIG9iago8PCAvQ291bnQgMSAvS2lkcyBbIDEwIDAgUiBdIC9UeXBlIC9QYWdlcyA+PgplbmRvYmoKMjYgMCBvYmoKPDwgL0NyZWF0aW9uRGF0ZSAoRDoyMDE5MDUwNjIxMjIzMCswOCcwMCcpCi9DcmVhdG9yIChtYXRwbG90bGliIDMuMC4zLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcpCi9Qcm9kdWNlciAobWF0cGxvdGxpYiBwZGYgYmFja2VuZCAzLjAuMykgL1RpdGxlIChJbWFnZSkgPj4KZW5kb2JqCnhyZWYKMCAyNwowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTYgMDAwMDAgbiAKMDAwMDAwODEwMCAwMDAwMCBuIAowMDAwMDA3ODYzIDAwMDAwIG4gCjAwMDAwMDc4OTUgMDAwMDAgbiAKMDAwMDAwODAzNyAwMDAwMCBuIAowMDAwMDA4MDU4IDAwMDAwIG4gCjAwMDAwMDgwNzkgMDAwMDAgbiAKMDAwMDAwMDA2NSAwMDAwMCBuIAowMDAwMDAwMzg1IDAwMDAwIG4gCjAwMDAwMDAyMDggMDAwMDAgbiAKMDAwMDAwMzMwOSAwMDAwMCBuIAowMDAwMDA2NjU2IDAwMDAwIG4gCjAwMDAwMDY0NTYgMDAwMDAgbiAKMDAwMDAwNjA5NSAwMDAwMCBuIAowMDAwMDA3NzA5IDAwMDAwIG4gCjAwMDAwMDMzMzAgMDAwMDAgbiAKMDAwMDAwMzc5NSAwMDAwMCBuIAowMDAwMDA0MTE1IDAwMDAwIG4gCjAwMDAwMDQyNzcgMDAwMDAgbiAKMDAwMDAwNDQyOSAwMDAwMCBuIAowMDAwMDA0NTUwIDAwMDAwIG4gCjAwMDAwMDQ2OTAgMDAwMDAgbiAKMDAwMDAwNTA4MCAwMDAwMCBuIAowMDAwMDA1NDkxIDAwMDAwIG4gCjAwMDAwMDU4MTIgMDAwMDAgbiAKMDAwMDAwODE2MCAwMDAwMCBuIAp0cmFpbGVyCjw8IC9JbmZvIDI2IDAgUiAvUm9vdCAxIDAgUiAvU2l6ZSAyNyA+PgpzdGFydHhyZWYKODMyOQolJUVPRgo=" download="Image.pdf"></object>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'Avengers win &#123;&#125;, Thanos win &#123;&#125;'</span>.format(<span class="number">1</span> - summarize_data[:,<span class="number">1</span>].sum()/test_time,summarize_data[:,<span class="number">1</span>].sum()/test_time) )</span><br></pre></td></tr></table></figure>
+<pre><code>Avengers win 0.523922359069483, Thanos win 0.4760776409305169
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">unique_sum = np.unique(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">0</span>)][:,<span class="number">0</span>],return_counts=<span class="number">1</span>)</span><br><span class="line">df = pd.DataFrame(np.concatenate((unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">0</span>].astype(<span class="string">'int'</span>).reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>)/test_time),axis=<span class="number">1</span>))</span><br><span class="line">df.iloc[:,<span class="number">1</span>] = np.array(df.iloc[:,<span class="number">1</span>]).astype(<span class="string">'int'</span>)</span><br><span class="line">df = df.set_index(<span class="number">1</span>)</span><br><span class="line">df.columns = [<span class="string">'win time'</span>,<span class="string">'win probability'</span>]</span><br><span class="line">display_dataframe(df,filename=<span class="string">'Avengers win times in &#123;&#125; times'</span>.format(test_time))</span><br><span class="line">    </span><br><span class="line">unique_sum = np.unique(summarize_data[np.where(summarize_data[:,<span class="number">1</span>]==<span class="number">1</span>)][:,<span class="number">0</span>],return_counts=<span class="number">1</span>)</span><br><span class="line">df = pd.DataFrame(np.concatenate((unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">0</span>].astype(<span class="string">'int'</span>).reshape(<span class="number">-1</span>,<span class="number">1</span>),unique_sum[<span class="number">1</span>].reshape(<span class="number">-1</span>,<span class="number">1</span>)/test_time),axis=<span class="number">1</span>))</span><br><span class="line">df.iloc[:,<span class="number">1</span>] = np.array(df.iloc[:,<span class="number">1</span>]).astype(<span class="string">'int'</span>)</span><br><span class="line">df = df.set_index(<span class="number">1</span>)</span><br><span class="line">df.columns = [<span class="string">'win time'</span>,<span class="string">'win probability'</span>]</span><br><span class="line">display_dataframe(df,filename=<span class="string">'Thanos win times in &#123;&#125; times'</span>.format(test_time))</span><br></pre></td></tr></table></figure>
+<p><style type="text/css">
+</style>  </p>
+<table id="T_00bf9b60_7002_11e9_9cd0_8c8590804826"><caption>Avengers win times in 14000605 times</caption> 
+<thead>    <tr> 
+        <th class="blank level0"></th> 
+        <th class="col_heading level0 col0">win time</th> 
+        <th class="col_heading level0 col1">win probability</th> 
+    </tr>    <tr> 
+        <th class="index_name level0">1</th> 
+        <th class="blank"></th> 
+        <th class="blank"></th> 
+    </tr></thead> 
+<tbody>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row0" class="row_heading level0 row0">1</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row0_col0" class="data row0 col0">5.25233e+06</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row0_col1" class="data row0 col1">0.37515</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row1" class="row_heading level0 row1">2</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row1_col0" class="data row1 col0">1.53058e+06</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row1_col1" class="data row1 col1">0.109322</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row2" class="row_heading level0 row2">3</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row2_col0" class="data row2 col0">409989</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row2_col1" class="data row2 col1">0.0292837</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row3" class="row_heading level0 row3">4</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row3_col0" class="data row3 col0">106393</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row3_col1" class="data row3 col1">0.00759917</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row4" class="row_heading level0 row4">5</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row4_col0" class="data row4 col0">26925</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row4_col1" class="data row4 col1">0.00192313</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row5" class="row_heading level0 row5">6</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row5_col0" class="data row5 col0">6764</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row5_col1" class="data row5 col1">0.000483122</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row6" class="row_heading level0 row6">7</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row6_col0" class="data row6 col0">1723</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row6_col1" class="data row6 col1">0.000123066</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row7" class="row_heading level0 row7">8</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row7_col0" class="data row7 col0">377</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row7_col1" class="data row7 col1">2.69274e-05</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row8" class="row_heading level0 row8">9</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row8_col0" class="data row8 col0">102</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row8_col1" class="data row8 col1">7.2854e-06</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row9" class="row_heading level0 row9">10</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row9_col0" class="data row9 col0">35</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row9_col1" class="data row9 col1">2.49989e-06</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row10" class="row_heading level0 row10">11</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row10_col0" class="data row10 col0">11</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row10_col1" class="data row10 col1">7.8568e-07</td> 
+    </tr>    <tr> 
+        <th id="T_00bf9b60_7002_11e9_9cd0_8c8590804826level0_row11" class="row_heading level0 row11">13</th> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row11_col0" class="data row11 col0">1</td> 
+        <td id="T_00bf9b60_7002_11e9_9cd0_8c8590804826row11_col1" class="data row11 col1">7.14255e-08</td> 
+    </tr></tbody> 
+</table> 
+
+
+
+<input type="button" id="button_754759131" value="Download">
+
+
+
+<script>
+    document.getElementById("button_754759131").addEventListener("click", function(event){
+        var filename = "Avengers win times in 14000605 times.csv";
+        var data = "data:text/csv;base64,MSx3aW4gdGltZSx3aW4gcHJvYmFiaWxpdHkKMSw1MjUyMzI5LjAsMC4zNzUxNTAxNDUyOTcyOTI1CjIsMTUzMDU4MS4wLDAuMTA5MzIyNDg5OTkyMzk2NzYKMyw0MDk5ODkuMCwwLjAyOTI4MzY2MzA5ODg0NDY1Ngo0LDEwNjM5My4wLDAuMDA3NTk5MTcxNjA3MjI2OTc0CjUsMjY5MjUuMCwwLjAwMTkyMzEzMTE3ODk3NDA1MTUKNiw2NzY0LjAsMC4wMDA0ODMxMjE5NzkzNzE2MDU3CjcsMTcyMy4wLDAuMDAwMTIzMDY2MTEwMzU3MzczODQKOCwzNzcuMCwyLjY5Mjc0MDc3Nzk4NzgwODNlLTA1CjksMTAyLjAsNy4yODUzOTk0NTIzODA4MDhlLTA2CjEwLDM1LjAsMi40OTk4OTE5Njg5NTQxOTg4ZS0wNgoxMSwxMS4wLDcuODU2ODAzMzMwOTk4OTFlLTA3CjEzLDEuMCw3LjE0MjU0ODQ4MjcyNjI4MmUtMDgK";
+        const element = document.createElement('a');
+        element.setAttribute('href', data);
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    });
+</script>
+
+
+
+<p><style type="text/css">
+</style>  </p>
+<table id="T_011a1c7a_7002_11e9_9cd0_8c8590804826"><caption>Thanos win times in 14000605 times</caption> 
+<thead>    <tr> 
+        <th class="blank level0"></th> 
+        <th class="col_heading level0 col0">win time</th> 
+        <th class="col_heading level0 col1">win probability</th> 
+    </tr>    <tr> 
+        <th class="index_name level0">1</th> 
+        <th class="blank"></th> 
+        <th class="blank"></th> 
+    </tr></thead> 
+<tbody>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row0" class="row_heading level0 row0">1</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row0_col0" class="data row0 col0">3.49891e+06</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row0_col1" class="data row0 col1">0.249911</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row1" class="row_heading level0 row1">2</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row1_col0" class="data row1 col0">2.18546e+06</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row1_col1" class="data row1 col1">0.156097</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row2" class="row_heading level0 row2">3</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row2_col0" class="data row2 col0">712026</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row2_col1" class="data row2 col1">0.0508568</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row3" class="row_heading level0 row3">4</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row3_col0" class="data row3 col0">199091</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row3_col1" class="data row3 col1">0.0142202</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row4" class="row_heading level0 row4">5</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row4_col0" class="data row4 col0">52039</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row4_col1" class="data row4 col1">0.00371691</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row5" class="row_heading level0 row5">6</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row5_col0" class="data row5 col0">13297</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row5_col1" class="data row5 col1">0.000949745</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row6" class="row_heading level0 row6">7</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row6_col0" class="data row6 col0">3438</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row6_col1" class="data row6 col1">0.000245561</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row7" class="row_heading level0 row7">8</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row7_col0" class="data row7 col0">816</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row7_col1" class="data row7 col1">5.82832e-05</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row8" class="row_heading level0 row8">9</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row8_col0" class="data row8 col0">215</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row8_col1" class="data row8 col1">1.53565e-05</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row9" class="row_heading level0 row9">10</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row9_col0" class="data row9 col0">65</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row9_col1" class="data row9 col1">4.64266e-06</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row10" class="row_heading level0 row10">11</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row10_col0" class="data row10 col0">17</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row10_col1" class="data row10 col1">1.21423e-06</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row11" class="row_heading level0 row11">12</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row11_col0" class="data row11 col0">5</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row11_col1" class="data row11 col1">3.57127e-07</td> 
+    </tr>    <tr> 
+        <th id="T_011a1c7a_7002_11e9_9cd0_8c8590804826level0_row12" class="row_heading level0 row12">13</th> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row12_col0" class="data row12 col0">1</td> 
+        <td id="T_011a1c7a_7002_11e9_9cd0_8c8590804826row12_col1" class="data row12 col1">7.14255e-08</td> 
+    </tr></tbody> 
+</table> 
+
+
+
+<input type="button" id="button_316164186" value="Download">
+
+
+
+<script>
+    document.getElementById("button_316164186").addEventListener("click", function(event){
+        var filename = "Thanos win times in 14000605 times.csv";
+        var data = "data:text/csv;base64,MSx3aW4gdGltZSx3aW4gcHJvYmFiaWxpdHkKMSwzNDk4OTEwLjAsMC4yNDk5MTEzNDMxMTY5NTgxNwoyLDIxODU0NTUuMCwwLjE1NjA5NzE4Mjk0MzE2NTY2CjMsNzEyMDI2LjAsMC4wNTA4NTY4MDIyNTk2MTY2NAo0LDE5OTA5MS4wLDAuMDE0MjIwMTcxMTk5NzQ0NTgyCjUsNTIwMzkuMCwwLjAwMzcxNjkxMDgwNDkyNTkzCjYsMTMyOTcuMCwwLjAwMDk0OTc0NDY3MTc0ODExMzcKNywzNDM4LjAsMC4wMDAyNDU1NjA4MTY4MzYxMjk2CjgsODE2LjAsNS44MjgzMTk1NjE5MDQ2NDY1ZS0wNQo5LDIxNS4wLDEuNTM1NjQ3OTIzNzg2MTUwNmUtMDUKMTAsNjUuMCw0LjY0MjY1NjUxMzc3MjA4NGUtMDYKMTEsMTcuMCwxLjIxNDIzMzI0MjA2MzQ2OGUtMDYKMTIsNS4wLDMuNTcxMjc0MjQxMzYzMTQxZS0wNwoxMywxLjAsNy4xNDI1NDg0ODI3MjYyODJlLTA4Cg==";
+        const element = document.createElement('a');
+        element.setAttribute('href', data);
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    });
+</script>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'Avengers win &#123;&#125;, Thanos win &#123;&#125;'</span>.format(<span class="number">1</span> - summarize_data[:,<span class="number">1</span>].sum()/test_time,summarize_data[:,<span class="number">1</span>].sum()/test_time) )</span><br></pre></td></tr></table></figure>
+<pre><code>Avengers win 0.523922359069483, Thanos win 0.4760776409305169
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.savetxt(<span class="string">'summarize_data_num_2.txt'</span>,summarize_data.astype(<span class="string">'uint8'</span>),fmt=<span class="string">'%1d'</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----The ---- end ----<i class="fa fa-paw"></i>--- Thanks --- for --- Reading----</div>
+    
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/blog/tags/interesting/" rel="tag"><i class="fa fa-tag"></i> interesting</a>
+          
+            <a href="/blog/tags/probability/" rel="tag"><i class="fa fa-tag"></i> probability</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/04/29/52_undergraduate_thesis/" rel="next" title="Undergraduate Thesis">
+                <i class="fa fa-chevron-left"></i> Undergraduate Thesis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/06/12/my_undergraduate_story/" rel="prev" title="我的本科生活">
+                我的本科生活 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/blog/images/avatar.png"
+                alt="James Chen" />
+            
+              <p class="site-author-name" itemprop="name">James Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/james20141606" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xp-chen14@mails.tsinghua.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=d9dbc8&w=a&t=n&d=MGAfMNv-Snrv0Yg1d2t2EH3ATBUCJtdgbna_qHvb4AI&co=302dad'></script>
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Chen</span>
+
+  
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共207.5k字</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://cmwonderland.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.cmwonderland.com/blog/2019/05/06/thanos_avengers/';
+          this.page.identifier = '2019/05/06/thanos_avengers/';
+          this.page.title = 'Thanos and Avengers playing roulette';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cmwonderland.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("klOjl0RBA8qP5IKgIXkOszBr-gzGzoHsz", "rCaN5wX4mjiRkRMzP95g7XHz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+</body>
+</html>
