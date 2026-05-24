@@ -1,0 +1,297 @@
+% =====================================================================
+% 陈炳林回忆录   印刷版
+% =====================================================================
+% 编译方法：  xelatex book.tex   (跑两遍以生成目录)
+% 字体：     Noto Serif CJK SC (思源宋体) + Noto Sans CJK SC (思源黑体)
+% 版式：     A5  140mm × 210mm   ctexbook  传统中文书籍版式
+% =====================================================================
+
+\documentclass[a5paper,11pt,openright,oneside]{ctexbook}
+
+% ---------- 页面 ----------
+\usepackage[
+  paperwidth=148mm, paperheight=210mm,
+  inner=20mm, outer=18mm, top=22mm, bottom=24mm,
+  headsep=8mm, footskip=14mm,
+  heightrounded
+]{geometry}
+
+% ---------- 字体 ----------
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% 西文字体：Latin Modern Roman + Latin Modern Sans
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+
+% 中文字体：思源宋体（正文）/ 思源黑体（标题）
+% 直接用文件路径加载（NotoSerif/Sans CJK 是 .ttc 集合）
+\setCJKmainfont[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSerifCJK-Regular,
+  BoldFont       = NotoSerifCJK-Bold,
+  ItalicFont     = NotoSerifCJK-Light,
+  BoldItalicFont = NotoSerifCJK-SemiBold
+]{NotoSerifCJK-Regular}
+
+\setCJKsansfont[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSansCJK-Light,
+  BoldFont       = NotoSansCJK-Bold
+]{NotoSansCJK-Light}
+
+% 备用：思源宋体 Light 当楷体用（ctex 已有 \kaishu/\booksans，所以换名字避免冲突）
+\newCJKfontfamily\bookkai[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSerifCJK-Light
+]{NotoSerifCJK-Light}
+
+\newCJKfontfamily\booksans[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSansCJK-Light,
+  BoldFont       = NotoSansCJK-Bold
+]{NotoSansCJK-Light}
+
+\newCJKfontfamily\booksansthin[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSansCJK-Thin
+]{NotoSansCJK-Thin}
+
+% 数字与英文字号：用衬线 sans 风格的 Latin Modern Sans Thin（无 -> 用普通拉丁数字）
+\newfontfamily\figurefont{Latin Modern Sans}
+
+% ---------- 行距与段落 ----------
+\linespread{1.55}                 % 中文书行距 1.5-1.6 倍较舒服
+\setlength{\parindent}{2em}       % 段首缩进两字
+\setlength{\parskip}{2pt plus 1pt}
+
+% ---------- 章节标题样式（核心：高对比 typography）----------
+\usepackage{titlesec}
+\usepackage{xcolor}
+\definecolor{inkblack}{HTML}{1a1a1a}
+\definecolor{inkgray}{HTML}{595959}
+\definecolor{inkfaint}{HTML}{9c9c9c}
+\definecolor{seal}{HTML}{8B2C1A}     % 印章红，留作装饰
+
+% 章首页：极简风。上方一行极细 "CHAPTER" 数字 sans，
+% 中部超大号 sans-thin 数字，下方一条短线，再下方大号宋体章名，
+% 再下方副题（年代）和长短线。size jump ~3x.
+\titleformat{\chapter}[display]
+  {\thispagestyle{plain}\vspace*{1.6cm}\centering}
+  {%
+    {\booksansthin\fontsize{12pt}{14pt}\selectfont\color{inkfaint}\addfontfeatures{LetterSpace=20} \MakeUppercase{\chaptername}}\\[6pt]
+    {\booksansthin\fontsize{84pt}{84pt}\selectfont\color{inkblack}\thechapter}\\[18pt]
+    {\color{inkfaint}\rule{2em}{0.4pt}}\\[20pt]
+  }
+  {0pt}
+  {\fontsize{24pt}{30pt}\selectfont\bfseries\color{inkblack}}
+  [\vspace{12pt}{\color{inkfaint}\rule{2em}{0.4pt}}\vspace{2.4cm}]
+
+% 节标题
+\titleformat{\section}
+  {\booksans\Large\bfseries\color{inkblack}}
+  {\thesection}{0.8em}{}
+
+\titleformat{\subsection}
+  {\booksans\large\color{inkblack}}
+  {}{0em}{}
+
+% ---------- 页眉页脚 ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+% 页眉：左中右皆空；中部放章名，前后各一个小菱点修饰
+\fancyhead[C]{%
+  \booksansthin\footnotesize\color{inkfaint}%
+  \raisebox{2pt}{\tiny ◇}\hspace{0.8em}%
+  \color{inkgray}\leftmark%
+  \hspace{0.8em}\raisebox{2pt}{\color{inkfaint}\tiny ◇}%
+}
+\fancyfoot[C]{\booksansthin\small\color{inkgray}\thepage}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\booksansthin\small\color{inkgray}\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% ---------- 目录样式 ----------
+\usepackage{titletoc}
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\booksansthin\color{inkgray}}
+\renewcommand{\cftchapleader}{\booksansthin\color{inkfaint}\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{2.0}
+\setlength{\cftbeforechapskip}{10pt}
+\setlength{\cftchapindent}{0pt}
+\setlength{\cftchapnumwidth}{2.6em}
+
+% 关掉 ctexbook 默认的 "第 X 章" 章节编号显示，由我们自定义
+% （已在 titleformat 里处理）
+
+% ---------- 图片 ----------
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{enumitem}
+\graphicspath{{images/}}
+
+% 安全图片：文件存在则插入，否则用占位框
+\newcommand{\safeimage}[1]{%
+  \IfFileExists{images/#1}{%
+    \includegraphics[max width=0.85\linewidth,max totalheight=0.5\textheight,keepaspectratio]{#1}%
+  }{%
+    \fbox{\parbox{0.75\linewidth}{\centering\booksansthin\small\color{inkfaint}%
+      \vspace{1.5em}[\,待补图：\detokenize{#1}\,]\vspace{1.5em}}}%
+  }%
+}
+
+% ---------- 引文样式 ----------
+\usepackage{quoting}
+\quotingsetup{
+  leftmargin=2em,
+  rightmargin=2em,
+  vskip=0.4em
+}
+\renewenvironment{quote}
+  {\begin{quoting}\bookkai\small}
+  {\end{quoting}}
+
+% ---------- 链接与目录支持 ----------
+\usepackage[hidelinks,unicode,bookmarks=true,bookmarksnumbered=true]{hyperref}
+\hypersetup{
+  pdftitle={陈炳林回忆录},
+  pdfauthor={陈炳林  口述／陈旭鹏  整理},
+  pdfsubject={家族回忆录},
+  pdfkeywords={陈炳林,回忆录,家史,memoir}
+}
+
+% ---------- 一些排版小工具 ----------
+% \usepackage{soul}      % 不需要
+% \usepackage{microtype} % xelatex 下功能有限，省略
+
+% 章前题记（章名下方的副标题或时间提示）
+\newcommand{\chapterepigraph}[1]{%
+  \begin{center}\booksansthin\small\color{inkgray}#1\end{center}\vspace{1em}}
+
+% 分节装饰符
+\newcommand{\dinkus}{\par\vspace{1em}\begin{center}\color{inkfaint}❦\end{center}\vspace{1em}\par}
+
+% horizontal rule -> 用 dinkus 替代
+\let\oldhrule\hrule
+
+% ---------- 关闭 ctexbook 默认章节编号样式 ----------
+% ctexbook 默认会输出 "第一章 章名"，我们的 titleformat 已经独立处理章号
+\CTEXsetup[number={\arabic{chapter}},name={,}]{chapter}
+
+% ---------- 书末杂项 ----------
+\usepackage[absolute,overlay]{textpos}
+
+% =====================================================================
+\begin{document}
+% =====================================================================
+
+% --------- 半扉页 / Half-title ---------
+% 仅有书名，极简，象征"翻开第一页"的仪式感
+\pagestyle{empty}
+\thispagestyle{empty}
+\vspace*{6cm}
+\begin{center}
+  {\booksansthin\fontsize{18pt}{22pt}\selectfont\color{inkgray} 陈炳林回忆录}
+\end{center}
+\cleardoublepage
+
+% --------- 扉页 / Title page ---------
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\booksansthin\fontsize{20pt}{24pt}\selectfont\color{inkfaint}\addfontfeatures{LetterSpace=30} MEMOIR}\\[6pt]
+  {\booksansthin\fontsize{14pt}{18pt}\selectfont\color{inkfaint}回\quad 忆\quad 录}\\[2.6cm]
+  {\fontsize{52pt}{60pt}\selectfont\bfseries 陈\,炳\,林}\\[0.8cm]
+  {\color{inkfaint}\rule{4em}{0.4pt}}\\[0.6cm]
+  {\booksansthin\large\color{inkgray}一九四〇\,—\,二〇二六}\\[2.8cm]
+  {\booksansthin\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}
+\end{titlepage}
+
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  {\bookkai\fontsize{16pt}{22pt}\selectfont 谨以此书\\[8pt]纪念我的爷爷}\\[2cm]
+  {\color{inkfaint}\rule{2em}{0.3pt}}\\[1.6cm]
+  {\booksansthin\small\color{inkgray}并献给\\[6pt]爱他的家人}
+\end{center}
+\vspace*{\fill}
+\cleardoublepage
+
+% --------- 前言：追思序 ---------
+\frontmatter
+\pagestyle{fancy}
+
+\chapter*{追思序}
+\addcontentsline{toc}{chapter}{追思序}
+\markboth{追思序}{}
+
+\input{src/00a-memorial-preface}
+
+\cleardoublepage
+
+% --------- 原序 ---------
+\chapter*{原序}
+\addcontentsline{toc}{chapter}{原序}
+\markboth{原序}{}
+
+\input{src/00-preface-original-body}
+
+\cleardoublepage
+
+% --------- 目录 ---------
+{\booksansthin\renewcommand{\contentsname}{目\hspace{1em}录}\tableofcontents}
+\cleardoublepage
+
+% --------- 正文：八章 ---------
+\mainmatter
+
+\input{src/02-chapter-1-body}
+\input{src/03-chapter-2-body}
+\input{src/04-chapter-3-body}
+\input{src/05-chapter-4-body}
+\input{src/06-chapter-5-body}
+\input{src/07-chapter-6-body}
+\input{src/08-chapter-7-body}
+\input{src/09-chapter-8-body}
+
+% --------- 附录 ---------
+\appendix
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+\input{src/10-appendix-poems-body}
+\input{src/11-appendix-justice-body}
+\input{src/12-appendix-essays-body}
+\input{src/01-chronology-body}
+
+% --------- 版权页 / Colophon ---------
+\backmatter
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  {\booksansthin\Large 陈炳林回忆录}\\[1em]
+  {\bookkai\small 陈炳林\ 口述\quad 陈旭鹏\ 整理}\\[2em]
+  {\color{inkfaint}\rule{4em}{0.4pt}}\\[2em]
+  {\booksansthin\footnotesize\color{inkgray}
+    内部刊印\quad 非卖品\\[4pt]
+    二〇二六年\\[2em]
+    谨呈家人传阅留念
+  }
+\end{center}
+\vspace*{\fill}
+
+\end{document}

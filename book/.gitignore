@@ -1,0 +1,12 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Preview renders (regenerable)
+preview/
+build/
+
+# Empty placeholder dir kept via .gitkeep
