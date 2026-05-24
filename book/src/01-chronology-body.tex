@@ -92,123 +92,113 @@
 
 
 \clearpage
-\begin{landscape}
 \thispagestyle{plain}
-\null\vspace*{-0.4cm}
-\begin{center}
-\begin{tikzpicture}[
-  remember picture,
+\section*{家\hspace{1em}族\hspace{1em}世\hspace{1em}系}
+
+\vspace{0.6em}
+
+\noindent\hspace*{-1.0em}\begin{tikzpicture}[
   every node/.style={
-    draw=seal, rounded corners=2.5pt, line width=0.45pt,
-    align=center, font=\trueka\small,
-    inner sep=3.5pt, minimum width=1.55cm
+    draw=seal, rounded corners=2pt, line width=0.4pt,
+    align=center, font=\trueka\footnotesize,
+    inner sep=2.5pt, minimum width=1.15cm
   },
   anc/.style={
-    fill=seal!6, font=\trueka\small\bfseries,
-    minimum width=1.85cm, inner sep=4.5pt
+    fill=seal!6, font=\trueka\footnotesize\bfseries,
+    minimum width=1.4cm, inner sep=3.5pt
   },
   spouse/.style={
-    fill=seal!10, font=\trueka\small\bfseries,
-    minimum width=1.85cm, inner sep=4.5pt
+    fill=seal!10, font=\trueka\footnotesize\bfseries,
+    minimum width=1.35cm, inner sep=3pt
   },
-  small/.style={font=\trueka\footnotesize, minimum width=1.35cm, inner sep=2.8pt},
-  ln/.style={draw=seal!60, line width=0.45pt},
-  marriage/.style={draw=seal!75, line width=0.7pt, double, double distance=1pt},
+  small/.style={
+    font=\trueka\scriptsize, minimum width=0.95cm, inner sep=2pt
+  },
+  ln/.style={draw=seal!60, line width=0.4pt, rounded corners=2pt},
+  marriage/.style={draw=seal!75, line width=0.6pt, double, double distance=0.8pt},
+  glabel/.style={draw=none, font=\trueka\scriptsize\itshape, text=inkgray},
   x=1cm, y=1cm,
 ]
 
-% ── Columns ────────────────────────────────────────────
+% ── 列坐标 ───────────────────────────────
 \def\cA{0}      % 祖辈
-\def\cB{3.2}    % 炳林一代
-\def\cC{6.4}    % 子女
-\def\cD{9.5}    % 孙辈
-\def\cE{12.6}   % 重孙辈
+\def\cB{2.2}    % 兄妹 / 炳林·若平
+\def\cC{4.5}    % 子女
+\def\cD{7.0}    % 孙辈
+\def\cE{9.2}    % 重孙
 
-% ── 标题（嵌入 tikz 内部，确保与图同页） ─────────────
-\node[draw=none, font=\trueka\fontsize{18pt}{22pt}\selectfont\bfseries, text=inkblack]
-  (title) at (\cC, 7.2) {家\hspace{0.8em}族\hspace{0.8em}世\hspace{0.8em}系};
-\node[draw=none, below=2pt of title]
-  {{\color{seal}\rule{1.2em}{0.4pt}}\hspace{0.4em}%
-    \raisebox{-1pt}{\color{seal}\small$\Diamond$}\hspace{0.4em}%
-    {\color{seal}\rule{1.2em}{0.4pt}}};
+% ── 列题注 ───────────────────────────────
+\node[glabel] at (\cA, 6.9) {祖\,辈};
+\node[glabel] at (\cB, 6.9) {兄\,妹};
+\node[glabel] at (\cC, 6.9) {子\,女};
+\node[glabel] at (\cD, 6.9) {孙\,辈};
+\node[glabel] at (\cE, 6.9) {重\,孙};
 
-% ── 第一代：双方父母 ──────────────────────────────────
-\node[anc] (chenP) at (\cA, 1.6)  {陈\,锡\,海\\吕\,金\,兰};
-\node[anc] (wangP) at (\cA, -2.3) {王\,铭\,鼎\\庆\hspace{1em}良};
+% ── 祖辈：陈家父母（上）、王家父母（下，与若平同行）────
+\node[anc] (chenP) at (\cA,  4.0) {陈\,锡\,海\\吕\,金\,兰};
+\node[anc] (wangP) at (\cA, -0.2) {王\,铭\,鼎\\庆\hspace{1em}良};
 
-% ── 第二代：炳林兄妹 + 若平 ──────────────────────────
-\node (cby)  at (\cB,  4.2) {陈炳郁};
-\node (cbq)  at (\cB,  3.3) {陈炳琴};
-\node (cbi)  at (\cB,  2.4) {陈炳义};
-\node (cbll) at (\cB,  1.5) {陈炳立};
-\node (cbyu) at (\cB,  0.6) {陈炳玉};
-\node[spouse] (cbl) at (\cB, -0.65) {陈\,炳\,林};
-\node[spouse] (wrp) at (\cB, -2.30) {王\,若\,平};
+% ── 兄妹列：陈氏五兄妹 + 陈炳林 ═ 王若平 ─────────────
+\node (cby)  at (\cB, 6.1) {陈炳郁};
+\node (cbq)  at (\cB, 5.2) {陈炳琴};
+\node (cbi)  at (\cB, 4.3) {陈炳义};
+\node (cbll) at (\cB, 3.4) {陈炳立};
+\node (cbyu) at (\cB, 2.5) {陈炳玉};
+\node[spouse] (cbl) at (\cB,  1.1) {陈\,炳\,林};
+\node[spouse] (wrp) at (\cB, -0.2) {王\,若\,平};
 
-% 婚姻线（双线表示婚配）
+% 婚姻（双横线）
 \draw[marriage] (cbl.south) -- (wrp.north);
 \coordinate (union) at ($(cbl.south)!0.5!(wrp.north)$);
 
-% 陈家父母 → 五位兄妹 + 炳林
+% ── 连线：陈家父母 → 五兄妹 + 炳林（曲线扇形）─────────
 \foreach \n in {cby,cbq,cbi,cbll,cbyu,cbl} {
   \draw[ln] (chenP.east) to[out=0,in=180] (\n.west);
 }
-% 王家父母 → 若平
-\draw[ln] (wangP.east) to[out=0,in=180] (wrp.west);
+% ── 连线：王家父母 → 若平 ────────────────────────────
+\draw[ln] (wangP.east) -- (wrp.west);
 
-% ── 第三代：炳林若平之子女 ────────────────────────────
-\node (chj) at (\cC,  3.6) {陈\,华\,军};
-\node (cy)  at (\cC,  1.2) {陈\hspace{1em}永\\杜思桂};
-\node (cb)  at (\cC, -1.2) {陈\hspace{1em}斌\\宋爱平};
-\node (ct)  at (\cC, -3.6) {陈\hspace{1em}涛\\刘延娇};
+% ── 子女：四个儿子分布于婚姻点下方 ───────────────────
+\node (chj) at (\cC, -1.6) {陈\,华\,军};
+\node (cy)  at (\cC, -3.5) {陈\hspace{0.6em}永\\杜思桂};
+\node (cb)  at (\cC, -5.4) {陈\hspace{0.6em}斌\\宋爱平};
+\node (ct)  at (\cC, -7.3) {陈\hspace{0.6em}涛\\刘延娇};
 
-% 由婚姻线汇流分枝
-\coordinate (junC) at (\cC-1.4, -1.2);
-\draw[ln] (union) -- (junC);
-\foreach \n in {chj,cy,cb,ct} {
-  \draw[ln] (junC) to[out=0,in=180] (\n.west);
-}
+% 婚配点 → 先东出（绕开若平节点）→ 下行 → 各子女西入
+\coordinate (junT) at ($(union)+(0.95,0)$);
+\coordinate (junB) at (junT |- ct.west);
+\draw[ln] (union) -- (junT) -- (junB);
+\draw[ln] (junT |- chj.west) -- (chj.west);
+\draw[ln] (junT |- cy.west)  -- (cy.west);
+\draw[ln] (junT |- cb.west)  -- (cb.west);
+\draw[ln] (junT |- ct.west)  -- (ct.west);
 
-% 华军两段婚姻：前妻 / 张娟
-\node[small] (qq) at (\cC+1.7,  4.3) {（前妻）};
-\node[small] (zj) at (\cC+1.7,  2.9) {张\hspace{0.6em}娟};
+% ── 华军两段婚姻 ─────────────────────────────────────
+\node[small] (qq) at (\cC+1.55, -0.6) {（前妻）};
+\node[small] (zj) at (\cC+1.55, -2.6) {张\hspace{0.4em}娟};
 \draw[ln] (chj.east) to[out=0,in=180] (qq.west);
 \draw[ln] (chj.east) to[out=0,in=180] (zj.west);
 
-% ── 第四代：孙辈 ─────────────────────────────────────
-\node (xk) at (\cD,  4.7) {陈旭鲲\\刘一佳};
-\node (jx) at (\cD,  2.9) {陈佳欣};
-\node (xp) at (\cD,  1.2) {陈旭鹏\\孟舒晨};
-\node (hy) at (\cD, -0.5) {陈泓妤};
-\node (yz) at (\cD, -1.9) {陈映竹};
-\node (yf) at (\cD, -2.9) {陈奕霏};
-\node (xh) at (\cD, -4.3) {陈旭宏};
+% ── 孙辈 ───────────────────────────────────────────
+\node (xk) at (\cD, -0.6) {陈旭鲲\\刘一佳};
+\node (jx) at (\cD, -2.6) {陈佳欣};
+\node (xp) at (\cD, -3.5) {陈旭鹏\\孟舒晨};
+\node (hy) at (\cD, -4.7) {陈泓妤};
+\node (yz) at (\cD, -6.1) {陈映竹};
+\node (yf) at (\cD, -6.9) {陈奕霏};
+\node (xh) at (\cD, -7.8) {陈旭宏};
 
-\draw[ln] (qq.east) to[out=0,in=180] (xk.west);
-\draw[ln] (zj.east) to[out=0,in=180] (jx.west);
-\draw[ln] (cy.east) to[out=0,in=180] (xp.west);
+\draw[ln] (qq.east) -- (xk.west);
+\draw[ln] (zj.east) -- (jx.west);
+\draw[ln] (cy.east) -- (xp.west);
 \draw[ln] (cb.east) to[out=0,in=180] (hy.west);
 \draw[ln] (cb.east) to[out=0,in=180] (yz.west);
 \draw[ln] (ct.east) to[out=0,in=180] (yf.west);
 \draw[ln] (ct.east) to[out=0,in=180] (xh.west);
 
-% ── 第五代：重孙辈 ──────────────────────────────────
-\node (qz) at (\cE, 4.7) {刘沁孜};
-\draw[ln] (xk.east) to[out=0,in=180] (qz.west);
-
-% ── 代际题注（横排列于上方） ────────────────────────
-\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
-  at (\cA, 5.7) {祖\,辈};
-\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
-  at (\cB, 5.7) {兄\,妹};
-\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
-  at (\cC, 5.7) {子\,女};
-\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
-  at (\cD, 5.7) {孙\,辈};
-\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
-  at (\cE, 5.7) {重\,孙};
+% ── 重孙 ───────────────────────────────────────────
+\node (qz) at (\cE, -0.6) {刘沁孜};
+\draw[ln] (xk.east) -- (qz.west);
 
 \end{tikzpicture}
-\end{center}
-\end{landscape}
 
