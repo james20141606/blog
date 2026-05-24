@@ -42,8 +42,22 @@
   BoldFont       = NotoSansCJK-Bold
 ]{NotoSansCJK-Light}
 
-% 备用：思源宋体 Light 当楷体用（ctex 已有 \kaishu/\booksans，所以换名字避免冲突）
+% \bookkai：用思源宋体 Light 当 "楷体" 用（含全字符集，含 〇），用于正文引文
 \newCJKfontfamily\bookkai[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSerifCJK-Light
+]{NotoSerifCJK-Light}
+
+% \trueka：真楷体 (AR PL KaitiM GB)，用于章首、扉页等装饰位置（注意缺 〇）
+\newCJKfontfamily\trueka[
+  Path           = /usr/share/fonts/truetype/arphic-gkai00mp/,
+  Extension      = .ttf,
+  UprightFont    = gkai00mp
+]{gkai00mp}
+
+% 思源宋体细字体（含 〇 的题记、副文，年份）
+\newCJKfontfamily\bookserifthin[
   Path           = /usr/share/fonts/opentype/noto/,
   Extension      = .ttc,
   UprightFont    = NotoSerifCJK-Light
@@ -73,32 +87,38 @@
 % ---------- 章节标题样式（核心：高对比 typography）----------
 \usepackage{titlesec}
 \usepackage{xcolor}
+\usepackage{amssymb}
 \definecolor{inkblack}{HTML}{1a1a1a}
 \definecolor{inkgray}{HTML}{595959}
 \definecolor{inkfaint}{HTML}{9c9c9c}
 \definecolor{seal}{HTML}{8B2C1A}     % 印章红，留作装饰
 
-% 章首页：极简风。上方一行极细 "CHAPTER" 数字 sans，
-% 中部超大号 sans-thin 数字，下方一条短线，再下方大号宋体章名，
-% 再下方副题（年代）和长短线。size jump ~3x.
+% 章首页：民国书风。"卷·一" 标记 + 大号宋体章名 + 朱红短线与方钮装饰
+% 在主体章节显示 "卷·一/二/三..."，附录章节显示 "附录·一/二..."
+\newif\ifinappendix
+\inappendixfalse
+
 \titleformat{\chapter}[display]
   {\thispagestyle{plain}\vspace*{1.6cm}\centering}
   {%
-    {\booksansthin\fontsize{12pt}{14pt}\selectfont\color{inkfaint}\addfontfeatures{LetterSpace=20} \MakeUppercase{\chaptername}}\\[6pt]
-    {\booksansthin\fontsize{84pt}{84pt}\selectfont\color{inkblack}\thechapter}\\[18pt]
-    {\color{inkfaint}\rule{2em}{0.4pt}}\\[20pt]
+    {\trueka\fontsize{15pt}{18pt}\selectfont\color{seal}%
+      \ifinappendix 附\,录\else 卷\fi\,\textperiodcentered\,%
+      \chinese{chapter}}\\[26pt]
+    {\color{seal}\rule{1.2em}{0.4pt}}\hspace{0.6em}%
+      \raisebox{-1pt}{\color{seal}\small$\Diamond$}\hspace{0.6em}%
+    {\color{seal}\rule{1.2em}{0.4pt}}\\[26pt]
   }
   {0pt}
-  {\fontsize{24pt}{30pt}\selectfont\bfseries\color{inkblack}}
-  [\vspace{12pt}{\color{inkfaint}\rule{2em}{0.4pt}}\vspace{2.4cm}]
+  {\fontsize{26pt}{34pt}\selectfont\bfseries\color{inkblack}}
+  [\vspace{20pt}{\color{seal}\rule{2em}{0.4pt}}\vspace{2.2cm}]
 
-% 节标题
+% 节标题：朱红方钮 + 宋体粗
 \titleformat{\section}
-  {\booksans\Large\bfseries\color{inkblack}}
-  {\thesection}{0.8em}{}
+  {\Large\bfseries\color{inkblack}}
+  {\thesection}{0.8em}{\color{seal}\raisebox{2pt}{\scriptsize$\blacksquare$}\hspace{0.6em}}
 
 \titleformat{\subsection}
-  {\booksans\large\color{inkblack}}
+  {\large\color{inkblack}}
   {}{0em}{}
 
 % ---------- 页眉页脚 ----------
@@ -108,16 +128,16 @@
 \renewcommand{\headrulewidth}{0pt}
 % 页眉：左中右皆空；中部放章名，前后各一个小菱点修饰
 \fancyhead[C]{%
-  \booksansthin\footnotesize\color{inkfaint}%
-  \raisebox{2pt}{\tiny ◇}\hspace{0.8em}%
-  \color{inkgray}\leftmark%
-  \hspace{0.8em}\raisebox{2pt}{\color{inkfaint}\tiny ◇}%
+  \bookserifthin\footnotesize\color{inkgray}%
+  {\color{seal}\raisebox{1pt}{\tiny$\Diamond$}}\hspace{0.8em}%
+  \leftmark%
+  \hspace{0.8em}{\color{seal}\raisebox{1pt}{\tiny$\Diamond$}}%
 }
-\fancyfoot[C]{\booksansthin\small\color{inkgray}\thepage}
+\fancyfoot[C]{\bookserifthin\small\color{inkgray}\thepage}
 
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyfoot[C]{\booksansthin\small\color{inkgray}\thepage}
+  \fancyfoot[C]{\bookserifthin\small\color{inkgray}\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
 
@@ -132,7 +152,7 @@
 \renewcommand{\cftdotsep}{2.0}
 \setlength{\cftbeforechapskip}{10pt}
 \setlength{\cftchapindent}{0pt}
-\setlength{\cftchapnumwidth}{2.6em}
+\setlength{\cftchapnumwidth}{3.2em}
 
 % 关掉 ctexbook 默认的 "第 X 章" 章节编号显示，由我们自定义
 % （已在 titleformat 里处理）
@@ -181,15 +201,27 @@
 \newcommand{\chapterepigraph}[1]{%
   \begin{center}\booksansthin\small\color{inkgray}#1\end{center}\vspace{1em}}
 
-% 分节装饰符
-\newcommand{\dinkus}{\par\vspace{1em}\begin{center}\color{inkfaint}❦\end{center}\vspace{1em}\par}
+% 分节装饰符（民国书风：三个朱红点）
+\newcommand{\dinkus}{\par\vspace{1.2em}\begin{center}{\color{seal}\small$\bullet$\hspace{1em}$\bullet$\hspace{1em}$\bullet$}\end{center}\vspace{1.2em}\par}
 
 % horizontal rule -> 用 dinkus 替代
 \let\oldhrule\hrule
 
 % ---------- 关闭 ctexbook 默认章节编号样式 ----------
 % ctexbook 默认会输出 "第一章 章名"，我们的 titleformat 已经独立处理章号
-\CTEXsetup[number={\arabic{chapter}},name={,}]{chapter}
+\CTEXsetup[number={\chinese{chapter}},name={,}]{chapter}
+\renewcommand{\thechapter}{\chinese{chapter}}
+
+% 进入附录时切换章首标签为"附录"，使用中文数字
+% 直接重定义 \appendix，绕开 ctex 自动加 "附录 X" 的逻辑
+\renewcommand\appendix{%
+  \par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{}%
+  \gdef\thechapter{附\,\chinese{chapter}}%
+  \inappendixtrue
+}
 
 % ---------- 书末杂项 ----------
 \usepackage[absolute,overlay]{textpos}
@@ -204,29 +236,39 @@
 \thispagestyle{empty}
 \vspace*{6cm}
 \begin{center}
-  {\booksansthin\fontsize{18pt}{22pt}\selectfont\color{inkgray} 陈炳林回忆录}
+  {\trueka\fontsize{20pt}{24pt}\selectfont\color{inkgray} 陈\,炳\,林\,回\,忆\,录}\\[1.2em]
+  {\color{seal}\rule{2em}{0.3pt}}
 \end{center}
 \cleardoublepage
+
+% --------- 朱印方块定义 ---------
+% 一枚仿"朱印"的小方块：朱红底白字"炳林"，竖排
+\newcommand{\redseal}{%
+  \fcolorbox{seal}{seal}{%
+    \color{white}\bfseries\fontsize{14pt}{16pt}\selectfont%
+    \begin{tabular}{@{\hspace{0.18em}}c@{\hspace{0.18em}}}炳\\[-1pt]林\end{tabular}%
+  }%
+}
 
 % --------- 扉页 / Title page ---------
 \begin{titlepage}
   \centering
-  \vspace*{2cm}
-  {\booksansthin\fontsize{20pt}{24pt}\selectfont\color{inkfaint}\addfontfeatures{LetterSpace=30} MEMOIR}\\[6pt]
-  {\booksansthin\fontsize{14pt}{18pt}\selectfont\color{inkfaint}回\quad 忆\quad 录}\\[2.6cm]
-  {\fontsize{52pt}{60pt}\selectfont\bfseries 陈\,炳\,林}\\[0.8cm]
-  {\color{inkfaint}\rule{4em}{0.4pt}}\\[0.6cm]
-  {\booksansthin\large\color{inkgray}一九四〇\,—\,二〇二六}\\[2.8cm]
-  {\booksansthin\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}
+  \vspace*{1.2cm}
+  {\trueka\fontsize{14pt}{18pt}\selectfont\color{inkgray}\addfontfeatures{LetterSpace=80} 回忆录}\\[1.8cm]
+  {\fontsize{56pt}{64pt}\selectfont\bfseries 陈\,炳\,林}\\[0.7cm]
+  {\color{seal}\rule{4em}{0.5pt}}\\[0.5cm]
+  {\bookserifthin\large\color{inkgray}一九四〇\,—\,二〇二六}\\[1.8cm]
+  \redseal\\[1.6cm]
+  {\trueka\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}
 \end{titlepage}
 
 \cleardoublepage
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
-  {\bookkai\fontsize{16pt}{22pt}\selectfont 谨以此书\\[8pt]纪念我的爷爷}\\[2cm]
-  {\color{inkfaint}\rule{2em}{0.3pt}}\\[1.6cm]
-  {\booksansthin\small\color{inkgray}并献给\\[6pt]爱他的家人}
+  {\trueka\fontsize{17pt}{24pt}\selectfont 谨以此书\\[10pt]纪念我的爷爷}\\[2.2cm]
+  {\color{seal}\rule{2em}{0.3pt}}\\[1.8cm]
+  {\trueka\small\color{inkgray}并献给\\[8pt]爱他的家人}
 \end{center}
 \vspace*{\fill}
 \cleardoublepage
@@ -253,7 +295,7 @@
 \cleardoublepage
 
 % --------- 目录 ---------
-{\booksansthin\renewcommand{\contentsname}{目\hspace{1em}录}\tableofcontents}
+{\renewcommand{\contentsname}{目\hspace{1em}录}\tableofcontents}
 \cleardoublepage
 
 % --------- 正文：八章 ---------
@@ -269,8 +311,13 @@
 \input{src/09-chapter-8-body}
 
 % --------- 附录 ---------
+\addtocontents{toc}{%
+  \protect\addvspace{1em}%
+  \protect\nopagebreak%
+  \protect\noindent{\protect\bfseries\protect\large 附\protect\quad 录}%
+  \protect\par\protect\nopagebreak\protect\addvspace{0.3em}%
+}
 \appendix
-\renewcommand{\thechapter}{\Roman{chapter}}
 
 \input{src/10-appendix-poems-body}
 \input{src/11-appendix-justice-body}
@@ -283,10 +330,11 @@
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
-  {\booksansthin\Large 陈炳林回忆录}\\[1em]
-  {\bookkai\small 陈炳林\ 口述\quad 陈旭鹏\ 整理}\\[2em]
-  {\color{inkfaint}\rule{4em}{0.4pt}}\\[2em]
-  {\booksansthin\footnotesize\color{inkgray}
+  {\trueka\Large 陈\,炳\,林\,回\,忆\,录}\\[1em]
+  {\trueka\small 陈炳林\ 口述\quad 陈旭鹏\ 整理}\\[1.8em]
+  {\color{seal}\rule{4em}{0.4pt}}\\[1.6em]
+  \redseal\\[2em]
+  {\bookserifthin\footnotesize\color{inkgray}
     内部刊印\quad 非卖品\\[4pt]
     二〇二六年\\[2em]
     谨呈家人传阅留念
