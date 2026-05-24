@@ -92,45 +92,123 @@
 
 
 \clearpage
+\begin{landscape}
 \thispagestyle{plain}
-\section*{家\hspace{1em}族\hspace{1em}世\hspace{1em}系}
+\null\vspace*{-0.4cm}
+\begin{center}
+\begin{tikzpicture}[
+  remember picture,
+  every node/.style={
+    draw=seal, rounded corners=2.5pt, line width=0.45pt,
+    align=center, font=\trueka\small,
+    inner sep=3.5pt, minimum width=1.55cm
+  },
+  anc/.style={
+    fill=seal!6, font=\trueka\small\bfseries,
+    minimum width=1.85cm, inner sep=4.5pt
+  },
+  spouse/.style={
+    fill=seal!10, font=\trueka\small\bfseries,
+    minimum width=1.85cm, inner sep=4.5pt
+  },
+  small/.style={font=\trueka\footnotesize, minimum width=1.35cm, inner sep=2.8pt},
+  ln/.style={draw=seal!60, line width=0.45pt},
+  marriage/.style={draw=seal!75, line width=0.7pt, double, double distance=1pt},
+  x=1cm, y=1cm,
+]
 
-\vspace{0.4em}
+% ── Columns ────────────────────────────────────────────
+\def\cA{0}      % 祖辈
+\def\cB{3.2}    % 炳林一代
+\def\cC{6.4}    % 子女
+\def\cD{9.5}    % 孙辈
+\def\cE{12.6}   % 重孙辈
 
-\noindent\hspace*{-2em}\begin{forest}
-  for tree={
-    font=\trueka\scriptsize,
-    edge={seal!55, line width=0.4pt},
-    parent anchor=east, child anchor=west,
-    grow=east,
-    s sep=3pt, l sep=8pt,
-    inner sep=2pt, inner xsep=3pt,
-    draw=seal, rounded corners=2pt, line width=0.4pt,
-    align=center,
-  }
-  [{陈\,锡\,海\\吕\,金\,兰}
-    [陈炳郁]
-    [陈炳琴]
-    [陈炳义]
-    [陈炳立]
-    [陈炳玉]
-    [{\bfseries 陈\,炳\,林\\王\,若\,平\\{\tiny\itshape 王父\,铭鼎}\\{\tiny\itshape 王母\,庆良}}
-      [{陈华军}
-        [{（前妻）}
-          [{陈旭鲲\\刘一佳}
-            [刘沁孜]]]
-        [{张\,娟}
-          [陈佳欣]]
-      ]
-      [{陈\,永\\杜思桂}
-        [{陈旭鹏\\孟舒晨}]]
-      [{陈\,斌\\宋爱平}
-        [陈泓妤]
-        [陈映竹]]
-      [{陈\,涛\\刘延娇}
-        [陈奕霏]
-        [陈旭宏]]
-    ]
-  ]
-\end{forest}
+% ── 标题（嵌入 tikz 内部，确保与图同页） ─────────────
+\node[draw=none, font=\trueka\fontsize{18pt}{22pt}\selectfont\bfseries, text=inkblack]
+  (title) at (\cC, 7.2) {家\hspace{0.8em}族\hspace{0.8em}世\hspace{0.8em}系};
+\node[draw=none, below=2pt of title]
+  {{\color{seal}\rule{1.2em}{0.4pt}}\hspace{0.4em}%
+    \raisebox{-1pt}{\color{seal}\small$\Diamond$}\hspace{0.4em}%
+    {\color{seal}\rule{1.2em}{0.4pt}}};
+
+% ── 第一代：双方父母 ──────────────────────────────────
+\node[anc] (chenP) at (\cA, 1.6)  {陈\,锡\,海\\吕\,金\,兰};
+\node[anc] (wangP) at (\cA, -2.3) {王\,铭\,鼎\\庆\hspace{1em}良};
+
+% ── 第二代：炳林兄妹 + 若平 ──────────────────────────
+\node (cby)  at (\cB,  4.2) {陈炳郁};
+\node (cbq)  at (\cB,  3.3) {陈炳琴};
+\node (cbi)  at (\cB,  2.4) {陈炳义};
+\node (cbll) at (\cB,  1.5) {陈炳立};
+\node (cbyu) at (\cB,  0.6) {陈炳玉};
+\node[spouse] (cbl) at (\cB, -0.65) {陈\,炳\,林};
+\node[spouse] (wrp) at (\cB, -2.30) {王\,若\,平};
+
+% 婚姻线（双线表示婚配）
+\draw[marriage] (cbl.south) -- (wrp.north);
+\coordinate (union) at ($(cbl.south)!0.5!(wrp.north)$);
+
+% 陈家父母 → 五位兄妹 + 炳林
+\foreach \n in {cby,cbq,cbi,cbll,cbyu,cbl} {
+  \draw[ln] (chenP.east) to[out=0,in=180] (\n.west);
+}
+% 王家父母 → 若平
+\draw[ln] (wangP.east) to[out=0,in=180] (wrp.west);
+
+% ── 第三代：炳林若平之子女 ────────────────────────────
+\node (chj) at (\cC,  3.6) {陈\,华\,军};
+\node (cy)  at (\cC,  1.2) {陈\hspace{1em}永\\杜思桂};
+\node (cb)  at (\cC, -1.2) {陈\hspace{1em}斌\\宋爱平};
+\node (ct)  at (\cC, -3.6) {陈\hspace{1em}涛\\刘延娇};
+
+% 由婚姻线汇流分枝
+\coordinate (junC) at (\cC-1.4, -1.2);
+\draw[ln] (union) -- (junC);
+\foreach \n in {chj,cy,cb,ct} {
+  \draw[ln] (junC) to[out=0,in=180] (\n.west);
+}
+
+% 华军两段婚姻：前妻 / 张娟
+\node[small] (qq) at (\cC+1.7,  4.3) {（前妻）};
+\node[small] (zj) at (\cC+1.7,  2.9) {张\hspace{0.6em}娟};
+\draw[ln] (chj.east) to[out=0,in=180] (qq.west);
+\draw[ln] (chj.east) to[out=0,in=180] (zj.west);
+
+% ── 第四代：孙辈 ─────────────────────────────────────
+\node (xk) at (\cD,  4.7) {陈旭鲲\\刘一佳};
+\node (jx) at (\cD,  2.9) {陈佳欣};
+\node (xp) at (\cD,  1.2) {陈旭鹏\\孟舒晨};
+\node (hy) at (\cD, -0.5) {陈泓妤};
+\node (yz) at (\cD, -1.9) {陈映竹};
+\node (yf) at (\cD, -2.9) {陈奕霏};
+\node (xh) at (\cD, -4.3) {陈旭宏};
+
+\draw[ln] (qq.east) to[out=0,in=180] (xk.west);
+\draw[ln] (zj.east) to[out=0,in=180] (jx.west);
+\draw[ln] (cy.east) to[out=0,in=180] (xp.west);
+\draw[ln] (cb.east) to[out=0,in=180] (hy.west);
+\draw[ln] (cb.east) to[out=0,in=180] (yz.west);
+\draw[ln] (ct.east) to[out=0,in=180] (yf.west);
+\draw[ln] (ct.east) to[out=0,in=180] (xh.west);
+
+% ── 第五代：重孙辈 ──────────────────────────────────
+\node (qz) at (\cE, 4.7) {刘沁孜};
+\draw[ln] (xk.east) to[out=0,in=180] (qz.west);
+
+% ── 代际题注（横排列于上方） ────────────────────────
+\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
+  at (\cA, 5.7) {祖\,辈};
+\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
+  at (\cB, 5.7) {兄\,妹};
+\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
+  at (\cC, 5.7) {子\,女};
+\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
+  at (\cD, 5.7) {孙\,辈};
+\node[draw=none, font=\trueka\footnotesize\itshape, text=inkgray]
+  at (\cE, 5.7) {重\,孙};
+
+\end{tikzpicture}
+\end{center}
+\end{landscape}
 
