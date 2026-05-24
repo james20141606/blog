@@ -90,6 +90,8 @@ title: "陈炳林 年表"
 
 **2018** 阴历六月十八重孙女刘沁孜出生。
 
+**2026** 5月24日15时28分，在南阳市中心医院逝世。
+
 # Family Tree
 
 ![Markdown](images/01-chronology-img01.jpg)
