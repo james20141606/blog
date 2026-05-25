@@ -259,64 +259,53 @@
 }
 
 % --------- 仿古双线装饰框（封面、封底共用） ---------
+% 双线框：外框细，内框更细，间距 2.5mm，呈古籍气韵
 \newcommand{\decorframe}{%
 \begin{tikzpicture}[remember picture, overlay]
-  % Outer thick line
-  \draw[seal!80, line width=0.8pt]
-    ([xshift=12mm,yshift=-12mm]current page.north west)
-    rectangle ([xshift=-12mm,yshift=12mm]current page.south east);
-  % Inner thin line
-  \draw[seal!75, line width=0.3pt]
-    ([xshift=14.5mm,yshift=-14.5mm]current page.north west)
-    rectangle ([xshift=-14.5mm,yshift=14.5mm]current page.south east);
-  % Four corner diamonds at the outer frame
-  \node[seal] at ([xshift=12mm,yshift=-12mm]current page.north west) {$\blacklozenge$};
-  \node[seal] at ([xshift=-12mm,yshift=-12mm]current page.north east) {$\blacklozenge$};
-  \node[seal] at ([xshift=12mm,yshift=12mm]current page.south west) {$\blacklozenge$};
-  \node[seal] at ([xshift=-12mm,yshift=12mm]current page.south east) {$\blacklozenge$};
+  \draw[seal!75, line width=0.6pt]
+    ([xshift=13mm,yshift=-13mm]current page.north west)
+    rectangle ([xshift=-13mm,yshift=13mm]current page.south east);
+  \draw[seal!70, line width=0.25pt]
+    ([xshift=15.5mm,yshift=-15.5mm]current page.north west)
+    rectangle ([xshift=-15.5mm,yshift=15.5mm]current page.south east);
 \end{tikzpicture}}
 
 % --------- 封面 / Front Cover ---------
+% 精简版：四角菱钮（边框装饰）/ 副题小字 / 主标题大字 / 朱印 / 生卒年 / 整理人
+% 删除中部菱钮装饰线（与四角菱钮重复）、删除底部独立年份（与生卒年重复）。
 \pagestyle{empty}
 \thispagestyle{empty}
 \null
 \decorframe
 
-\vspace*{1.8cm}
+\vspace*{4.2cm}
 \begin{center}
-  % 顶部：回忆录小字（疏朗）
-  {\trueka\fontsize{14pt}{18pt}\selectfont\color{inkgray}\addfontfeatures{LetterSpace=300}回\,忆\,录}
+  % 副题：回忆录小字（疏排，安静）
+  {\trueka\fontsize{14pt}{18pt}\selectfont\color{inkgray}\addfontfeatures{LetterSpace=400}回\,忆\,录}
 
-  \vspace{2.2cm}
+  \vspace{1.6cm}
 
-  % 主标题：陈炳林
-  {\trueka\fontsize{60pt}{70pt}\selectfont\bfseries 陈\,炳\,林}
+  % 主标题：陈炳林大字
+  {\trueka\fontsize{62pt}{72pt}\selectfont\bfseries 陈\,炳\,林}
 
-  \vspace{0.6cm}
+  \vspace{1.0cm}
 
-  % 装饰线：朱红短线 + 菱钮 + 短线
-  {\color{seal}\rule{1.6em}{0.5pt}}\hspace{0.4em}%
-    \raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.4em}%
-  {\color{seal}\rule{1.6em}{0.5pt}}
-
-  \vspace{0.8cm}
-
-  % 生卒年
-  {\bookserifthin\fontsize{13pt}{16pt}\selectfont\color{inkgray}一九四〇\ \,—\,\ 二〇二六}
-
-  \vfill
-
-  % 朱印
-  \redseal
-
-  \vspace{1.4cm}
-
-  % 落款
-  {\trueka\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}\\[8pt]
-  {\bookserifthin\small\color{inkgray}二\,〇\,二\,六\,年}
+  % 生卒年（安静的灰）
+  {\bookserifthin\fontsize{13pt}{16pt}\selectfont\color{inkgray}一九四〇\hspace{1.0em}—\hspace{1.0em}二〇二六}
 
   \vspace{1.2cm}
+
+  % 朱印：紧跟生卒年下，与标题成一组「身份印记」
+  \redseal
 \end{center}
+
+\vfill
+
+\begin{center}
+  % 落款：被推到页面底部
+  {\trueka\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}
+\end{center}
+\vspace*{2.2cm}
 \cleardoublepage
 
 % --------- 献词 / Dedication ---------
