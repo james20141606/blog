@@ -207,7 +207,7 @@
 \usepackage[hidelinks,unicode,bookmarks=true,bookmarksnumbered=true]{hyperref}
 \hypersetup{
   pdftitle={陈炳林回忆录},
-  pdfauthor={陈炳林  口述／陈旭鹏  整理},
+  pdfauthor={陈炳林  著／陈旭鹏  录入},
   pdfsubject={家族回忆录},
   pdfkeywords={陈炳林,回忆录,家史,memoir}
 }
@@ -259,15 +259,26 @@
 }
 
 % --------- 仿古双线装饰框（封面、封底共用） ---------
-% 双线框：外框细，内框更细，间距 2.5mm，呈古籍气韵
+% 双线框 + 四角内嵌的篆刻小方印（朱红实心方块），含蓄而精致
 \newcommand{\decorframe}{%
 \begin{tikzpicture}[remember picture, overlay]
+  % 外层细线
   \draw[seal!75, line width=0.6pt]
     ([xshift=13mm,yshift=-13mm]current page.north west)
     rectangle ([xshift=-13mm,yshift=13mm]current page.south east);
+  % 内层极细线（双线框气韵）
   \draw[seal!70, line width=0.25pt]
     ([xshift=15.5mm,yshift=-15.5mm]current page.north west)
     rectangle ([xshift=-15.5mm,yshift=15.5mm]current page.south east);
+  % 四角小方印（朱红实心小方块，含蓄）
+  \node[fill=seal!85, inner sep=0pt, minimum size=1.6mm]
+    at ([xshift=13mm,yshift=-13mm]current page.north west) {};
+  \node[fill=seal!85, inner sep=0pt, minimum size=1.6mm]
+    at ([xshift=-13mm,yshift=-13mm]current page.north east) {};
+  \node[fill=seal!85, inner sep=0pt, minimum size=1.6mm]
+    at ([xshift=13mm,yshift=13mm]current page.south west) {};
+  \node[fill=seal!85, inner sep=0pt, minimum size=1.6mm]
+    at ([xshift=-13mm,yshift=13mm]current page.south east) {};
 \end{tikzpicture}}
 
 % --------- 封面 / Front Cover ---------
@@ -278,34 +289,50 @@
 \null
 \decorframe
 
-\vspace*{4.2cm}
+% 落款：先用 textpos 绝对定位钉在页底（不会被中间内容挤压）
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\begin{textblock*}{148mm}(0mm,188mm)
 \begin{center}
+{\trueka\small\color{inkgray}陈炳林\ 著\quad 陈旭鹏\ 录入}
+\end{center}
+\end{textblock*}
+
+\vspace*{2.0cm}
+\begin{center}
+  % 顶部装饰横线 + 篆刻菱钮（划定"身份块"开始）
+  {\color{seal}\rule{4.2em}{0.5pt}}\hspace{0.5em}%
+    \raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.5em}%
+  {\color{seal}\rule{4.2em}{0.5pt}}
+
+  \vspace{1.2cm}
+
   % 副题：回忆录小字（疏排，安静）
   {\trueka\fontsize{14pt}{18pt}\selectfont\color{inkgray}\addfontfeatures{LetterSpace=400}回\,忆\,录}
 
-  \vspace{1.6cm}
+  \vspace{1.4cm}
 
   % 主标题：陈炳林大字
-  {\trueka\fontsize{62pt}{72pt}\selectfont\bfseries 陈\,炳\,林}
+  {\trueka\fontsize{56pt}{64pt}\selectfont\bfseries 陈\,炳\,林}
 
-  \vspace{1.0cm}
+  \vspace{0.9cm}
 
   % 生卒年（安静的灰）
   {\bookserifthin\fontsize{13pt}{16pt}\selectfont\color{inkgray}一九四〇\hspace{1.0em}—\hspace{1.0em}二〇二六}
 
   \vspace{1.2cm}
 
-  % 朱印：紧跟生卒年下，与标题成一组「身份印记」
+  % 朱印：身份块内的核心标记
   \redseal
+
+  \vspace{1.2cm}
+
+  % 底部装饰横线（划定"身份块"结束，与顶部呼应）
+  {\color{seal}\rule{4.2em}{0.5pt}}\hspace{0.5em}%
+    \raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.5em}%
+  {\color{seal}\rule{4.2em}{0.5pt}}
 \end{center}
 
-\vfill
-
-\begin{center}
-  % 落款：被推到页面底部
-  {\trueka\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}
-\end{center}
-\vspace*{2.2cm}
 \cleardoublepage
 
 % --------- 献词 / Dedication ---------
