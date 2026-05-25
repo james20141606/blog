@@ -249,18 +249,7 @@
 \begin{document}
 % =====================================================================
 
-% --------- 半扉页 / Half-title ---------
-% 仅有书名，极简，象征"翻开第一页"的仪式感
-\pagestyle{empty}
-\thispagestyle{empty}
-\vspace*{6cm}
-\begin{center}
-  {\trueka\fontsize{20pt}{24pt}\selectfont\color{inkgray} 陈\,炳\,林\,回\,忆\,录}\\[1.2em]
-  {\color{seal}\rule{2em}{0.3pt}}
-\end{center}
-\cleardoublepage
-
-% --------- 朱印方块定义 ---------
+% --------- 朱印方块定义（前移，封面要用） ---------
 % 一枚仿"朱印"的小方块：朱红底白字"炳林"，竖排
 \newcommand{\redseal}{%
   \fcolorbox{seal}{seal}{%
@@ -268,6 +257,67 @@
     \begin{tabular}{@{\hspace{0.18em}}c@{\hspace{0.18em}}}炳\\[-1pt]林\end{tabular}%
   }%
 }
+
+% --------- 仿古双线装饰框（封面、封底共用） ---------
+\newcommand{\decorframe}{%
+\begin{tikzpicture}[remember picture, overlay]
+  % Outer thick line
+  \draw[seal!80, line width=0.8pt]
+    ([xshift=12mm,yshift=-12mm]current page.north west)
+    rectangle ([xshift=-12mm,yshift=12mm]current page.south east);
+  % Inner thin line
+  \draw[seal!75, line width=0.3pt]
+    ([xshift=14.5mm,yshift=-14.5mm]current page.north west)
+    rectangle ([xshift=-14.5mm,yshift=14.5mm]current page.south east);
+  % Four corner diamonds at the outer frame
+  \node[seal] at ([xshift=12mm,yshift=-12mm]current page.north west) {$\blacklozenge$};
+  \node[seal] at ([xshift=-12mm,yshift=-12mm]current page.north east) {$\blacklozenge$};
+  \node[seal] at ([xshift=12mm,yshift=12mm]current page.south west) {$\blacklozenge$};
+  \node[seal] at ([xshift=-12mm,yshift=12mm]current page.south east) {$\blacklozenge$};
+\end{tikzpicture}}
+
+% --------- 封面 / Front Cover ---------
+\pagestyle{empty}
+\thispagestyle{empty}
+\null
+\decorframe
+
+\vspace*{1.8cm}
+\begin{center}
+  % 顶部：回忆录小字（疏朗）
+  {\trueka\fontsize{14pt}{18pt}\selectfont\color{inkgray}\addfontfeatures{LetterSpace=300}回\,忆\,录}
+
+  \vspace{2.2cm}
+
+  % 主标题：陈炳林
+  {\trueka\fontsize{60pt}{70pt}\selectfont\bfseries 陈\,炳\,林}
+
+  \vspace{0.6cm}
+
+  % 装饰线：朱红短线 + 菱钮 + 短线
+  {\color{seal}\rule{1.6em}{0.5pt}}\hspace{0.4em}%
+    \raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.4em}%
+  {\color{seal}\rule{1.6em}{0.5pt}}
+
+  \vspace{0.8cm}
+
+  % 生卒年
+  {\bookserifthin\fontsize{13pt}{16pt}\selectfont\color{inkgray}一九四〇\ \,—\,\ 二〇二六}
+
+  \vfill
+
+  % 朱印
+  \redseal
+
+  \vspace{1.4cm}
+
+  % 落款
+  {\trueka\small\color{inkgray}陈炳林\ 口述\quad 陈旭鹏\ 整理}\\[8pt]
+  {\bookserifthin\small\color{inkgray}二\,〇\,二\,六\,年}
+
+  \vspace{1.2cm}
+\end{center}
+\cleardoublepage
 
 % --------- 扉页 / Title page ---------
 \begin{titlepage}
@@ -343,22 +393,42 @@
 \input{src/12-appendix-essays-body}
 \input{src/01-chronology-body}
 
-% --------- 版权页 / Colophon ---------
+% --------- 封底 / Back Cover ---------
 \backmatter
 \cleardoublepage
+\pagestyle{empty}
 \thispagestyle{empty}
-\vspace*{\fill}
+\markboth{}{}
+\decorframe
+
+\vspace*{2.2cm}
 \begin{center}
-  {\trueka\Large 陈\,炳\,林\,回\,忆\,录}\\[1em]
-  {\trueka\small 陈炳林\ 口述\quad 陈旭鹏\ 整理}\\[1.8em]
-  {\color{seal}\rule{4em}{0.4pt}}\\[1.6em]
-  \redseal\\[2em]
+  % 题词块：祖母语（贯穿全书的家族精神）
+  {\trueka\fontsize{24pt}{32pt}\selectfont\color{inkblack}人\,留\,子\,孙}\\[8pt]
+  {\trueka\fontsize{24pt}{32pt}\selectfont\color{inkblack}草\,留\,根}\\[0.6cm]
+
+  {\trueka\small\color{inkgray}——\,祖\,母\,语}
+\end{center}
+
+\vfill
+
+\begin{center}
+  % 中间装饰
+  {\color{seal}\rule{1.4em}{0.5pt}}\hspace{0.4em}%
+    \raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.4em}%
+  {\color{seal}\rule{1.4em}{0.5pt}}\\[1.0cm]
+
+  % 朱印
+  \redseal\\[1.2cm]
+
+  % 落款信息
   {\bookserifthin\footnotesize\color{inkgray}
-    内部刊印\quad 非卖品\\[4pt]
-    二〇二六年\\[2em]
-    谨呈家人传阅留念
+    内\,部\,刊\,印\quad\textperiodcentered\quad 非\,卖\,品\\[6pt]
+    二\,〇\,二\,六\,年\,初\,夏\,印\,行\\[10pt]
+    谨\,呈\,家\,人\,传\,阅\,留\,念
   }
 \end{center}
-\vspace*{\fill}
+
+\vspace*{1.4cm}
 
 \end{document}
