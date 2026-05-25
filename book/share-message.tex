@@ -1,0 +1,115 @@
+% 家书分享图片：64 年的回响
+\documentclass[11pt]{ctexart}
+
+\usepackage[
+  paperwidth=160mm, paperheight=265mm,
+  margin=16mm
+]{geometry}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+
+% 中文字体：思源宋体（正文）/ 楷体（引文）
+\setCJKmainfont[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSerifCJK-Regular,
+  BoldFont       = NotoSerifCJK-Bold
+]{NotoSerifCJK-Regular}
+
+\newCJKfontfamily\bookkai[
+  Path           = /usr/share/fonts/opentype/noto/,
+  Extension      = .ttc,
+  UprightFont    = NotoSerifCJK-Light
+]{NotoSerifCJK-Light}
+
+\newCJKfontfamily\trueka[
+  Path           = /usr/share/fonts/truetype/arphic-gkai00mp/,
+  Extension      = .ttf,
+  UprightFont    = gkai00mp
+]{gkai00mp}
+
+\definecolor{inkblack}{HTML}{1a1a1a}
+\definecolor{inkgray}{HTML}{595959}
+\definecolor{seal}{HTML}{8B2C1A}
+
+\linespread{1.55}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em plus 0.2em}
+
+\pagestyle{empty}
+\color{inkblack}
+
+% 引文环境：楷体、左缩进、稍小
+\newenvironment{quoteblk}{%
+  \vspace{0.4em}%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.2em}%
+    \setlength{\rightmargin}{0.4em}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+  }\item[]{\trueka\color{inkgray}\small}%
+}{%
+  \end{list}\vspace{0.4em}%
+}
+
+\begin{document}
+
+% 顶部装饰
+\begin{center}
+{\color{seal}\rule{2em}{0.5pt}}\hspace{0.5em}%
+\raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.5em}%
+{\color{seal}\rule{2em}{0.5pt}}
+\end{center}
+
+\vspace{0.6em}
+
+前几天对照爷爷回忆录里的日子，看到一件事——
+
+爷爷走的那天，公历 5 月 24 日，{\bfseries 农历四月初八}。
+
+四月初八，是老家\textbf{尹店每年的庙会日}。爷爷在回忆录里写：
+
+\begin{quoteblk}
+"老家尹店每年农历四月初八的庙会规模大，总是有两台戏，约老同学来赶庙会、叙叙旧应该是不错的选择！"
+\end{quoteblk}
+
+那是 \textbf{1962 年}。爷爷刚从郑州学校放长假回乡。在那之前，从郑州走回家的路上，他和奶奶（王若平）结伴步行，凌晨到蒲山殷庄奶奶家歇脚，奶奶的妈妈做了一顿削过皮的红薯白面疙瘩。爷爷写：
+
+\begin{quoteblk}
+"她哪里知道接待的人竟是她未来的女婿呀！"
+\end{quoteblk}
+
+几个月后的农历四月初八，爷爷约几位老同学到尹店赶庙会，奶奶和赵玉珍应约前来，逛完庙会还去了家里。爷爷写下：
+
+\begin{quoteblk}
+"同样的命运，同样的环境，同样的人生遭遇，五年的同窗同学生活，我和王若平见面有太多想说的，有太多的共同语言……缘分就是这么奇妙，所谓日久生情，时间久了，我们的关系从普通的同学关系，变得不太一样了，内心仿佛多了些什么？"
+\end{quoteblk}
+
+那一年的农历七月十一，他们结婚了。爷爷后来写：
+
+\begin{quoteblk}
+"我和若平两人背景相同，志同道合，结婚后朝夕相处，可以永不分离，两个人形影不离，生活觉得甜蜜极了。"
+\end{quoteblk}
+
+从 1962 年的农历四月初八，到 2026 年的农历四月初八——
+
+\begin{center}
+{\bfseries\large 整整六十四个农历年。}
+\end{center}
+
+\vspace{0.4em}
+\begin{center}
+六十四年，他们一辈子。
+\end{center}
+
+\vfill
+
+\begin{center}
+{\color{seal}\rule{2em}{0.5pt}}\hspace{0.5em}%
+\raisebox{-1pt}{\color{seal}$\blacklozenge$}\hspace{0.5em}%
+{\color{seal}\rule{2em}{0.5pt}}
+\end{center}
+
+\end{document}
